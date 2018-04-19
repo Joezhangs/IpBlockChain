@@ -1,0 +1,345 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>我们科技-注册</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<link rel="icon" type="image/x-icon" th:href="@{~/images/favicon.ico}">
+<link th:href="@{/css/bootstrap.css}" rel='stylesheet' type='text/css'/>
+<link th:href="@{/css/font-awesome.css}" rel="stylesheet"> 
+<link rel="stylesheet" th:href="@{/css/slider.css}">
+<link th:href="@{/css/style.css}" rel='stylesheet' type='text/css' />	
+<link rel="stylesheet" type="text/css" th:href="@{/css/mislider.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{/css/mislider-skin-cameo.css}"/>
+</head>
+	<body>
+	<div id="" style="position: relative;">
+	
+
+	<div class="top_banner" id="topl">
+		<!-- SVG Arrows -->
+		<div class="svg-wrap">
+			<svg width="64" height="64" viewBox="0 0 64 64">
+				<path id="arrow-left" d="M46.077 55.738c0.858 0.867 0.858 2.266 0 3.133s-2.243 0.867-3.101 0l-25.056-25.302c-0.858-0.867-0.858-2.269 0-3.133l25.056-25.306c0.858-0.867 2.243-0.867 3.101 0s0.858 2.266 0 3.133l-22.848 23.738 22.848 23.738z" />
+			</svg>
+			<svg width="64" height="64" viewBox="0 0 64 64">
+				<path id="arrow-right" d="M17.919 55.738c-0.858 0.867-0.858 2.266 0 3.133s2.243 0.867 3.101 0l25.056-25.302c0.858-0.867 0.858-2.269 0-3.133l-25.056-25.306c-0.858-0.867-2.243-0.867-3.101 0s-0.858 2.266 0 3.133l22.848 23.738-22.848 23.738z" />
+			</svg>
+		</div>
+		<div class="top_header_agile_info_w3ls">
+		  <nav class="navbar navbar-default">
+				<div class="navbar-header navbar-left">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">版权</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<h1>
+					<a class="navbar-brand" href="company_en.html"  th:href="@{/company_en.html}"><img src="../static/images/logoll.png" th:src="@{~/images/logoll.png}"/></a><span class="ospan">Register</span>
+					</h1>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+<style type="text/css">
+	.m_nav li>a {color: #666; font-weight: 600;}
+	.top_header_agile_info_w3ls{border-bottom: 1px solid #ccc;}
+	.navbar-default .navbar-brand, .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus{color: #666;}
+	.ospan{margin: 15px; display: inline-block;}
+</style>
+					<!-- <div id="m_nav_container" class="m_nav wthree_bg">
+						<nav class="menu menu--sebastian">
+							<ul id="m_nav_list" class="m_nav menu__list">
+								
+
+								<li class="m_nav_item" id="moble_nav_item_6"> <a href="login.html" class="link link--kumya"><span data-letters="登录/注册">登录/注册</span></a></li>
+							</ul>
+						</nav>
+					</div> -->
+
+					</nav>
+				</div>
+		</div>
+	
+	
+		<!--<div class="sleekslider" id="home">
+	
+			<div class="slide active bg-1">
+				
+			</div>	
+		</div>	-->
+		
+		
+      <!--welcome-->
+ </div>
+	</div>
+
+<style type="text/css">
+	.formd{padding-top: 120px; min-height: 892px;}
+</style>
+<div class="formd">
+	
+
+<div class=" container">
+	
+<div class="box col-md-offset-3 col-sm-8" style="margin-top: 40px;">
+      <!--<p id="title">
+      	<span class="select">找回密码</span>
+    </p>-->
+     
+  <style type="text/css">
+       	.select{    float: left;
+    padding: 0 20px;
+    text-align: center;
+    border-bottom: 2px solid #00ACEE!important;
+    margin-left: 20px;
+    color: #00ACEE;
+    }
+    
+        #title{
+      line-height: 40px;
+      font-size: 16px;
+      font-weight: bold;
+      overflow: hidden;
+    }
+    #title span{
+      float: left;
+     padding: 0 20px;
+      text-align: center;
+      border: 1px solid #fff;
+      margin-left: 20px;
+    }
+  
+    #content{
+      /*margin-top: 20px;*/
+    }
+    .reg_left{margin-top: 0; padding-top: 0!important;}
+    #content li{
+
+      overflow: hidden;
+      display: none;
+    }
+ 
+  
+    #content .show{
+      display: block;
+    }
+       </style>
+     
+      <ul id="content">
+        <li class="show">
+           <div class="log-wrap cl">
+                <div class="log-content cl">
+                    <div class="wpl pos cl">
+                        <div class="log-row-cx cl">
+                        	<div class="reg_left pos col-lg-8">
+                            <form method="post" class="regForm" onsubmit="return false" id="sign-up-form">
+                            <input type="hidden" th:value="${session.token}" name="token">
+                                <div class="reg_cont_input">
+                                	<label class="login-icon pos">
+										<i class="fa fa-phone fa-2x fss"></i>
+                                        <input type="tel" name="phone" autocomplete="off" class="log-input mls" datatype="phone" maxlength="11" autocomplete="off" placeholder="Please enter the cell phone number">
+                                        <div class="Validform_checktip"></div>
+									</label>
+                                   <label class="login-icon fg-code pos">
+                                            <i class=" fss log-i fa fa-envelope fa-2x"></i>
+                                            <input id="forgot-code" type="text" name="vrifyCode" maxlength="4" autocomplete="off" placeholder="Please enter the verification code" class="log-input-half login-pwd mls log-input" style="margin-left: 40px!important;">
+                                        </label>
+                                        <div class="fg-code-wp"> 
+                                            <span class="fg-code-pic" style="margin-left: 15%;">
+                                                <img alt="Verification Code" onclick = "this.src='/auth/defaultKaptcha?d='+new Date()*1" th:src="@{/auth/defaultKaptcha}" />
+                                            </span>
+                                           <!--  <a class="fg-code-t" href="javascript:;" onclick="this.previousSbiling.firstChild.onclick">换一张</a> -->
+                                        </div>
+									<label class="login-icon fg-code pos">
+                                            <i class=" fss log-i fa fa-envelope fa-2x"></i>
+                                            <input id="forgot-code" type="text" name="smsCode" maxlength="6" autocomplete="off" placeholder="Please enter the verification code" class="log-input-half login-pwd mls log-input" style="margin-left: 40px!important;">
+                                        </label>
+                                        <div class="fg-code-wp"> 
+                                            <button class="btn btn-default" id="btnSendCode" style="border-radius: 0; padding: 9px 12px; margin-left: 15%;width: 260px;" onclick="sendSmsCode()"> Getting SMS authentication code</button>
+                                        </div>
+                                  <div id="" style="clear: both;"> </div>
+                                  	<label class="login-icon pos">
+										<i class="fa fa-user fa-2x fss"></i>
+                                        <input type="text" name="userName" autocomplete="off" maxlength="8" class="log-input mls" datatype="username" autocomplete="off" placeholder="Please enter one user name">
+                                        <div class="Validform_checktip"></div>
+									</label>
+									<label class="login-icon pos">
+										<i class="fa fa-unlock-alt fa-2x fss"></i>
+                                        <input type="password" name="verifyCredential" maxlength="16" autocomplete="off" class="log-input mls" datatype=""  placeholder="Please input a password">
+                                        <span style="color: #999;font-size: 13px;">8~16 bit "alphabet" character</span>
+                                        <div class="Validform_checktip"></div>
+									</label>
+									<label class="login-icon pos">
+										<i class="fa fa-unlock-alt fa-2x fss"></i>
+                                        <input type="password" name="verifyCredential-true" maxlength="16" autocomplete="off" class="log-input mls" datatype=""  placeholder="Confirm the password">
+                                        <div class="Validform_checktip"></div>
+									</label>
+                                  <div class="reg_checkboxline pos">
+                                         <span class="z"> <input type="checkbox" id="agree" value="0"> </span>
+                                         <p style="color: #999;">&nbsp;I have read and accept <a th:href="@{~/protocol_en.html}" style="color: #039;" target="_brack">《Registration Agreement》</a> </p>
+                                    </div>
+                                    
+                                    <!-- <a href="home.html" class="lang-btn" id="regInputSubmit">
+                                    	<span>立即注册</span>
+                                    </a> -->
+                                    <button type="button" class="lang-btn" onclick="signUp()">Immediate registration</button>
+                                     <!-- <button type="button" lay-submit lay-filter="signUp" disabled="disabled" class="lang-btn">立即注册</button> -->
+                                    <div class="lr_title_txt">
+                                	<h2></h2>
+                                	<span>Existing account？<a th:href="@{~/auth/loginPage_en.html}">Log in immediately</a></span>
+                                </div>
+                                </div>
+                               </form>
+                            </div><!-- .reg_left -->
+                            <div class=" col-lg-1">
+                            	
+                            </div>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        
+
+        </li>
+        <li>
+        
+    <link rel="stylesheet" type="text/css" th:href="@{/css/login-fluid.css}"/>    
+
+        </li>
+    
+     
+      </ul>
+    </div>
+</div>
+
+</div>
+
+
+<div style="clear: both;">
+	
+</div>
+
+<!-- footer -->
+	<div class="footer" >
+    <div class="agileinfo_footer_bottom1" th:replace="footer_en::footer">
+		</div>
+	</div>
+		
+
+<!-- //footer -->
+<!-- JavaScripts -->
+<script type="text/javascript" th:src="@{/js/jquery-2.1.4.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/sleekslider.js}"></script>
+<script type="text/javascript" th:src="@{/js/app.js}"></script>
+<script th:src="@{/js/bootstrap.js}"></script>
+<script th:src="@{/js/layer/layer.js}"></script>
+<!-- //for bootstrap working -->
+<script type="text/javascript">
+//发送短信
+var InterValObj; //timer变量，控制时间
+var count = 60; //间隔函数，1秒执行
+var curCount;//当前剩余秒数
+function sendSmsCode(){
+	var myreg = /^1[3|4|5|7|8][0-9]{9}$/;
+	if(!myreg.test($("input[name='phone']").val())){
+		layer.msg("The phone number is wrong");
+		return false;
+	}
+	$.ajax({
+		url : "/auth/sendSmsCode",
+		type : "POST",
+		data : {'phone':$("input[name='phone']").val(),'type':'1'},
+		cache : false,
+		success : function(data) {
+			var jsondata = JSON.parse(data); 
+			layer.msg(jsondata.msg);
+			if(jsondata.status=="0"){
+				//sessionStorage.setItem('phone', $("input[name='phone']").val());//记录接收短信的手机号，注册时做比较
+				curCount = count;
+				$("#btnSendCode").attr("disabled", "true");
+				$("#btnSendCode").html( + curCount + "Second acquisition");
+				InterValObj = setInterval(SetRemainTime, 1000); //启动计时器，1秒执行一次
+			}
+		},
+		error : function() {
+			layer.msg("Server error");
+		}
+	});
+} 
+//timer处理函数
+function SetRemainTime() {
+	if (curCount == 0) {                
+		clearInterval(InterValObj);//停止计时器
+		$("#btnSendCode").removeAttr("disabled");//启用按钮
+		$("#btnSendCode").html("Resend the verifying code");
+	}
+	else {
+		curCount--;
+		$("#btnSendCode").html( + curCount + "Second acquisition");
+	}
+}
+
+function signUp(){
+	//var phone = sessionStorage.getItem('phone');
+	if($.trim($("input[name='phone']").val())==""){
+		layer.msg("Cell phone number can not be empty");
+		return false;
+	}
+	if($.trim($("input[name='vrifyCode']").val())==""){
+		layer.msg("The verifying code cannot be empty");
+		return false;
+	}
+	if($.trim($("input[name='smsCode']").val())==""){
+		layer.msg("Short message authentication code can not be empty");
+		return false;
+	}
+	/* if($("input[name='phone']").val()!=phone){
+		layer.msg("注册手机号与接收短信手机号不一致");
+		return false;
+	} */
+	if($.trim($("input[name='userName']").val())==""){
+		layer.msg("The username can not be empty");
+		return false;
+	}
+	if($.trim($("input[name='verifyCredential']").val())==""){
+		layer.msg("The password can not be empty");
+		return false;
+	}
+	if($.trim($("input[name='verifyCredential-true']").val())!=$.trim($("input[name='verifyCredential']").val())){
+		layer.msg("Two inconsistencies in cipher input");
+		return false;
+	}
+	if(!$("#agree").is(':checked')) {
+		layer.msg("Please agree to the registration agreement");
+		return false;
+	}
+	$.ajax({
+		url : "/user/signUp",
+		type : "POST",
+		data : $("#sign-up-form").serialize(),
+		cache : false,
+		success : function(data) {
+			var jsondata = JSON.parse(data); 
+			if(jsondata.status=="0"){
+				layer.msg(jsondata.msg);
+				setTimeout(function(){
+					//window.location.href="/auth/loginPage.html";
+					window.location.href="/user/userInfo_en.html";
+				},2000); 
+			}else{
+				layer.msg(jsondata.msg);
+			}
+		},
+		error : function() {
+			layer.msg("Server error");
+		}
+	});
+} 
+</script>
+</body>
+</html>

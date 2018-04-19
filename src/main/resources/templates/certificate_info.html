@@ -1,0 +1,406 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>我们科技-登记详情</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<link rel="icon" type="image/x-icon" th:href="@{~/images/favicon.ico}">
+<link th:href="@{~/css/bootstrap.css}" rel='stylesheet' type='text/css' />
+<link th:href="@{~/css/font-awesome.css}" rel="stylesheet"> 
+<link rel="stylesheet" th:href="@{~/css/slider.css}">
+<link th:href="@{~/css/style.css}" rel='stylesheet' type='text/css' />	
+<link rel="stylesheet" type="text/css" th:href="@{~/css/mislider.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{~/css/mislider-skin-cameo.css}"/>
+<link th:href="@{/css/nav.css}" rel='stylesheet' type='text/css' />
+<style type="text/css">
+	 body{background: #f0f0f0;}
+	.top_header_agile_info_w3ls{background: #fff;}
+</style>
+</head>
+	<body>
+	<div id="" style="position: relative;">
+	
+
+	<div class="top_banner" id="topl">
+		<div class="top_header_agile_info_w3ls">
+		  <nav class="navbar navbar-default">
+				<div class="navbar-header navbar-left">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">版权</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<h1>
+						<a class="navbar-brand" href="index.html" th:href="@{~/}">
+							<img src="../statiac/images/logoll.png" th:src="@{~/images/logoll.png}"/>
+						</a>
+						<span class="ospan">用户中心 > 版权证书</span>
+					</h1>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+<style type="text/css">
+	.m_nav li>a {color: #666; font-weight: 600;}
+	.top_header_agile_info_w3ls{border-bottom: 1px solid #ccc;}
+	.navbar-default .navbar-brand, .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus{color: #666;}
+	.ospan{margin: 15px; display: inline-block;}
+	/*下拉按钮样式 */
+.dropbtn {
+	color: #666;
+	padding: 16px;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+	font-weight: 600;
+}
+
+/*容器 <div> - 需要定位下拉内容 */
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+/*下拉内容 (默认隐藏) */
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+/*下拉菜单的链接 */
+.dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+/*鼠标移上去后修改下拉菜单链接颜色 */
+.dropdown-content a:hover {
+	background-color: #f1f1f1
+}
+
+/*在鼠标移上去后显示下拉菜单 */
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+/* 当下拉内容显示后修改下拉按钮的背景颜色 */
+.dropdown:hover .dropbtn {
+	color: #3e8e41;
+}
+</style>
+					<div id="m_nav_container" class="m_nav wthree_bg">
+						<nav class="menu menu--sebastian">
+							<!-- <ul id="m_nav_list" class="m_nav menu__list">
+								<li class="m_nav_item" id="moble_nav_item_6"> 
+									<a href="login.html" class="link link--kumya">
+										<span data-letters="登录/注册" th:text="${session.user.userName}==null?${session.user.userNickname}:${session.user.userName}">登录/注册</span>
+									</a>
+								</li>
+							</ul> -->
+							<div class="dropdown-back-white">
+							  <span><span class="dropbtn-back-white" th:text="${session.user.userName}==null?${#strings.length(session.user.userNickname)>5?#strings.substring(session.user.userNickname,0,5)+'...':session.user.userNickname}:${#strings.length(session.user.userName)>5?#strings.substring(session.user.userName,0,5)+'...':session.user.userName}">登录/注册</span><i class="menu-ico-back-white"></i></span>
+							  <div class="dropdown-content-back-white">
+							    <a th:href="@{~/user/userInfo.html}">用户中心</a>
+							    <a th:href="@{~/auth/longOut}">退出</a>
+							  </div>
+							</div>
+						</nav>
+					</div>
+
+					</nav>
+				</div>
+		</div>
+	
+	
+		<!--<div class="sleekslider" id="home">
+	
+			<div class="slide active bg-1">
+				
+			</div>	
+		</div>	-->
+		
+		
+      <!--welcome-->
+ </div>
+	</div>
+
+<style type="text/css">
+	.formd{padding-top: 120px; min-height: 892px; height: 100%; margin-bottom: 40px;}
+</style>
+<div class="formd">
+	
+<div class="container">
+	
+<div class="box " style="margin-top: 40px;">
+        <div class="col-lg-2 user-left">
+        	<ul class="user-ul">
+        		<li ><i class="fa fa-user"></i> 用户信息</li>
+        		<li><a href="user.html" th:href="@{~/user/userInfo.html}">个人资料</a></li>
+        		<li th:if="${session.user.identifyType==3 && session.user.identifyStatus==3}"><a href="enterprise_info_en.html" th:href="@{~/certification/getEnterprise.html}">企业资料</a></li>
+        		<li><a href="user_auth.html" th:href="@{~/certification/getCertification.html}">实名认证</a></li>
+        		<!-- <li><a href="">版权证书</a></li> -->
+        	</ul>
+        	<ul class="user-ul">
+        		<li ><i class="fa fa-cog"></i> 用户操作</li>	
+        		<!-- <li><a href="#">实名认证</a></li> -->
+        		<li class="activeuser"><a href="works_list.html.html" th:href="@{~/works/workses.html}" class="activeuser">作品查询</a></li>
+        		<li><a th:href="@{~/chain/search.html}">区块查询</a></li>
+        		<!-- <li><a th:href="@{~/works/worksFirst.html}">版权登记</a></li> -->
+        		<li><a href="javascript:;" onclick="confirmation()">版权登记</a></li>
+        	</ul>
+        </div>
+        <div class="col-lg-10 ">
+        	<div class="user-right">
+        		
+        		<ul class="user-ulr3">
+        			<li>
+        				<h1>登记详情</h1>
+        				<div class="col-lg-2 text-center" >
+        					 作品
+        				</div>
+        				<div class="col-lg-1"></div>
+        				<div class="col-lg-6 " >
+        					<p class="edit" th:text="${info.works_name}"> 白与黑</p>
+        				</div>
+        			<div style="clear: both;"></div>
+        			</li>
+        			<li>
+        				<div class="col-lg-2 text-center" >
+        					
+        					作者
+        				</div>
+        				<div class="col-lg-1"></div>
+        				<div class="col-lg-6 " >
+        					<p class="edit" th:text="${info.author}"> 张三</p>
+        				</div>
+        				<div style="clear: both;"></div>
+        			</li>
+        			<li>
+        			
+        				<div class="col-lg-2 text-center" >
+        					
+        					 完成确权时间
+        				</div>
+        				<div class="col-lg-1"></div>
+        				<div class="col-lg-6 " >
+        					<p class="edit" th:text="${#dates.format(info.timestamp, 'yyyy年MM月dd日 HH:mm:ss SSS')}"> 2017年07月31日 13:59:28</p>
+        				</div>
+        			<div style="clear: both;"></div>
+        			</li>
+        			<li>
+        				<div class="col-lg-2 text-center" >
+        					
+        					区块链版权ID
+        				</div>
+        				<div class="col-lg-1"></div>
+        				<div class="col-lg-6 " >
+        					<p class="edit" th:text="${info.block_id}"> 238</p>
+        				</div>
+        				<div style="clear: both;"></div>
+        			</li>
+        			<li>
+        				<div class="col-lg-2 text-center" th:text="|${info.works_nature}权利登记声明|" >
+        					原创权利登记声明
+        				</div>
+        				<div class="col-lg-1"></div>
+        				<div class="col-lg-6 " >
+        					<p class="edit" th:text="|${info.author}的${info.works_nature}作品《${info.works_name}》，于${#dates.format(info.timestamp, 'yyyy年MM月dd日 HH:mm:ss SSS')}，经我们科技版权完成区块链版权登记，并加以保护。特此声明${info.works_nature}权利！|"> xx的xx作品《xxx》，于xxx|，经过我们科技完成区块链互联网版权登记，并加以保护。特此声明xxx权利！</p>
+        				</div>
+        				<div style="clear: both;"></div>
+        			</li>
+        		</ul>
+        		<ul class="user-ulr3">
+        			<li>
+        				<h1>作品信息</h1>
+        				<div class="col-lg-2 text-center" >
+        					 作品
+        				</div>
+        				<div class="col-lg-1"></div>
+        				<div class="col-lg-6 " >
+        					<p class="edit" th:text="${info.works_name}"> 白与黑</p>
+        				</div>
+        			<div style="clear: both;"></div>
+        			</li>
+        			<li>
+        				<div class="col-lg-2 text-center" >
+        					作者
+        				</div>
+        				<div class="col-lg-1"></div>
+        				<div class="col-lg-6 " >
+        					<p class="edit" th:text="${info.author}"> 张三</p>
+        				</div>
+        				<div style="clear: both;"></div>
+        			</li>
+        			<li>
+        			
+        				<div class="col-lg-2 text-center" >
+        					 存在数据（SHA256）
+        				</div>
+        				<div class="col-lg-1"></div>
+        				<div class="col-lg-6 " >
+        					<p class="edit" th:text="${info.tx_hash}"> 6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b</p>
+        				</div>
+        			<div style="clear: both;"></div>
+        			</li>
+        			<li>
+        				<div class="col-lg-2 text-center" >
+        					作品证书
+        				</div>
+        				<div class="col-lg-1"></div>
+        				<div class="col-lg-6 " >
+        					<p class="edit"><a target="_blank" download th:href="${info.works_certificate_url}"> <button class="btn btn-info">下载证书</button></a></p>
+        					<!-- <p class="edit"><a target="_blank" download th:href="|${domain}download.do?works_id=${info.works_id}|"> <button class="btn btn-info">下载证书</button></a></p> -->
+        				</div>
+        				<div style="clear: both;"></div>
+        			</li>
+        		</ul>
+        		<ul class="user-ulr3">
+        			<li>
+        				<h1>区块信息</h1>
+        				<div class="col-lg-2 text-center" >
+        					  区块ID
+        				</div>
+        				<div class="col-lg-1"></div>
+        				<div class="col-lg-6 " >
+        					<p class="edit" th:text="${info.block_id}"> 238</p>
+        				</div>
+        			<div style="clear: both;"></div>
+        			</li>
+        			<li>
+        				<div class="col-lg-2 text-center" >
+        					
+        					区块Hash
+        				</div>
+        				<div class="col-lg-1"></div>
+        				<div class="col-lg-6 " >
+        					<p class="edit" th:text="${info.hash}"> 6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b</p>
+        				</div>
+        				<div style="clear: both;"></div>
+        			</li>
+        			
+        			<li>
+        				<div class="col-lg-2 text-center" >
+        					前一区块Hash
+        				</div>
+        				<div class="col-lg-1"></div>
+        				<div class="col-lg-6 " >
+        					<p class="edit" th:text="${info.pre_hash}"> 1bad6b8cf97131fceab8543e81f7757195fbb1d36b376ee994ad1cf17699c464</p>
+        				</div>
+        				<div style="clear: both;"></div>
+        			</li>
+        			<li>
+        				<div class="col-lg-2 text-center" >
+        					
+        					创建时间
+        				</div>
+        				<div class="col-lg-1"></div>
+        				<div class="col-lg-6 " >
+        					<p class="edit" th:text="${#dates.format(info.timestamp, 'yyyy-MM-dd HH:mm:ss SSS')}"> 2017-07-19 10:23:13</p>
+        				</div>
+        				<div style="clear: both;"></div>
+        			</li>
+        			
+        		</ul>
+        		   
+        	</div>
+        </div>
+        
+</div>
+  <style type="text/css">
+  	.text{padding: 3px 15px; border: 1px solid #ccc;}
+  </style>       
+<script type="text/javascript">
+
+</script>
+	
+</div>
+
+</div>
+
+
+<div style="clear: both;">
+	
+</div>
+<!-- footer -->
+
+
+	<div class="footer" >
+
+    <div class="agileinfo_footer_bottom1">
+			<div class="container">
+				    <p class="col-lg-2" style="padding-right: 0;"><a th:href="@{~/}">关于我们</a>&nbsp;&nbsp;<a href="javascript:;">法律协议</a></p>
+				
+					<p class="col-lg-10 text-right"> &copy;2017 wevolution Allg Rights Reserved. powered by 上海我们信息科技有限公司 <img th:src="@{~/images/pic1.gif}"  style="margin-top:5px;"/> 沪ICP备17045920号</p>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+		
+
+<!-- //footer -->
+<!-- JavaScripts -->
+<script type="text/javascript" th:src="@{~/js/jquery-2.1.4.min.js}"></script>
+<script type="text/javascript" th:src="@{~/js/sleekslider.js}"></script>
+<script type="text/javascript" th:src="@{~/js/app.js}"></script>
+<script th:src="@{~/js/bootstrap.js}"></script>
+<script th:inline="javascript">
+/*<![CDATA[*/
+    var user = /*[[${session.user}]]*/ 'null';
+/*]]>*/
+</script>
+<script type="text/javascript">
+function confirmation(){
+	if(user == null){
+		window.location.href="/auth/loginPage.html";
+	}else{
+		if(user.phone==null||user.phone==""){
+			layer.confirm('尚未绑定手机号，是否立即绑定？', function(index){
+				  window.location.href="/user/bind.html";
+				  layer.close(index);
+				});       
+		}else{
+			$.ajax({
+				url : "/certification/getCertificationStatus",
+				type : "GET",
+				cache : false,
+				success : function(data) {
+					var jsondata = JSON.parse(data); 
+					var au = jsondata.data;
+					if(jsondata.status=="0"){
+						if(au.identityStatus==null||au.identityStatus==1){
+							layer.confirm('尚未实名认证，是否立即认证？', function(index){
+								  window.location.href="/certification/certificateSelect.html";
+								  layer.close(index);
+							});  
+						}else if(au.identityStatus==2){
+							layer.alert('实名认证尚在审核中，无法进行操作');
+						}else if(au.identityStatus==4){
+							layer.confirm('未通过实名认证，是否重新认证？', function(index){
+								  window.location.href="/certification/certificateSelect.html";
+								  layer.close(index);
+							}); 
+						}else{
+							window.location.href="/works/worksFirst.html";
+						}
+					}else{
+						layer.msg(jsondata.msg);
+					}
+				},
+				error : function() {
+					layer.msg("服务器错误");
+				}
+			});
+		}
+	}
+}
+</script>
+<!-- //for bootstrap working -->
+</body>
+</html>

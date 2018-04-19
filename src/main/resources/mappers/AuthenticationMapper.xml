@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wevolution.mapper.AuthenticationMapper">
+  <resultMap id="BaseResultMap" type="com.wevolution.domain.Authentication">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_id" jdbcType="CHAR" property="userId" />
+    <result column="auth_id" jdbcType="CHAR" property="authId" />
+    <result column="real_name" jdbcType="VARCHAR" property="realName" />
+    <result column="id_type" jdbcType="TINYINT" property="idType" />
+    <result column="id_number" jdbcType="VARCHAR" property="idNumber" />
+    <result column="identity_status" jdbcType="TINYINT" property="identityStatus" />
+    <result column="identify_type" jdbcType="TINYINT" property="identifyType" />
+    <result column="submit_time" jdbcType="CHAR" property="submitTime" />
+    <result column="approved_time" jdbcType="CHAR" property="approvedTime" />
+    <result column="approved_description" property="approvedDescription" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    record_id, user_id, auth_id, real_name, id_type, id_number, identity_status, identify_type, 
+    submit_time, approved_time,approved_description
+  </sql>
+  <insert id="newCertification" parameterType="com.wevolution.domain.Authentication">
+    <selectKey keyProperty="recordId" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into authentication
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="authId != null">
+        auth_id,
+      </if>
+      <if test="realName != null">
+        real_name,
+      </if>
+      <if test="idType != null">
+        id_type,
+      </if>
+      <if test="idNumber != null">
+        id_number,
+      </if>
+      <if test="identityStatus != null">
+        identity_status,
+      </if>
+      <if test="identifyType != null">
+        identify_type,
+      </if>
+      <if test="submitTime != null">
+        submit_time,
+      </if>
+      <if test="approvedTime != null">
+        approved_time,
+      </if>
+      <if test="approvedDescription != null">
+        approved_description,
+      </if>
+      <if test="accountType != null">
+        account_type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=CHAR},
+      </if>
+      <if test="authId != null">
+        #{authId,jdbcType=CHAR},
+      </if>
+      <if test="realName != null">
+        #{realName,jdbcType=VARCHAR},
+      </if>
+      <if test="idType != null">
+        #{idType,jdbcType=TINYINT},
+      </if>
+      <if test="idNumber != null">
+        #{idNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="identityStatus != null">
+        #{identityStatus,jdbcType=TINYINT},
+      </if>
+      <if test="identifyType != null">
+        #{identifyType,jdbcType=TINYINT},
+      </if>
+      <if test="submitTime != null">
+        #{submitTime,jdbcType=CHAR},
+      </if>
+      <if test="approvedTime != null">
+        #{approvedTime,jdbcType=CHAR},
+      </if>
+      <if test="approvedDescription != null">
+        #{approvedDescription,jdbcType=VARCHAR},
+      </if>
+      <if test="accountType != null">
+        #{accountType,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="getCertification" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from authentication
+    where 1=1
+    <choose>
+    	<when test="phone != null and phone != ''">
+    		and user_id in (SELECT user_id FROM front_users WHERE phone = (SELECT phone FROM front_users WHERE user_id= #{userId,jdbcType=CHAR})) ORDER BY account_type limit 1
+    	</when>
+    	<otherwise>
+    		and user_id = #{userId}
+    	</otherwise>
+    </choose>
+  </select>
+  <update id="updateCertification" parameterType="com.wevolution.domain.Authentication">
+    update authentication
+    <set>
+      <!-- <if test="userId != null">
+        user_id = #{userId,jdbcType=CHAR},
+      </if> -->
+      <if test="realName != null">
+        real_name = #{realName,jdbcType=VARCHAR},
+      </if>
+      <if test="idType != null">
+        id_type = #{idType,jdbcType=TINYINT},
+      </if>
+      <if test="idNumber != null">
+        id_number = #{idNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="identityStatus != null">
+        identity_status = #{identityStatus,jdbcType=TINYINT},
+      </if>
+      <if test="identifyType != null">
+        identify_type = #{identifyType,jdbcType=TINYINT},
+      </if>
+      <if test="submitTime != null">
+        submit_time = #{submitTime,jdbcType=CHAR},
+      </if>
+      <if test="approvedTime != null">
+        approved_time = #{approvedTime,jdbcType=CHAR},
+      </if>
+      <if test="approvedDescription != null" >
+        approved_description = #{approvedDescription,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where auth_id = #{authId}
+  </update>
+  <select id="selectAuthentication" resultMap="BaseResultMap">
+  	select 
+    <include refid="Base_Column_List" />
+    from authentication where 1=1
+     <if test="userId != null and userId != ''">
+        user_id = #{userId,jdbcType=CHAR}
+      </if>
+      <if test="authId != null and authId != ''">
+        auth_id = #{authId,jdbcType=CHAR}
+      </if>
+      <if test="realName != null and realName != ''">
+        real_name = #{realName,jdbcType=VARCHAR}
+      </if>
+      <if test="idType != null and idType != ''">
+        id_type = #{idType,jdbcType=TINYINT}
+      </if>
+      <if test="idNumber != null and idNumber != ''">
+        id_number = #{idNumber,jdbcType=VARCHAR}
+      </if>
+      <if test="identityStatus != null and identityStatus != ''">
+       and identity_status = #{identityStatus,jdbcType=TINYINT}
+      </if>
+      <!-- <choose>
+      	<when test="identityStatus != null">
+      		and identity_status = #{identityStatus,jdbcType=TINYINT}
+      	</when>
+      	<otherwise>
+      		and identity_status = 2
+      	</otherwise>
+      </choose> -->
+      <if test="identifyType != null and identifyType != ''">
+        identify_type = #{identifyType,jdbcType=TINYINT}
+      </if>
+      <if test="submitTime != null and submitTime != ''">
+        submit_time = #{submitTime,jdbcType=CHAR}
+      </if>
+      <if test="approvedTime != null and approvedTime != ''">
+        approved_time = #{approvedTime,jdbcType=CHAR}
+      </if>
+      ORDER BY submit_time DESC,identity_status=2 desc
+  </select>
+</mapper>

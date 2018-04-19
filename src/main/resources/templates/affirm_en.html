@@ -1,0 +1,369 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>我们科技-版权确权</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<link rel="icon" type="image/x-icon" th:href="@{~/images/favicon.ico}">
+<link href="../static/css/bootstrap.css" rel='stylesheet' type='text/css' th:href="@{~/css/bootstrap.css}" />
+<link href="../static/css/font-awesome.css" rel="stylesheet" th:href="@{~/css/font-awesome.css}"> 
+<link rel="stylesheet" href="../static/css/slider.css" th:href="@{~/css/slider.css}">
+<link href="../static/css/style.css" rel='stylesheet' type='text/css' th:href="@{~/css/style.css}"/>	
+<link rel="stylesheet" type="text/css" href="../static/css/mislider.css" th:href="@{~/css/mislider.css}"/>
+<link rel="stylesheet" type="text/css" href="../static/css/mislider-skin-cameo.css" th:href="@{~/css/mislider-skin-cameo.css}"/>
+<link rel="stylesheet" type="text/css" href="../static/css/animates.css" th:href="@{~/css/animates.css}"/>
+<link rel="stylesheet" type="text/css" href="../static/css/nav.css" th:href="@{~/css/nav.css}"/>
+</head>
+	<body>
+	<div id="" style="position: relative;">
+		<a  onclick="click_scroll();"><i class="fa fa-angle-double-down"   style="position: absolute; bottom: 0; left: 50%; z-index: 999; color: #fff; font-size: 36px; " ></i></a>
+
+	<script type="text/javascript"> 
+function click_scroll() { 
+var scroll_offset = $("#pos").offset(); //得到pos这个div层的offset，包含两个值，top和left 
+$("body,html").animate({ 
+scrollTop:scroll_offset.top //让body的scrollTop等于pos的top，就实现了滚动 
+},0); 
+} 
+</script> 
+
+	<div class="top_banner" id="topl">
+		<!-- SVG Arrows -->
+		<div class="svg-wrap">
+			<svg width="64" height="64" viewBox="0 0 64 64">
+				<path id="arrow-left" d="M46.077 55.738c0.858 0.867 0.858 2.266 0 3.133s-2.243 0.867-3.101 0l-25.056-25.302c-0.858-0.867-0.858-2.269 0-3.133l25.056-25.306c0.858-0.867 2.243-0.867 3.101 0s0.858 2.266 0 3.133l-22.848 23.738 22.848 23.738z" />
+			</svg>
+			<svg width="64" height="64" viewBox="0 0 64 64">
+				<path id="arrow-right" d="M17.919 55.738c-0.858 0.867-0.858 2.266 0 3.133s2.243 0.867 3.101 0l25.056-25.302c0.858-0.867 0.858-2.269 0-3.133l-25.056-25.306c-0.858-0.867-2.243-0.867-3.101 0s-0.858 2.266 0 3.133l22.848 23.738-22.848 23.738z" />
+			</svg>
+		</div>
+		<div class="top_header_agile_info_w3ls">
+		  <nav class="navbar navbar-default">
+				<div class="navbar-header navbar-left">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">版权</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<h1>
+						<a class="navbar-brand" href="company_en.html" th:href="@{~/company_en.html}">
+							<!--<span>w</span>shanghai-->
+							<img src="../static/images/LOGOL.png" th:src="@{~/images/LOGOL.png}"/>
+						</a></h1>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+
+					<div id="m_nav_container" class="m_nav wthree_bg">
+						<nav class="menu menu--sebastian">
+							<ul id="m_nav_list" class="m_nav menu__list">
+								<li class="m_nav_item " id="m_nav_item_1"> <a href="home_en.html" th:href="@{~/home_en}" class="link link--kumya"><span >Home</span></a></li>
+								<li class="m_nav_item active" id="moble_nav_item_3"> <a href="javascript:;"  class="link link--kumya"><span >CopyrightAffirm</span></a></li>
+								<li class="m_nav_item" id="moble_nav_item_4"> <a href="copyright_show_en.html" th:href="@{~/copyright_show_en.html}" class="link link--kumya"><span >Copyright</span></a></li>
+							    <li class="m_nav_item" id="moble_nav_item_4"> <a href="consulting_en.html" th:href="@{~/consulting_en.html}" class="link link--kumya"><span >Consulting</span></a></li>
+							    <li class="m_nav_item" id="moble_nav_item_2"><a href="case_en.html" th:href="@{~/case_en.html}" class="link link--kumya"><jspan >Cases</jspan></a></li>
+								 <li class="m_nav_item" id="moble_nav_item_2" th:if="${session.user} != null"><a href="blockchain_show_en.html" th:href="@{~/chain/statistics_en.html}" class="link link--kumya"><span >BlockDisplay</span></a></li>
+								<li class="m_nav_item" id="m_nav_item_1"> <a th:href="@{~/company_en}" class="link link--kumya"><span >Company</span></a></li>
+
+								<li th:if="${session.user} != null" class="m_nav_item dropdown" id="moble_nav_item_6"> 
+									<span class="link link--kumya"><span class="dropbtn" th:text="${session.user.userName}==null?${#strings.length(session.user.userNickname)>5?#strings.substring(session.user.userNickname,0,5)+'...':session.user.userNickname}:${#strings.length(session.user.userName)>5?#strings.substring(session.user.userName,0,5)+'...':session.user.userName}">登录/注册</span><i class="menu-ico"></i></span>
+									<div class="dropdown-content">
+									    <a th:href="@{~/user/userInfo_en.html}">UserCentered</a>
+										    <a th:href="@{~/auth/longOut_en}">Sign Out</a>
+								  </div>
+								</li>
+								<li th:unless="${session.user} != null" class="m_nav_item" id="moble_nav_item_6"> 
+									<a  href="login_en.html" class="link link--kumya" th:href="@{/auth/loginPage_en.html}">
+										<span>Login/Register</span>
+									</a> 
+								</li>
+								<li class="m_nav_item"  style="float: right;">
+									<select  name="selectDropDown" style="height: 34px; margin-top:5px;">
+										<option value="0">ENGLISH</option>
+										<option value="1">中文 (简体)</option>
+									</select>
+								</li>
+							</ul>
+						</nav>
+					</div>
+
+					</nav>
+				</div>
+		</div>
+		
+		<style type="text/css">
+		@media (max-width: 1820px){
+		.banner-nve{position: absolute;
+    right: 9%;
+    top: 40%;}
+		}
+		
+		@media (max-width: 1300px){
+		.banner-nve{position: absolute;
+    right: 5%;
+    top: 40%;}
+		}
+		  
+		</style>
+		
+	<div class="r-content">
+        <div id=""  style="width: 100%; height:600px ; background: url(images/wallhaven-3178.jpg) no-repeat; background-size: cover;">
+        	<div class="container banner-nven" style=" ">
+        		<div  class="banner-nve" style="">
+        		<h1 style="">Online Fast Registration for Blockchain Copyright</h1>
+        		<a class="btn btn-warning" onclick="confirmation()"><span style="font-weight: 800;font-size: 17px;">Quick Registration，Go！</span></a>
+<!--         		<a class="btn btn-warning" th:href="@{~/works/worksFirst.html}"><span style="font-weight: 800;font-size: 17px;">快捷登记，Go！</span></a> -->
+        	    </div>
+        	</div>
+        	
+        </div>
+    </div>
+
+	
+<!--<div class="item" style="width: 100%; height: 100%; position: relative;" >
+  <img src="images/wallhaven-12018.jpg" alt="..." style="width: 100%; min-height: 400px;height:500px;">
+  
+</div>-->
+ </div>
+</div>
+<div class="" style="background: #f0f0f0;">
+
+    <!--team-->
+<div  style="background: #05193d;">
+
+</div>
+</div>
+
+
+<div class="" style="margin-top: 60px;" id="pos">
+	<div class="container">
+
+
+	<div class="pageone">
+			<div class="col-lg-7">
+				<h1><img src="../static/images/ic_register.png" th:src="@{~/images/ic_register.png}" width="50px" height="50px" style="border: 0px;margin-bottom: -15px;margin-right: 10px"/><font color="black">Quick Registration</font> </h1>
+
+		<p>WE Technology will offer you the online fast registration service for copyright blockchain, save time on downloading all kinds of forms during traditional registration, eliminate tedious procedures and solve your problems.
+</p>
+       
+	</div>
+	<div class="col-lg-5">
+		<img src="../static/images/zcdjtu.jpg" th:src="@{~/images/zcdjtu.jpg}" width="100%" height="100%"/>
+	</div>
+
+	<div style="clear: both;"></div>
+	</div>
+	
+		<div class="pageone">
+
+	<div class="col-lg-5">
+		<img src="../static/images/quequanban.jpg" th:src="@{~/images/quequanban.jpg}" width="100%" height="100%"/>
+	</div>
+		<div class="col-lg-7">
+			<h1><img src="../static/images/ic_block.png" th:src="@{~/images/ic_block.png}" width="50px" height="50px" style="border: 0px;margin-bottom: -15px;margin-right: 10px"/><font color="black">Blockchain Affirmation</font></h1>
+		
+		<p>WE Technology offers the permanent service for copyright affirmation based on the blockchain technology, it is lifelong service once registered.
+</p>
+        
+	</div>
+	<div style="clear: both;"></div>
+	</div>
+	
+
+	
+
+</div>
+</div>
+
+<div class="container">
+	 <div class="home_news">
+	 	<div class="news_com">
+	 		<div class="top_all" id="ren3">
+				<h3><img src="../static/images/logoll.png" th:src="@{~/images/logoll.png}" width="30px"/> Blockchain Copyright Registration Process</h3>
+				
+			</div>
+			<div class="news_nei clearfix">
+				<div class="n_left  wow bounceInLeft">
+					<div class="imgd">
+						<a href="javascript:;"><img src="../static/images/zszs.jpg" th:src="@{~/images/zszs.jpg}" alt="" class="vcenter" width="100%" /></a>
+						<i></i>	
+					</div>
+				</div>
+				<div class="n_right">
+					<ul>
+						<li class="clearfix wow bounceInRight"  data-wow-delay="0.5s">
+							<a href="javascript:;">
+							<span class="ri">
+								<i style="color: #7be3fa;">01</i>
+								
+							</span>
+							<div class="wen_nei">
+								<h4>Fill the Form
+</h4>
+								<p>Visit our website, click “Copyright Affirmation”, register and sign in.</p>
+							</div>
+							</a>
+						</li>
+						<li class="clearfix wow bounceInRight"  data-wow-delay="1s">
+							<a href="javascript:;">
+							<span class="ri">
+								<i style="color: #5bd0ea;">02</i>
+								
+							</span>
+							<div class="wen_nei">
+								<h4>Upload Your Work
+</h4>
+								<p>Upload your work</p>
+							</div>
+							</a>
+						</li>
+						<li class="clearfix wow bounceInRight"  data-wow-delay="1.5s">
+							<a href="javascript:;">
+							<span class="ri">
+								<i style="color: #43b4cc;">03</i>
+								
+							</span>
+							<div class="wen_nei">
+								<h4> Information of Work
+</h4>
+								<p>Fill the work’s information</p>
+							</div>
+							</a>
+						</li>
+							<li class="clearfix wow bounceInRight"  data-wow-delay="2s">
+							<a href="javascript:;">
+							<span class="ri">
+								<i style="color: #2e9eb6;">04</i>
+								
+							</span>
+							<div class="wen_nei">
+								<h4> Information of Author and Copyright</h4>
+								<p>Fill the work’s author and copyright information</p>
+							</div>
+							</a>
+						</li>
+							<li class="clearfix wow bounceInRight"  data-wow-delay="2.5s">
+							<a href="javascript:;">
+							<span class="ri">
+								<i style="color: #267f92;">05</i>
+								
+							</span>
+							<div class="wen_nei">
+								<h4>Review and Generate the Copyright Certificate of Blockchain</h4>
+								<p>Review the uploaded work and generate the copyright certificate of blockchain</p>
+							</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+	 	</div>
+	 </div>
+	 
+		
+</div>	
+
+
+<span id="" style="position: fixed; bottom: 20px; right: 20px; color: #fff; width: 60px; height: 60px; background: rgba(50,195,255,0.4);font-size: 36px; text-align: center; line-height: 60px;">
+	<a href="#topl" style="color: #fff;"><i class="fa fa-chevron-circle-up"></i></a>
+</span>
+
+
+<!-- footer -->
+	<div class="footer">
+		<div class="agileinfo_footer_bottom1">
+			<div class="container">
+				<p class="col-lg-3" style="display: inline-block; letter-spacing:0px;"><a th:href="@{~/company_en.html}">About Us</a>&nbsp; &nbsp;<a href="javascript:;">Legal Agreements</a></p>
+
+				<p class="col-lg-9  text-right" style="display: inline-block;letter-spacing:0px;" > &copy;2017 wevolution Allg Rights Reserved. powered by Shanghai WE Info and Tech Co.,Ltd <img th:src="@{~/images/pic1.gif}"  style="margin-top:5px;"/> Shanghai ICP no. 17045920</p>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- JavaScripts -->
+<script type="text/javascript" src="..static/js/jquery-2.1.4.min.js" th:src="@{~/js/jquery-2.1.4.min.js}"></script>
+<script type="text/javascript" src="..static/js/sleekslider.js" th:src="@{~/js/sleekslider.js}"></script>
+<script type="text/javascript" src="..static/js/app.js" th:src="@{~/js/app.js}"></script>
+<script src="..static/js/bootstrap.js" th:src="@{~/js/bootstrap.js}"></script>
+<script src="..static/js/wow.min.js" type="text/javascript" charset="utf-8" th:src="@{~/js/wow.min.js}"></script>
+<script th:src="@{/js/layer/layer.js}"></script>
+<script th:inline="javascript">
+/*<![CDATA[*/
+    var user = /*[[${session.user}]]*/ 'null';
+/*]]>*/
+</script>
+<!-- //for bootstrap working -->
+<script>
+if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))){
+	new WOW().init();
+};
+function confirmation(){
+	if(user == null){
+		window.location.href="/auth/loginPage_en.html";
+	}else{
+		if(user.phone==null||user.phone==""){
+			layer.confirm('The phone number has not been bound, whether it is bound immediately？', function(index){
+				  window.location.href="/user/bind.html";
+				  layer.close(index);
+				});       
+		}else{
+			$.ajax({
+				url : "/certification/getCertificationStatus",
+				type : "GET",
+				cache : false,
+				success : function(data) {
+					var jsondata = JSON.parse(data); 
+					var au = jsondata.data;
+					if(jsondata.status=="0"){
+						if(au.identityStatus==null||au.identityStatus==1){
+							layer.confirm('No real name authentication, immediate authentication？', function(index){
+								  window.location.href="/certification/certificateSelect.html";
+								  layer.close(index);
+							});  
+						}else if(au.identityStatus==2){
+							layer.alert('The real name authentication is still under review and cannot be operated on');
+						}else if(au.identityStatus==4){
+							layer.confirm('Not authenticated by real name, whether or not to re authenticate？', function(index){
+								  window.location.href="/certification/certificateSelect.html";
+								  layer.close(index);
+							}); 
+						}else{
+							window.location.href="/works/worksFirst_en.html";
+						}
+					}else{
+						layer.msg(jsondata.msg);
+					}
+				},
+				error : function() {
+					layer.msg("Server error");
+				}
+			});
+		}
+	}
+}
+window.onload = function ()
+{
+    var sel = document.getElementsByName('selectDropDown')[0];
+    sel.onchange = function ()
+    {
+        // var options=$("#test option:selected");
+        var val = this.value;
+        switch (val)
+        {
+            case "0":
+                break;
+            case "1":
+                window.location.href='/affirm.html';
+                break;
+            default:
+                break;
+        }
+    }
+}
+</script>
+</body>
+</html>

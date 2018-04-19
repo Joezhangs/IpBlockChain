@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+	<body>
+	<header th:fragment="header">
+	<div class="top_banner" id="topl">
+		<!-- SVG Arrows -->
+		<div class="svg-wrap">
+			<svg width="64" height="64" viewBox="0 0 64 64">
+				<path id="arrow-left" d="M46.077 55.738c0.858 0.867 0.858 2.266 0 3.133s-2.243 0.867-3.101 0l-25.056-25.302c-0.858-0.867-0.858-2.269 0-3.133l25.056-25.306c0.858-0.867 2.243-0.867 3.101 0s0.858 2.266 0 3.133l-22.848 23.738 22.848 23.738z" />
+			</svg>
+			<svg width="64" height="64" viewBox="0 0 64 64">
+				<path id="arrow-right" d="M17.919 55.738c-0.858 0.867-0.858 2.266 0 3.133s2.243 0.867 3.101 0l25.056-25.302c0.858-0.867 0.858-2.269 0-3.133l-25.056-25.306c-0.858-0.867-2.243-0.867-3.101 0s-0.858 2.266 0 3.133l22.848 23.738-22.848 23.738z" />
+			</svg>
+		</div>
+		<div class="top_header_agile_info_w3ls">
+		  <nav class="navbar navbar-default">
+				<div class="navbar-header navbar-left">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">版权</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<h1><a class="navbar-brand" href="company_en.html" th:href="@{~/company_en.html}">
+							<!--<span>w</span>shanghai-->
+							<img src="../static/images/LOGOL.png" th:src="@{~/images/LOGOL.png}"/>
+						</a></h1>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+
+					<div id="m_nav_container" class="m_nav wthree_bg">
+						<nav class="menu menu--sebastian">
+							<ul id="m_nav_list" class="m_nav menu__list">
+								<li class="m_nav_item active" id="m_nav_item_1"> <a href="javascript:;" class="link link--kumya"><span >Home</span></a></li>
+								<li class="m_nav_item" id="moble_nav_item_3"> <a th:href="@{~/affirm_en.html}" class="link link--kumya"><span >CopyrightAffirm</span></a></li>
+								<li class="m_nav_item" id="moble_nav_item_4"> <a th:href="@{~/copyright_show_en.html}" class="link link--kumya"><span >Copyright</span></a></li>
+							    <li class="m_nav_item" id="moble_nav_item_4"> <a th:href="@{~/consulting_en.html}" class="link link--kumya"><span >Consulting</span></a></li>
+								<li class="m_nav_item" id="moble_nav_item_6"> <a th:href="@{~/case_en.html}" class="link link--kumya"><span>Cases</span></a></li>
+								<li class="m_nav_item" id="moble_nav_item_7" th:if="${session.user} != null"> <a href="#" th:href="@{~/chain/statistics_en.html}" class="link link--kumya"><span>BlockDisplay</span></a></li>
+								<li class="m_nav_item" id="m_nav_item_1"> <a th:href="@{~/company_en.html}" class="link link--kumya"><span >Company</span></a></li>
+								<li th:if="${session.user} != null" class="m_nav_item dropdown" id="moble_nav_item_6"> 
+									<span class="link link--kumya"><span class="dropbtn" th:text="${session.user.userName}==null?${#strings.length(session.user.userNickname)>5?#strings.substring(session.user.userNickname,0,5)+'...':session.user.userNickname}:${#strings.length(session.user.userName)>5?#strings.substring(session.user.userName,0,5)+'...':session.user.userName}">登录/注册</span><i class="menu-ico"></i></span>
+									<div class="dropdown-content">
+									    <a th:href="@{~/user/userInfo_en.html}">UserCentered</a>
+									    <a th:href="@{~/auth/longOut_en}">Sign Out</a>
+								  </div>
+								</li>
+								<li th:unless="${session.user} != null" class="m_nav_item" id="moble_nav_item_6"> 
+									<a  href="login_en.html" class="link link--kumya" th:href="@{/auth/loginPage_en.html}">
+										<span>Login/Register</span>
+									</a> 
+								</li>
+								<li class="m_nav_item"  style="float: right;">
+									<select  name="selectDropDown" style="height: 34px; margin-top:5px;">
+										<option value="0">ENGLISH</option>
+										<option value="1">中文 (简体)</option>
+									</select>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					</nav>
+				</div>
+			</div>
+		</header>
+	</body>
+</html>

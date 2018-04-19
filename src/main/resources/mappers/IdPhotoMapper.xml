@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wevolution.mapper.IdPhotoMapper">
+  <resultMap id="BaseResultMap" type="com.wevolution.domain.IdPhoto">
+    <id column="record_id" jdbcType="INTEGER" property="recordId" />
+    <result column="user_id" jdbcType="CHAR" property="userId" />
+    <result column="auth_id" jdbcType="CHAR" property="authId" />
+    <result column="id_image_url" jdbcType="VARCHAR" property="idImageUrl" />
+    <result column="photo_type" jdbcType="TINYINT" property="photoType" />
+    <result column="identity_status" jdbcType="TINYINT" property="identityStatus" />
+    <result column="create_time" jdbcType="CHAR" property="createTime" />
+    <result column="update_time" jdbcType="CHAR" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    record_id, user_id, auth_id, id_image_url, photo_type, identity_status, create_time, 
+    update_time
+  </sql>
+  <insert id="insertPhoto" parameterType="com.wevolution.domain.IdPhoto">
+    <selectKey keyProperty="recordId" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into id_photo
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="authId != null">
+        auth_id,
+      </if>
+      <if test="idImageUrl != null">
+        id_image_url,
+      </if>
+      <if test="photoType != null">
+        photo_type,
+      </if>
+      <if test="identityStatus != null">
+        identity_status,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=CHAR},
+      </if>
+      <if test="authId != null">
+        #{authId,jdbcType=CHAR},
+      </if>
+      <if test="idImageUrl != null">
+        #{idImageUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="photoType != null">
+        #{photoType,jdbcType=TINYINT},
+      </if>
+      <if test="identityStatus != null">
+        #{identityStatus,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=CHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <!-- 建立关系，更新认证状态 -->
+  <update id="updateAuthId">
+    update id_photo
+    set
+      auth_id = #{authId,jdbcType=CHAR},
+      identity_status = 2
+    where record_id in  
+       <foreach collection="photoIds" item="recordId" index="index"  
+           open="(" close=")" separator=",">  
+           #{recordId}  
+       </foreach>
+  </update>
+  <select id="selectPhotoByRecordId" parameterType="String" resultMap="BaseResultMap">
+  	select <include refid="Base_Column_List"/>
+  	from id_photo where record_id = #{recordId}
+  </select>
+  <update id="updatePhoto" parameterType="com.wevolution.domain.IdPhoto">
+  	 update id_photo
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=CHAR},
+      </if>
+      <if test="authId != null">
+        auth_id = #{authId,jdbcType=CHAR},
+      </if>
+      <if test="idImageUrl != null">
+        id_image_url = #{idImageUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="photoType != null">
+        photo_type = #{photoType,jdbcType=TINYINT},
+      </if>
+      <if test="identityStatus != null">
+        identity_status = #{identityStatus,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=CHAR},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=CHAR},
+      </if>
+    </set>
+    where record_id = #{recordId,jdbcType=INTEGER}
+  </update>
+  <select id="selectByUserId"  parameterType="String" resultMap="BaseResultMap" >
+  	select <include refid="Base_Column_List"/>
+  	<![CDATA[from id_photo where user_id = #{userId} and identity_status <> 3]]>
+  	order by identity_status
+  </select>
+  <select id="selectByAuthId"  parameterType="String" resultMap="BaseResultMap" >
+  	select <include refid="Base_Column_List"/>
+  	<![CDATA[from id_photo where auth_id = #{authId}]]>
+  	order by identity_status
+  </select>
+  <update id="updatePhotoByAuthId" parameterType="com.wevolution.domain.IdPhoto">
+  	 update id_photo
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=CHAR},
+      </if>
+      <if test="idImageUrl != null">
+        id_image_url = #{idImageUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="photoType != null">
+        photo_type = #{photoType,jdbcType=TINYINT},
+      </if>
+      <if test="identityStatus != null">
+        identity_status = #{identityStatus,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=CHAR},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=CHAR},
+      </if>
+    </set>
+    where auth_id = #{authId,jdbcType=CHAR} and identity_status = 2
+  </update>
+  <delete id="deletByUserId">
+  	delete from id_photo
+    where user_id = #{userId,jdbcType=CHAR} and identity_status=#{status}
+  </delete>
+</mapper>

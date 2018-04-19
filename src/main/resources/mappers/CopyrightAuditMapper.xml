@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wevolution.mapper.CopyrightAuditMapper" >
+  <resultMap id="BaseResultMap" type="com.wevolution.domain.CopyrightAudit" >
+    <id column="record_id" property="recordId" jdbcType="INTEGER" />
+    <result column="works_name" property="worksName" jdbcType="VARCHAR" />
+    <result column="works_id" property="worksId" jdbcType="CHAR" />
+    <result column="user_id" property="userId" jdbcType="CHAR" />
+    <result column="update_time" property="updateTime" jdbcType="CHAR" />
+    <result column="update_flag" property="updateFlag" jdbcType="CHAR" />
+    <result column="req_no" property="reqNo" jdbcType="VARCHAR" />
+    <result column="block_id" property="blockId" jdbcType="INTEGER" />
+    <result column="created_time" property="createdTime" jdbcType="CHAR" />
+    <result column="author_sing" property="authorSing" jdbcType="VARCHAR" />
+    <result column="author" property="author" jdbcType="VARCHAR" />
+    <result column="approved_status" property="approvedStatus" jdbcType="TINYINT" />
+    <result column="approved_description" jdbcType="VARCHAR" property="approvedDescription" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    record_id, works_name, works_id, user_id, update_time, update_flag, req_no, block_id, 
+    created_time, author_sing, author, approved_status,approved_description
+  </sql>
+  <select id="selectByWorksId" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from copyright_audit
+    where works_id = #{worksId,jdbcType=CHAR}
+  </select>
+  <insert id="insert" parameterType="com.wevolution.domain.CopyrightAudit" >
+    <selectKey resultType="java.lang.Integer" keyProperty="recordId" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into copyright_audit
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="worksName != null">
+        works_name,
+      </if>
+      <if test="worksId != null">
+        works_id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="updateFlag != null">
+        update_flag,
+      </if>
+      <if test="reqNo != null">
+        req_no,
+      </if>
+      <if test="blockId != null">
+        block_id,
+      </if>
+      <if test="createdTime != null">
+        created_time,
+      </if>
+      <if test="authorSing != null">
+        author_sing,
+      </if>
+      <if test="author != null">
+        author,
+      </if>
+      <if test="approvedStatus != null">
+        approved_status,
+      </if>
+      <if test="approvedDescription != null">
+        approved_description,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="worksName != null">
+        #{worksName,jdbcType=VARCHAR},
+      </if>
+      <if test="worksId != null">
+        #{worksId,jdbcType=CHAR},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=CHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=CHAR},
+      </if>
+      <if test="updateFlag != null">
+        #{updateFlag,jdbcType=CHAR},
+      </if>
+      <if test="reqNo != null">
+        #{reqNo,jdbcType=VARCHAR},
+      </if>
+      <if test="blockId != null">
+        #{blockId,jdbcType=INTEGER},
+      </if>
+      <if test="createdTime != null">
+        #{createdTime,jdbcType=CHAR},
+      </if>
+      <if test="authorSing != null">
+        #{authorSing,jdbcType=VARCHAR},
+      </if>
+      <if test="author != null">
+        #{author,jdbcType=VARCHAR},
+      </if>
+      <if test="approvedStatus != null">
+        #{approvedStatus,jdbcType=TINYINT},
+      </if>
+      <if test="approvedDescription != null">
+        #{approvedDescription,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByworksId" parameterType="com.wevolution.domain.CopyrightAudit" >
+    update copyright_audit
+    <set >
+      <if test="worksName != null" >
+        works_name = #{worksName,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=CHAR},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=CHAR},
+      </if>
+      <if test="updateFlag != null" >
+        update_flag = #{updateFlag,jdbcType=CHAR},
+      </if>
+      <if test="reqNo != null" >
+        req_no = #{reqNo,jdbcType=VARCHAR},
+      </if>
+      <if test="blockId != null" >
+        block_id = #{blockId,jdbcType=INTEGER},
+      </if>
+      <if test="createdTime != null" >
+        created_time = #{createdTime,jdbcType=CHAR},
+      </if>
+      <if test="authorSing != null" >
+        author_sing = #{authorSing,jdbcType=VARCHAR},
+      </if>
+      <if test="author != null" >
+        author = #{author,jdbcType=VARCHAR},
+      </if>
+      <if test="approvedStatus != null" >
+        approved_status = #{approvedStatus,jdbcType=TINYINT},
+      </if>
+      <if test="approvedDescription != null">
+        approved_description = #{approvedDescription,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where works_id = #{worksId,jdbcType=INTEGER}
+  </update>
+  <select id="selectAuditList" parameterType="com.wevolution.domain.CopyrightAudit" resultMap="BaseResultMap">
+     select 
+    <include refid="Base_Column_List" />
+    from copyright_audit
+    where 1=1
+    <if test="worksName != null and worksName != ''" >
+        and works_name = #{worksName,jdbcType=VARCHAR}
+      </if>
+      <if test="userId != null and userId != ''" >
+        and user_id = #{userId,jdbcType=CHAR}
+      </if>
+      <if test="updateTime != null and updateTime != ''" >
+        and update_time = #{updateTime,jdbcType=CHAR}
+      </if>
+      <if test="updateFlag != null and updateFlag != ''" >
+        and update_flag = #{updateFlag,jdbcType=CHAR}
+      </if>
+      <if test="reqNo != null and reqNo != ''" >
+        and req_no = #{reqNo,jdbcType=VARCHAR}
+      </if>
+      <if test="blockId != null and blockId != ''" >
+        and block_id = #{blockId,jdbcType=INTEGER}
+      </if>
+      <if test="createdTime != null and createdTime != ''" >
+        and created_time = #{createdTime,jdbcType=CHAR}
+      </if>
+      <if test="authorSing != null and authorSing != ''" >
+        and author_sing like CONCAT(CONCAT('%', #{author_sing,jdbcType=VARCHAR}), '%')
+      </if>
+      <if test="author != null and author != ''" >
+        and author like CONCAT(CONCAT('%', #{author,jdbcType=VARCHAR}), '%')
+      </if>
+      <if test="approvedStatus != null and approvedStatus != ''" >
+        and approved_status = #{approvedStatus,jdbcType=TINYINT}
+      </if>
+      ORDER BY created_time DESC,update_time=2 desc
+    </select>
+    <select id="selectFailAuditList" resultMap="BaseResultMap">
+    	select 
+    	<include refid="Base_Column_List" />
+    	from copyright_audit where approved_status in (1,3,4)
+    </select>
+</mapper>

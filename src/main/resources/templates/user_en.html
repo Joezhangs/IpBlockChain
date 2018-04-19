@@ -1,0 +1,430 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>我们科技-个人资料</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<link rel="icon" type="image/x-icon" th:href="@{~/images/favicon.ico}">
+<link th:href="@{/css/bootstrap.css}" rel='stylesheet' type='text/css'/>
+<link th:href="@{/css/font-awesome.css}" rel="stylesheet"> 
+<link rel="stylesheet" th:href="@{/css/slider.css}">
+<link th:href="@{/css/style.css}" rel='stylesheet' type='text/css' />	
+<link rel="stylesheet" type="text/css" th:href="@{/css/mislider.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{/css/mislider-skin-cameo.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{/css/avatar.css}"/>
+<link th:href="@{/css/nav.css}" rel='stylesheet' type='text/css' />
+<link rel="stylesheet" type="text/css" href="../static/css/login.css" th:href="@{~/css/login.css}"/>
+<style type="text/css">
+	 body{background: #f0f0f0;}
+	.top_header_agile_info_w3ls{background: #fff;}
+</style>
+</head>
+	<body>
+	<div id="" style="position: relative;">
+	
+
+	<div class="top_banner" id="topl">
+		<!-- SVG Arrows -->
+		<div class="svg-wrap">
+			<svg width="64" height="64" viewBox="0 0 64 64">
+				<path id="arrow-left" d="M46.077 55.738c0.858 0.867 0.858 2.266 0 3.133s-2.243 0.867-3.101 0l-25.056-25.302c-0.858-0.867-0.858-2.269 0-3.133l25.056-25.306c0.858-0.867 2.243-0.867 3.101 0s0.858 2.266 0 3.133l-22.848 23.738 22.848 23.738z" />
+			</svg>
+			<svg width="64" height="64" viewBox="0 0 64 64">
+				<path id="arrow-right" d="M17.919 55.738c-0.858 0.867-0.858 2.266 0 3.133s2.243 0.867 3.101 0l25.056-25.302c0.858-0.867 0.858-2.269 0-3.133l-25.056-25.306c-0.858-0.867-2.243-0.867-3.101 0s-0.858 2.266 0 3.133l22.848 23.738-22.848 23.738z" />
+			</svg>
+		</div>
+		<div class="top_header_agile_info_w3ls">
+		  <nav class="navbar navbar-default">
+				<div class="navbar-header navbar-left">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">版权</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<h1><a class="navbar-brand" href="company_en.html"  th:href="@{/company_en.html}"><img src="../static/images/logoll.png" th:src="@{~/images/logoll.png}"/></a><span class="ospan">User center  > personal information</span></h1>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+					<div id="m_nav_container" class="m_nav wthree_bg">
+						<nav class="menu menu--sebastian">
+							<div class="dropdown-back-white">
+							  <span class="dropbtn-back-white" id="right-user-name" th:text="${session.user.userName}==null?${#strings.length(session.user.userNickname)>5?#strings.substring(session.user.userNickname,0,5)+'...':session.user.userNickname}:${#strings.length(session.user.userName)>5?#strings.substring(session.user.userName,0,5)+'...':session.user.userName}">登录/注册</span><i class="menu-ico-back-white"></i>
+							  <div class="dropdown-content-back-white">
+							    <a th:href="@{~/user/userInfo_en.html}">User center</a>
+							    <a th:href="@{~/auth/longOut_en}">Sign out</a>
+							  </div>
+							</div>
+						</nav>
+					</div>
+
+					</nav>
+				</div>
+		</div>
+	
+      <!--welcome-->
+ </div>
+	</div>
+
+<style type="text/css">
+	.formd{padding-top: 120px; min-height: 892px;}
+	.upload{
+	position: relative; /* 保证子元素的定位 */
+    width: 120px;
+    height: 30px;
+    background: #eee;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 5px;
+    color: #666;
+    /* font-family: "黑体"; */
+    font-size: 18px;
+   /*  padding: 4px 10px;
+    height: 20px;
+    line-height: 20px;
+    position: relative;
+    border: 1px solid #999;
+    text-decoration: none;
+    color: #666; */
+}
+.change{
+	display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120px; /* 宽高和外围元素保持一致 */
+    height: 30px;
+    opacity: 0;
+    -moz-opacity: 0;  /* 兼容老式浏览器 */
+    filter: alpha(opacity=0); /* 兼容IE */
+    /* position: absolute;
+    overflow: hidden;
+    right: 0;
+    top: 0;
+    opacity: 0; */
+}
+	
+</style>
+<div class="formd">
+	
+<div class="container">
+	
+<div class="box " style="margin-top: 40px;">
+        <div class="col-lg-2 user-left">
+        	<ul class="user-ul">
+        		<li ><i class="fa fa-user"></i> User information</li>
+        		<li class="activeuser"><a href="user.html" th:href="@{~/user/userInfo_en.html}" class="activeuser">Personal information</a></li>
+        		<li th:if="${session.user.identifyType==3 && session.user.identifyStatus==3}"><a href="enterprise_info_en.html" th:href="@{~/certification/getEnterprise.html}">Enterprise information</a></li>
+        		<li><a href="user_auth_en.html" th:href="@{~/certification/getCertification_en.html}">Real name authentication</a></li>
+        	</ul>
+        	<ul class="user-ul">
+        		<li ><i class="fa fa-cog"></i> User operation</li>
+        		<li><a href="works_list.html" th:href="@{~/works/workses_en.html}">Work inquiry</a></li>
+        		<!-- <li><a href="">实名认证</a></li> -->
+        		<li><a th:href="@{~/chain/search_en.html}">Block query</a></li>
+        		<!-- <li><a th:href="@{~/works/worksFirst.html}">版权登记</a></li> -->
+        		<li><a href="javascript:;" onclick="confirmation()">Copyright registration</a></li>
+        	
+        	</ul>
+        </div>
+        <div class="col-lg-10 ">
+        	<div class="user-right">
+        		<ul class="user-ulr">
+        			<li>
+        			<input type="hidden" id="user-name" th:value="${user.userName}">
+        			<input type="hidden" id="imageavatar" th:value="@{~/images/timg.jpg}">
+        			<!-- <img id="userImageUrl" th:src="${user.userImageUrl == null || user.userImageUrl ==''}  ? @{~/images/timg.jpg} : @{~{name}(name=${user.userImageUrl})} " alt="..." class="img-circle" style="min-height: 120px; min-width: 120px; width: 100px; height: 100px;"> -->
+        			<img id="userImageUrl" th:src="${user.userImageUrl == null || user.userImageUrl ==''}  ? @{~/images/timg.jpg} : ${user.userImageUrl} " alt="..." class="img-circle" style="min-height: 120px; min-width: 120px; width: 100px; height: 100px;">
+        			<p th:text="${user.userName}" id="img-user-name">凉凉</p>
+        			<form id="upload-file-form">
+	        			<a href="javascript:;" class="upload" data-toggle="modal" data-target="#myModal">Upload Image
+	        				<input  id="upload-file-input" class="change" type="file" name="uploadfile" accept="*" />
+	        			</a>
+	        			<!-- <button class="btn btn-default">上传头像</button> -->
+        			</form>
+        			</li>
+        		</ul>
+        		<ul class="user-ulr2">
+        			<li>
+        				<div class="col-lg-4">
+        					<i class="fa fa-user" style="color: #00ACEE;"></i>
+        					 UserName
+        					 <input type="hidden" name="userId" th:value="${user.userId}">
+        				</div>
+        				<div class="col-lg-4 " style="text-align: center;" >
+        					<p class="edit" th:text="${user.userName}">张三</p>
+        				</div>
+        				<div class="col-lg-4" style="text-align: right;">
+        					<button type="button" class="btn" onclick="change(this)">modify</button>
+        				</div>
+        				<div style="clear: both;">
+        					
+        				</div>
+        			</li>
+        			<li th:if="${user.phone != null && user.phone != ''}">
+        				<div class="col-lg-4">
+        					<i class="fa fa-phone" style="color: #00ACEE;"></i>
+        					 Telephone
+        				</div>
+        				<div class="col-lg-4" style="text-align: center;" th:text="${user.phone}">
+        					15875823452
+        				</div>
+        				<div class="col-lg-4" style="text-align: right; color: #04B00F;">
+							Verified
+        				</div>
+        				<div style="clear: both;">
+        					
+        				</div>
+        			</li>
+        			<li th:unless="${user.phone != null && user.phone != ''}">
+        				<div class="col-lg-4">
+        					<i class="fa fa-phone" style="color: #00ACEE;"></i>
+							Telephone
+        				</div>
+        				<div class="col-lg-4" style="text-align: center;" th:text="${user.phone}">
+        				</div>
+        				<div class="col-lg-4" style="text-align: right; color: #04B00F;">
+        					<a href="javascript:;" th:href="@{~/user/bind.html}">Binding Telephone</a>
+        				</div>
+        				<div style="clear: both;">
+        					
+        				</div>
+        			</li>
+        		</ul>
+        		 
+        	</div>
+        </div>
+        
+</div>
+  <style type="text/css">
+  	.text{padding: 3px 15px; border: 1px solid #ccc;}
+  </style>   
+  <!-- modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog" style="width: 660px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Revise the head image</h4>
+            </div>
+            <div class="modal-body">
+            	<div class="imageBox">
+				    <div class="thumbBox"></div>
+				    <div class="spinner" style="display: none">Loading...</div>
+				  </div>
+				  <div class="action"> 
+				    <!-- <input type="file" id="file" style=" width: 200px">-->
+				    <div class="new-contentarea tc"> <a href="javascript:void(0)" class="Btnsty_peyton">
+				      <label for="upload-file">choose</label>
+				      </a>
+				      <input type="file" class="" name="upload-file" id="upload-file" />
+				    </div>
+				    <input type="button" id="btnUpload"  class="Btnsty_peyton" value="upload">
+				    <input type="button" id="btnCrop"  class="Btnsty_peyton" value="Cutting">
+				    <input type="button" id="btnZoomIn" class="Btnsty_peyton" value="+"  >
+				    <input type="button" id="btnZoomOut" class="Btnsty_peyton" value="-" >
+				  </div>
+				  <div class="cropped"></div>
+			</div>
+            <!-- <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary">提交更改</button>
+            </div> -->
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+</div>
+
+</div>
+
+
+<div style="clear: both;">
+	
+</div>
+<!-- footer -->
+
+
+	<div class="footer" >
+    <div class="agileinfo_footer_bottom1" th:replace="footer_en::footer">
+		</div>
+	</div>
+		
+
+<!-- //footer -->
+<!-- JavaScripts -->
+<script type="text/javascript" th:src="@{/js/jquery-2.1.4.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/sleekslider.js}"></script>
+<script type="text/javascript" th:src="@{/js/app.js}"></script>
+<script th:src="@{/js/bootstrap.js}"></script>
+<script th:src="@{/js/cropbox.js}"></script>
+<script th:src="@{/js/layer/layer.js}"></script>
+<script th:inline="javascript">
+/*<![CDATA[*/
+    var user = /*[[${session.user}]]*/ 'null';
+/*]]>*/
+</script>
+<!-- //for bootstrap working -->
+<script type="text/javascript">
+function confirmation(){
+	if(user == null){
+		window.location.href="/auth/loginPage_en.html";
+	}else{
+		if(user.phone==null||user.phone==""){
+			layer.confirm('尚未绑定手机号，是否立即绑定？', function(index){
+				  window.location.href="/user/bind.html";
+				  layer.close(index);
+				});       
+		}else{
+			$.ajax({
+				url : "/certification/getCertificationStatus",
+				type : "GET",
+				cache : false,
+				success : function(data) {
+					var jsondata = JSON.parse(data); 
+					var au = jsondata.data;
+					if(jsondata.status=="0"){
+						if(au.identityStatus==null||au.identityStatus==1){
+							layer.confirm('尚未实名认证，是否立即认证？', function(index){
+								  window.location.href="/certification/certificateSelect.html";
+								  layer.close(index);
+							});  
+						}else if(au.identityStatus==2){
+							layer.alert('实名认证尚在审核中，无法进行操作');
+						}else if(au.identityStatus==4){
+							layer.confirm('未通过实名认证，是否重新认证？', function(index){
+								  window.location.href="/certification/certificateSelect.html";
+								  layer.close(index);
+							}); 
+						}else{
+							window.location.href="/works/worksFirst_en.html";
+						}
+					}else{
+						layer.msg(jsondata.msg);
+					}
+				},
+				error : function() {
+					layer.msg("服务器错误");
+				}
+			});
+		}
+	}
+}
+/* $(document).ready(function() {
+	//$("#upload-file-input").on("change", uploadFile);
+}); */
+$(window).load(function() {
+	var options =
+	{
+		thumbBox: '.thumbBox',
+		spinner: '.spinner',
+		imgSrc: $("#userImageUrl").attr("src")
+	}
+	var cropper = $('.imageBox').cropbox(options);
+	$('#upload-file').on('change', function(){
+		var reader = new FileReader();
+		reader.onload = function(e) {
+			options.imgSrc = e.target.result;
+			cropper = $('.imageBox').cropbox(options);
+		}
+		reader.readAsDataURL(this.files[0]);
+		this.files = [];
+	})
+	$('#btnCrop').on('click', function(){
+		var img = cropper.getDataURL();
+		$('.cropped').html('');
+		$('.cropped').append('<img src="'+img+'" align="absmiddle" style="width:60px;margin-top:4px;border-radius:60px;box-shadow:0px 0px 12px #7E7E7E;" ><p style="line-height: 0.9em;">60px*60px</p>');
+		$('.cropped').append('<img src="'+img+'" align="absmiddle" style="width:120px;margin-top:4px;border-radius:120px;box-shadow:0px 0px 12px #7E7E7E;"><p style="line-height: 0.9em;">120px*120px</p>');
+		$('.cropped').append('<img id="image-164" src="'+img+'" align="absmiddle" style="width:164px;margin-top:4px;border-radius:164px;box-shadow:0px 0px 12px #7E7E7E;"><p style="line-height: 0.9em;">164px*164px</p>');
+/* 		$('.cropped').append('<img src="'+img+'" align="absmiddle" style="width:60px;margin-top:4px;border-radius:60px;box-shadow:0px 0px 12px #7E7E7E;" ><p>60px*60px</p>');
+		$('.cropped').append('<img src="'+img+'" align="absmiddle" style="width:120px;margin-top:4px;border-radius:120px;box-shadow:0px 0px 12px #7E7E7E;"><p>120px*120px</p>');
+		$('.cropped').append('<img src="'+img+'" align="absmiddle" style="width:164px;margin-top:4px;border-radius:164px;box-shadow:0px 0px 12px #7E7E7E;"><p>164px*164px</p>'); */
+	})
+	$('#btnZoomIn').on('click', function(){
+		cropper.zoomIn();
+	})
+	$('#btnZoomOut').on('click', function(){
+		cropper.zoomOut();
+	})
+	$('#btnUpload').on('click',function(){
+		$('#btnCrop').click();
+		$.ajax({
+			url : "/file/baseS3/avatar",
+			//url : "/file/base/avatar",
+			//url : "/file/avatar",
+			type : "POST",
+			//data : new FormData($("#upload-file-form")[0]),
+			data : {"image":$("#image-164").attr("src")},
+			//enctype : 'multipart/form-data',
+			//processData : false,
+			//contentType : false,
+			cache : false,
+			success : function(data) {
+				//console.log(data);
+				$("#userImageUrl").attr('src',data); 
+				$('#myModal').modal('hide');
+			},
+			error : function() {
+				// Handle upload error
+				//$("#upload-file-message").text("File not uploaded (perhaps it's too much big)");
+			}
+		}); 
+	})
+});
+
+function change(obj){
+　　var xg=$(obj).html();
+　　if(xg=='修改'){
+　　　　$('.edit').each(function(){
+　　　　　　var old=$(this).html();
+　　　　　　$(this).html("<input type='text' name='editname' class='text' value="+old+" >");
+　　　　})
+　　　　$(obj).html('保存');
+　　}else if(xg=='保存'){
+		if($.trim($("#user-name").val())!=$('input[name=editname]').val()){
+			$.ajax({
+				url : "/user/updateUser",
+				type : "POST",
+				data : {'userName':$('input[name=editname]').val(),'userId':$('input[name=userId]').val()},
+				cache : false,
+				success : function(data) {
+					var jsondata = JSON.parse(data); 
+					if(jsondata.status=="0"){
+						$("#user-name").val($('input[name=editname]').val())
+						$("#img-user-name").html($('input[name=editname]').val())
+						$("#right-user-name").html($('input[name=editname]').val())
+						layer.msg(jsondata.msg);
+						$('input[name=editname]').each(function(){
+				　　　　　　var old=$(this).html();
+				　　　　　　var newfont=$(this).parent('p').parent('div').children().find('input').val();
+				　　　　　　$(this).parent('p').html(newfont);
+				　　　　 })
+						　$(obj).html('修改');
+					}else{
+						layer.msg(jsondata.msg);
+					}
+				},
+				error : function() {
+					layer.msg("服务器错误");
+				}
+			});
+		}else{
+			//layer.msg("未做任何修改");
+			$('input[name=editname]').each(function(){
+		　　　　　　var old=$(this).html();
+		　　　　　　var newfont=$(this).parent('p').parent('div').children().find('input').val();
+		　　　　　　$(this).parent('p').html(newfont);
+		　　　　 })
+				　$(obj).html('修改');
+		}
+　　　　
+　　}
+}
+</script>
+</body>
+</html>

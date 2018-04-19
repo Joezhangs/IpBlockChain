@@ -1,0 +1,311 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>我们科技-实名认证</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<link rel="icon" type="image/x-icon" th:href="@{~/images/favicon.ico}">
+<link th:href="@{/css/bootstrap.css}" rel='stylesheet' type='text/css'/>
+<link th:href="@{/css/font-awesome.css}" rel="stylesheet"> 
+<link rel="stylesheet" th:href="@{/css/slider.css}">
+<link th:href="@{/css/style.css}" rel='stylesheet' type='text/css' />	
+<link rel="stylesheet" type="text/css" th:href="@{/css/mislider.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{/css/mislider-skin-cameo.css}"/>
+<link rel="stylesheet" type="text/css" href="../static/css/login.css" th:href="@{~/css/login.css}"/>
+<link th:href="@{/css/nav.css}" rel='stylesheet' type='text/css' />
+<style type="text/css">
+body {
+	background: #f0f0f0;
+}
+
+.top_header_agile_info_w3ls {
+	background: #fff;
+}
+</style>
+</head>
+	<body>
+	<div id="" style="position: relative;">
+	
+
+	<div class="top_banner" id="topl">
+		<!-- SVG Arrows -->
+		<div class="svg-wrap">
+			<svg width="64" height="64" viewBox="0 0 64 64">
+				<path id="arrow-left" d="M46.077 55.738c0.858 0.867 0.858 2.266 0 3.133s-2.243 0.867-3.101 0l-25.056-25.302c-0.858-0.867-0.858-2.269 0-3.133l25.056-25.306c0.858-0.867 2.243-0.867 3.101 0s0.858 2.266 0 3.133l-22.848 23.738 22.848 23.738z" />
+			</svg>
+			<svg width="64" height="64" viewBox="0 0 64 64">
+				<path id="arrow-right" d="M17.919 55.738c-0.858 0.867-0.858 2.266 0 3.133s2.243 0.867 3.101 0l25.056-25.302c0.858-0.867 0.858-2.269 0-3.133l-25.056-25.306c-0.858-0.867-2.243-0.867-3.101 0s-0.858 2.266 0 3.133l22.848 23.738-22.848 23.738z" />
+			</svg>
+		</div>
+		<div class="top_header_agile_info_w3ls">
+		  <nav class="navbar navbar-default">
+				<div class="navbar-header navbar-left">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">版权</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<h1><a class="navbar-brand" href="index.html"  th:href="@{/}"><img src="../static/images/logoll.png" th:src="@{~/images/logoll.png}"/></a><span class="ospan">用户中心 > 实名认证</span></h1>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+					<div id="m_nav_container" class="m_nav wthree_bg">
+						<nav class="menu menu--sebastian">
+							<div class="dropdown-back-white">
+							  <span class="dropbtn-back-white" th:text="${session.user.userName}==null?${#strings.length(session.user.userNickname)>5?#strings.substring(session.user.userNickname,0,5)+'...':session.user.userNickname}:${#strings.length(session.user.userName)>5?#strings.substring(session.user.userName,0,5)+'...':session.user.userName}">登录/注册</span><i class="menu-ico-back-white"></i>
+							  <div class="dropdown-content-back-white">
+							    <a th:href="@{~/user/userInfo.html}">用户中心</a>
+							    <a th:href="@{~/auth/longOut}">退出</a>
+							  </div>
+							</div>
+						</nav>
+					</div>
+
+					</nav>
+				</div>
+		</div>
+	
+	
+		<!--<div class="sleekslider" id="home">
+	
+			<div class="slide active bg-1">
+				
+			</div>	
+		</div>	-->
+		
+		
+      <!--welcome-->
+ </div>
+	</div>
+<style type="text/css">
+	.formd{padding-top: 120px; min-height: 892px;}
+</style>
+<div class="formd">
+	
+<div class="container">
+	
+<div class="box " style="margin-top: 40px;">
+        <div class="col-lg-2 user-left">
+        	<ul class="user-ul">
+        		<li ><i class="fa fa-user"></i> 用户信息</li>
+        		<li><a href="user.html" th:href="@{~/user/userInfo.html}">个人资料</a></li>
+        		<li th:if="${session.user.identifyType==3 && session.user.identifyStatus==3}"><a href="enterprise_info_en.html" th:href="@{~/certification/getEnterprise.html}">企业资料</a></li>
+        		<li class="activeuser"><a href="users.html" th:href="@{~/certification/getCertification.html}" class="activeuser">实名认证</a></li>
+        		<!-- <li><a href="">版权证书</a></li> -->
+        	</ul>
+        	<ul class="user-ul">
+        		<li ><i class="fa fa-cog"></i> 用户操作</li>	
+        		<!-- <li><a href="">实名认证</a></li> -->
+        		<li><a href="works_list.html" th:href="@{~/works/workses.html}">作品查询</a></li>
+        		<li><a th:href="@{~/chain/search.html}">区块查询</a></li>
+        		<!-- <li><a th:href="@{~/works/worksFirst.html}">版权登记</a></li> -->
+        		<li><a href="javascript:;" onclick="confirmation()">版权登记</a></li>
+        	
+        	</ul>
+        </div>
+        <div class="col-lg-10 ">
+        	<div class="user-right">
+        		<a class="btn btn-info" th:if="${authentication!= null && authentication.identityStatus == 4}" th:href="@{~/certification/certificateSelect.html}" style="float: right;margin-right: 80px;">重新认证</a>
+        		<div class="text-center" >
+        			<img src="../static/images/shz.jpg" th:src="@{~/images/shz.jpg}" th:if="${authentication == null}"/>
+        			<img src="../static/images/shzh.gif" th:src="@{~/images/shzh.gif}" th:if="${authentication != null && authentication.identityStatus == 2}"/>
+        			<img src="../static/images/rzcg.jpg" th:src="@{~/images/rzcg.jpg}" th:if="${authentication != null && authentication.identityStatus == 3}"/>
+        			<img src="../static/images/shzs.jpg" th:src="@{~/images/shzs.jpg}" th:if="${authentication != null && authentication.identityStatus == 4}" style="margin-left: 120px;"/>
+				</div>
+				<div class="text-center">
+					<a class="btn btn-info" th:if="${authentication} eq null" th:href="@{~/certification/certificateSelect.html}">立即认证</a>
+					<!-- <span class="btn btn-info" th:if="${authentication!= null && authentication.identityStatus == 2}">认证审核中...</span> -->
+					<span th:if="${authentication!= null && authentication.identityStatus == 4}">
+						<span th:if="${authentication.approvedDescription != null && authentication.approvedDescription != ''}" th:text="|原因： ${authentication.approvedDescription}|"></span>
+						<!-- <span th:unless="${authentication.approvedDescription != null && authentication.approvedDescription != ''}">认证未通过 </span> -->
+					</span>
+				</div>
+        		<!-- <ul class="user-ulr2">
+        			<li>
+					    <div class="col-lg-6" th:switch="${type}">
+						  <p th:case="2">姓名</p>
+						  <p th:case="3">企业名</p>
+						  <p th:case="*">姓名/企业名</p>
+						</div>
+        				<div class="col-lg-6 " >
+        					<p class="edit"> 状态</p>
+        				</div>
+        				<div style="clear: both;">
+        				</div>
+        			</li>
+        			<li th:if="${authentication} eq null">
+        				<div class="col-lg-6">
+        				</div>
+        				<div class="col-lg-6" >
+        					未认证，<a th:href="@{~/certification/certificateSelect.html}">立即认证</a>
+        				</div>
+        				<div style="clear: both;">
+        				</div>
+        			</li>
+        			<li th:unless="${authentication} eq null">
+        				
+        				<div class="col-lg-6" th:text="${authentication.realName}">
+        				张三
+        				</div>
+        				<div class="col-lg-6" th:if="${authentication.identityStatus eq 2} ">
+        					审核中
+        				</div>
+        				<div class="col-lg-6" th:if="${authentication.identityStatus eq 3} ">
+        					已认证
+        				</div>
+        				<div class="col-lg-6" th:if="${authentication.identityStatus eq 4} ">
+        					认证失败，<a th:href="@{~/certification/certificateSelect.html}">重新认证</a>
+        				</div>
+        				<div style="clear: both;">
+        				</div>
+        			</li>
+        		</ul> -->
+        		 
+        	</div>
+        </div>
+        
+</div>
+  <style type="text/css">
+  	.text{padding: 3px 15px; border: 1px solid #ccc;}
+  </style>       
+</div>
+
+</div>
+
+
+<div style="clear: both;">
+	
+</div>
+<!-- footer -->
+
+
+	<div class="footer" >
+    <div class="agileinfo_footer_bottom1" th:replace="footer::footer">
+		</div>
+	</div>
+		
+
+<!-- //footer -->
+<!-- JavaScripts -->
+<script type="text/javascript" th:src="@{/js/jquery-2.1.4.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/sleekslider.js}"></script>
+<script type="text/javascript" th:src="@{/js/app.js}"></script>
+<script th:src="@{/js/bootstrap.js}"></script>
+<script th:src="@{/js/layer/layer.js}"></script>
+<script th:inline="javascript">
+/*<![CDATA[*/
+    var user = /*[[${session.user}]]*/ 'null';
+/*]]>*/
+</script>
+<!-- //for bootstrap working -->
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#upload-file-input").on("change", uploadFile);
+});
+function uploadFile() {
+	$.ajax({
+		url : "/file/avatar",
+		type : "POST",
+		data : new FormData($("#upload-file-form")[0]),
+		enctype : 'multipart/form-data',
+		processData : false,
+		contentType : false,
+		cache : false,
+		success : function(data) {
+			// Handle upload success
+			console.log(data);
+			$("#userImageUrl").attr('src',"/file/avatar/" + data); 
+			//window.location.href = "/file/file/" + data
+		},
+		error : function() {
+			// Handle upload error
+			//$("#upload-file-message").text("File not uploaded (perhaps it's too much big)");
+		}
+	});
+
+} // function uploadFile
+function change(obj){
+　　var xg=$(obj).html();
+　　if(xg=='修改'){
+　　　　$('.edit').each(function(){
+　　　　　　var old=$(this).html();
+　　　　　　$(this).html("<input type='text' name='editname' class='text' value="+old+" >");
+　　　　})
+　　　　$(obj).html('保存');
+　　}else if(xg=='保存'){
+		$.ajax({
+			url : "/user/updateUser",
+			type : "POST",
+			data : {'userNickname':$('input[name=editname]').val(),'userId':$('input[name=userId]').val()},
+			cache : false,
+			success : function(data) {
+				var jsondata = JSON.parse(data); 
+				if(jsondata.status=="0"){
+					layer.msg(jsondata.msg);
+					$('input[name=editname]').each(function(){
+			　　　　　　var old=$(this).html();
+			　　　　　　var newfont=$(this).parent('p').parent('div').children().find('input').val();
+			　　　　　　$(this).parent('p').html(newfont);
+			　　　　 })
+					　$(obj).html('修改');
+				}else{
+					layer.msg(jsondata.msg);
+				}
+			},
+			error : function() {
+				layer.msg("服务器错误");
+			}
+		});
+　　　　
+　　}
+}
+function confirmation(){
+	if(user == null){
+		window.location.href="/auth/loginPage.html";
+	}else{
+		if(user.phone==null||user.phone==""){
+			layer.confirm('尚未绑定手机号，是否立即绑定？', function(index){
+				  window.location.href="/user/bind.html";
+				  layer.close(index);
+				});       
+		}else{
+			$.ajax({
+				url : "/certification/getCertificationStatus",
+				type : "GET",
+				cache : false,
+				success : function(data) {
+					var jsondata = JSON.parse(data); 
+					var au = jsondata.data;
+					if(jsondata.status=="0"){
+						if(au.identityStatus==null||au.identityStatus==1){
+							layer.confirm('尚未实名认证，是否立即认证？', function(index){
+								  window.location.href="/certification/certificateSelect.html";
+								  layer.close(index);
+							});  
+						}else if(au.identityStatus==2){
+							layer.alert('实名认证尚在审核中，无法进行操作');
+						}else if(au.identityStatus==4){
+							layer.confirm('未通过实名认证，是否重新认证？', function(index){
+								  window.location.href="/certification/certificateSelect.html";
+								  layer.close(index);
+							}); 
+						}else{
+							window.location.href="/works/worksFirst.html";
+						}
+					}else{
+						layer.msg(jsondata.msg);
+					}
+				},
+				error : function() {
+					layer.msg("服务器错误");
+				}
+			});
+		}
+	}
+}
+</script>
+</body>
+</html>

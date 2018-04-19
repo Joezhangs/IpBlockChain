@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wevolution.mapper.MessageRecorderMapper" >
+  <resultMap id="BaseResultMap" type="com.wevolution.domain.MessageRecorder" >
+    <id column="record_id" jdbcType="INTEGER" property="recordId" />
+    <result column="phone" jdbcType="CHAR" property="phone" />
+    <result column="sms_code" jdbcType="CHAR" property="smsCode" />
+    <result column="sms_usage" jdbcType="VARCHAR" property="smsUsage" />
+    <result column="sms_status" jdbcType="INTEGER" property="smsStatus" />
+    <result column="sendtime" jdbcType="CHAR" property="sendtime" />
+    <result column="ip_address" jdbcType="VARCHAR" property="ipAddress" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    record_id, phone, sms_code, sms_usage, sms_status, sendtime, ip_address
+  </sql>
+  <insert id="insertSelective" parameterType="com.wevolution.domain.MessageRecorder" >
+    <selectKey keyProperty="recordId" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into message_recorder
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="smsCode != null">
+        sms_code,
+      </if>
+      <if test="smsUsage != null">
+        sms_usage,
+      </if>
+      <if test="smsStatus != null">
+        sms_status,
+      </if>
+      <if test="sendtime != null">
+        sendtime,
+      </if>
+      <if test="ipAddress != null">
+        ip_address,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="phone != null">
+        #{phone,jdbcType=CHAR},
+      </if>
+      <if test="smsCode != null">
+        #{smsCode,jdbcType=CHAR},
+      </if>
+      <if test="smsUsage != null">
+        #{smsUsage,jdbcType=VARCHAR},
+      </if>
+      <if test="smsStatus != null">
+        #{smsStatus,jdbcType=INTEGER},
+      </if>
+      <if test="sendtime != null">
+        #{sendtime,jdbcType=CHAR},
+      </if>
+      <if test="ipAddress != null">
+        #{ipAddress,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wevolution.domain.MessageRecorder" >
+    update message_recorder
+    <set>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=CHAR},
+      </if>
+      <if test="smsCode != null">
+        sms_code = #{smsCode,jdbcType=CHAR},
+      </if>
+      <if test="smsUsage != null">
+        sms_usage = #{smsUsage,jdbcType=VARCHAR},
+      </if>
+      <if test="smsStatus != null">
+        sms_status = #{smsStatus,jdbcType=INTEGER},
+      </if>
+      <if test="sendtime != null">
+        sendtime = #{sendtime,jdbcType=CHAR},
+      </if>
+      <if test="ipAddress != null">
+        ip_address = #{ipAddress,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where record_id = #{recordId,jdbcType=INTEGER}
+  </update>
+</mapper>

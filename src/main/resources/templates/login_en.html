@@ -1,0 +1,416 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>我们科技-登录</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<link rel="icon" type="image/x-icon" th:href="@{~/images/favicon.ico}">
+<META HTTP-EQUIV="pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+<META HTTP-EQUIV="expires" CONTENT="0">
+<link href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}" rel='stylesheet' type='text/css' />
+<link href="../static/css/font-awesome.css" th:href="@{/css/font-awesome.css}" rel="stylesheet"> 
+<link rel="stylesheet" href="../static/css/slider.css" th:href="@{/css/slider.css}">
+<link href="../static/css/style.css" th:href="@{/css/style.css}" rel='stylesheet' type='text/css' />	
+<link rel="stylesheet" type="text/css" href="../static/css/mislider.css" th:href="@{/css/mislider.css}"/>
+<link rel="stylesheet" type="text/css" href="../static/css/mislider-skin-cameo.css" th:href="@{/css/mislider-skin-cameo.css}"/>
+<link rel="stylesheet" type="text/css" href="../static/css/login.css" th:href="@{~/css/login.css}"/>
+<style type="text/css">
+		body{background: #fff;}
+</style>
+</head>
+	<body>
+	<div id="" style="position: relative;">
+	<div class="top_banner" id="topl">
+		<!-- SVG Arrows -->
+		<div class="svg-wrap">
+			<svg width="64" height="64" viewBox="0 0 64 64">
+				<path id="arrow-left" d="M46.077 55.738c0.858 0.867 0.858 2.266 0 3.133s-2.243 0.867-3.101 0l-25.056-25.302c-0.858-0.867-0.858-2.269 0-3.133l25.056-25.306c0.858-0.867 2.243-0.867 3.101 0s0.858 2.266 0 3.133l-22.848 23.738 22.848 23.738z" />
+			</svg>
+			<svg width="64" height="64" viewBox="0 0 64 64">
+				<path id="arrow-right" d="M17.919 55.738c-0.858 0.867-0.858 2.266 0 3.133s2.243 0.867 3.101 0l25.056-25.302c0.858-0.867 0.858-2.269 0-3.133l-25.056-25.306c-0.858-0.867-2.243-0.867-3.101 0s-0.858 2.266 0 3.133l22.848 23.738-22.848 23.738z" />
+			</svg>
+		</div>
+		<div class="top_header_agile_info_w3ls">
+		  <nav class="navbar navbar-default">
+				<div class="navbar-header navbar-left">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">版权</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<h1><a class="navbar-brand" href="company_en.html"  th:href="@{/company_en.html}"><img src="../static/images/logoll.png" th:src="@{~/images/logoll.png}"/></a> <span class="ospan">Login</span></h1>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+					<style type="text/css">
+						.m_nav li>a {color: #666; font-weight: 600;}
+						.top_header_agile_info_w3ls{border-bottom: 1px solid #ccc;}
+						.navbar-default .navbar-brand, .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus{color: #666;}
+						.ospan{margin: 15px; display: inline-block;}
+					</style>
+
+					</nav>
+				</div>
+		</div>
+      <!--welcome-->
+ </div>
+	</div>
+<style type="text/css">
+	.formd{padding-top: 120px; min-height: 892px;}
+</style>
+<div class="formd">
+<div class=" container">
+<div class="box col-md-offset-2 col-sm-8" style="margin-top: 40px;">
+      <p id="title">
+      	<span class="select">Dynamic Password</span>
+        <span>Account Login </span>
+
+	</p>
+      <ul id="content">
+        <li class="show">
+           <div class="log-wrap cl">
+                <div class="log-content cl">
+                    <div class="wpl pos cl">
+                        <div class="log-row-cx cl">
+                        	<div class="reg_left pos col-lg-7">
+                            	<div class="lr_title_txt">
+                                	<h2></h2>
+                                	<span>No account number？<a th:href="@{/user/signUppage_en.html}">Immediate registration</a></span>
+                                </div>
+                            <form action="" method="post" onsubmit="return false" class="regForm layui-form" id="phone-login-form">
+                                <div class="reg_cont_input">
+	                                <div class="layui-form-item">
+	                                	<label class="login-icon pos">
+											<i class="fa fa-phone fa-2x fss"></i>
+	                                        <input type="tel" id="phone" name="nameOrPhone"  autocomplete="off" class="log-input mls" datatype="username"  maxlength="11"  placeholder="Please enter the cell phone number">
+	                                        <input type="hidden" name="loginType" value="01">
+	                                        <div class="Validform_checktip"></div>
+										</label>
+                                   	</div>       
+                                   	
+                                	<div class="layui-form-item">
+                                   		<label class="login-icon fg-code pos">
+                                            <i class=" fss log-i fa fa-envelope fa-2x"></i>
+                                            <input id="forgot-code" type="text"  name="credential" placeholder="Please enter the verification code" maxlength="6" class="log-input-half login-pwd mls log-input "autocomplete="off" style="margin-left: 40px!important;">
+	                                        <div class="Validform_checktip"></div>
+                                        </label>
+                                        <div class="fg-code-wp"> 
+                                            <button class="btn btn-default" id="btnSendCode" style="border-radius: 0; padding: 9px 12px; margin-left: 40px;" onclick="sendSmsCode()"> Getting SMS authentication code</button>
+                                        </div>
+                                     </div> 
+                                   <!--  <a href="home.html" class="lang-btn" id="phone_login">
+                                    	<span>登  录</span>
+                                    </a> -->
+                                    <button type="button" onclick="phoneLogin()" class="lang-btn phone-login">Login</button>
+                                </div>
+                               </form>
+                            </div><!-- .reg_left -->
+                            <div class=" col-lg-1">
+                            	
+                            </div>
+                            <div class="login-wrap-party z col-lg-4">
+                                <h2 class="h2">Third party login</h2>
+                                <div class="login-party cl">
+																	
+									<a href="javascript:;" class="log-weixin" onclick="wxLogin()">
+									<span><i class="fa fa-wechat"></i><p>Wechat login</p></span>
+									</a>
+                                    <a href="javascript:;" class="log-sina" onclick="wbLogin()">
+                                        <span><i class="fa fa-weibo"></i><p>Sina Weibo login</p></span>
+                                    </a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/login-fluid.css}" href="../static/css/login-fluid.css/>    
+          <div class="log-wrap cl">
+                <div class="log-content cl">
+                    <div class="wpl pos cl">
+                        <div class="log-row-cx cl">
+                        	<div class="reg_left pos col-lg-7">
+                            	<div class="lr_title_txt">
+                                	<h2></h2>
+                                	<span>No account number？<a th:href="@{/user/signUppage_en.html}">Immediate registration</a></span>
+                                </div>
+                            <form  method="post" class="regForm layui-form" onsubmit="return false" id="password-login-form">
+                                <div class="reg_cont_input">
+                                	<div class="layui-form-item layui-form-text">
+	                                	<label class="login-icon pos">
+											<i class="fa fa-user fa-2x fss"></i>
+	                                        <input type="text" name="nameOrPhone" required  lay-verify="required" autocomplete="off" class="log-input mls" datatype="username"  placeholder="Please enter one username">
+	                                        <input type="hidden" name="loginType" value="0">
+	                                        <div class="Validform_checktip"></div>
+										</label>
+									</div>
+									<div class="layui-form-item">
+	                                    <label class="login-icon pos">
+											<i class="fa fa-unlock-alt fa-2x fss"></i>
+	                                        <!-- <input type="text" name="placeholderpwd" class="log-input mls" value="设置密码" style="display: none;"> -->
+	                                        <input type="password" name="credential" required  lay-verify="required" datatype="*6-20" errormsg="The password range is between 6~20 bits!" autocomplete="off" class="log-input mls" nullmsg="Please enter your account password!" placeholder="Please enter the login password">
+	                                        <div class="Validform_checktip"></div>
+										</label>
+									</div>
+                                    <!-- <a href="#" class="lang-btn">
+                                    	<span>登 录</span>
+                                    </a> -->
+                                    <!-- <button type="button" onclick="passwordLogin()" class="lang-btn">登录</button> -->
+                                    <button type="button" onclick="passwordLogin()" class="lang-btn password-login">Login</button>
+	                                <div class="lr_title_txt">
+	                                	<h2></h2>
+	                                	<span>Forget the password？<a th:href="@{~/user/retrieve_en.html}">Retrieve the password</a></span>
+	                                </div>
+                                </div>
+                               </form>
+                            </div><!-- .reg_left -->
+                            <div class=" col-lg-1">
+                            </div>
+                            <div class="login-wrap-party z col-lg-4">
+                                <h2 class="h2">Third party login</h2>
+                                <div class="login-party cl">
+																	
+									<a href="javascript:;" class="log-weixin" onclick="wxLogin()">
+									<span><i class="fa fa-wechat"></i><p> Wechat login</p></span>
+									</a>
+                                    <a href="javascript:;" class="log-sina" onclick="wbLogin()">
+                                        <span><i class="fa fa-weibo"></i><p>Sina Weibo login</p></span>
+                                    </a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+      </ul>
+      <input type="hidden" id="refreshed" value="no">
+    </div>
+    <script>
+      var title=document.getElementById('title');
+      var content=document.getElementById('content');
+      var spans=title.getElementsByTagName('span');
+      var lis=content.getElementsByTagName('li');
+      for (var i = 0; i < spans.length; i++) {
+        spans[i].index=i;
+          spans[i].onclick=function(){
+            for (var j = 0; j < spans.length; j++) {
+              spans[j].className='';
+              lis[j].className='';
+            }
+              this.className='select';
+              lis[this.index].className='show';
+          }
+      }
+    </script>
+</div>
+
+</div>
+
+
+<div style="clear: both;">
+	
+</div>
+<!-- footer -->
+
+
+	<div class="footer" >
+
+    <div class="agileinfo_footer_bottom1" th:replace="footer_en::footer">
+		</div>
+	</div>
+		
+
+<!-- //footer -->
+<!-- JavaScripts -->
+<script type="text/javascript" src="../static/js/jquery-2.1.4.min.js" th:src="@{/js/jquery-2.1.4.min.js}"></script>
+<script type="text/javascript" src="../static/js/sleekslider.js" th:src="@{/js/sleekslider.js}"></script>
+<script type="text/javascript" src="../static/js/app.js" th:src="@{/js/app.js}"></script>
+<script src="../static/js/bootstrap.js" th:src="@{/js/bootstrap.js}"></script>
+<script src="../static/js/layer/layer.js" th:src="@{/js/layer/layer.js}"></script>
+<!-- //for bootstrap working -->
+<!-- <script th:inline="javascript">
+/*<![CDATA[*/
+    var user = /*[[${session.user}]]*/;
+    console.log(user);
+    if(user != null){
+    	window.location.href="/";
+    }
+/*]]>*/
+</script> -->
+<script>
+$(function(){
+	//移除之前的找回密码步骤（若有）
+	var step = sessionStorage.getItem('step');
+	if(step!=null){
+		sessionStorage.removeItem('step');
+	}
+});
+onload=function(){
+	var e=document.getElementById("refreshed");
+	if(e.value=="no"){
+		e.value="yes";
+	}else{
+		e.value="no";
+		location.reload();
+	}
+}
+$(document).keyup(function(event){
+	 if(event.keyCode ==13){
+		 if($("#title>span").eq(0).hasClass("select")){
+			 $(".phone-login").trigger("click");
+		 }
+		 if($("#title>span").eq(1).hasClass("select")){
+			 $(".password-login").trigger("click");
+		 }
+	}
+});
+function passwordLogin(){
+	if($.trim($("#password-login-form input[name='nameOrPhone']").val())==""||$.trim($("#password-login-form input[name='nameOrPhone']").val())==null){
+		layer.msg("The username or cell phone number can not be empty");
+		return false;
+	}
+	if($.trim($("#password-login-form input[name='credential']").val())==""||$.trim($("#password-login-form input[name='credential']").val())==null){
+		layer.msg("The password can not be empty");
+		return false;
+	}
+	  $.ajax({
+			url : "/auth/login",
+			type : "POST",
+			data : $('#password-login-form').serialize(),
+			cache : false,
+			success : function(data) {
+				var jsondata = JSON.parse(data); 
+				if(jsondata.status=="0"){
+					if(window.location.pathname.indexOf("loginPage")>0){
+						window.location.href="/user/userInfo_en.html";
+					}else{
+						window.location.reload();
+					} 
+				}else{
+					layer.msg(jsondata.msg);
+				}
+			},
+			error : function() {
+				layer.msg("Server error");
+			}
+		});
+  }
+	function phoneLogin(){
+		if($.trim($("#phone-login-form input[name='nameOrPhone']").val())==""||$.trim($("#phone-login-form input[name='nameOrPhone']").val())==null){
+			layer.msg("Cell phone number can not be empty");
+			return false;
+		}
+		if($.trim($("#phone-login-form input[name='credential']").val())==""||$.trim($("#phone-login-form input[name='credential']").val())==null){
+			layer.msg("Short message authentication code can not be empty");
+			return false;
+		}
+		$.ajax({
+			url : "/auth/login",
+			type : "POST",
+			data : $('#phone-login-form').serialize(),
+			cache : false,
+			success : function(data) {
+				var jsondata = JSON.parse(data); 
+				if(jsondata.status=="0"){
+					if(window.location.pathname.indexOf("loginPage_en")){
+						window.location.href="/user/userInfo_en.html";
+					}else{
+						window.location.reload();
+					} 
+				}else{
+					layer.msg(jsondata.msg);
+				}
+			},
+			error : function() {
+				layer.msg("Server error");
+			}
+		});
+	}
+//发送短信
+var InterValObj; //timer变量，控制时间
+var count = 60; //间隔函数，1秒执行
+var curCount;//当前剩余秒数
+function sendSmsCode(){
+	var myreg = /^1[3|4|5|7|8][0-9]{9}$/;
+	if(!myreg.test($("#phone").val())){
+		layer.msg("The phone number is wrong");
+		return false;
+	}
+	curCount = count;
+	$.ajax({
+		url : "/auth/sendSmsCode",
+		type : "POST",
+		data : {'phone':$("#phone").val(),'type':'0'},
+		cache : false,
+		success : function(data) {
+			var jsondata = JSON.parse(data); 
+			if(jsondata.status=="0"){
+				$("#btnSendCode").attr("disabled", "true");
+				$("#btnSendCode").html( + curCount + "Second acquisition");
+				InterValObj = setInterval(SetRemainTime, 1000); //启动计时器，1秒执行一次
+			}
+			layer.msg(jsondata.msg);
+		},
+		error : function() {
+			layer.msg("Server error");
+		}
+	});
+}
+//timer处理函数
+function SetRemainTime() {
+	if (curCount == 0) {                
+		clearInterval(InterValObj);//停止计时器
+		$("#btnSendCode").removeAttr("disabled");//启用按钮
+		$("#btnSendCode").html("Resend the verifying code");
+	}
+	else {
+		curCount--;
+		$("#btnSendCode").html( + curCount + "Second acquisition");
+	}
+}
+function wxLogin(){
+	$.ajax({
+		url : "/auth/login",
+		type : "POST",
+		data : {'loginType':'1'},
+		cache : false,
+		success : function(data) {
+			var jsondata = JSON.parse(data); 
+			if(jsondata.status=="0"){
+				window.location.href=jsondata.data;
+			}
+		},
+		error : function() {
+			layer.msg("Server error");
+		}
+	});
+}
+function wbLogin(){
+	$.ajax({
+		url : "/auth/login",
+		type : "POST",
+		data : {'loginType':'2'},
+		cache : false,
+		success : function(data) {
+			var jsondata = JSON.parse(data); 
+			if(jsondata.status=="0"){
+				window.location.href=jsondata.data;
+			}
+		},
+		error : function() {
+			layer.msg("Server error");
+		}
+	});
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>我们科技-版权展示-详情</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<link rel="icon" type="image/x-icon" th:href="@{~/images/favicon.ico}">
+<link href="../static/css/bootstrap.css" th:href="@{~/css/bootstrap.css}" rel='stylesheet' type='text/css' />
+<link href="../static/css/font-awesome.css" th:href="@{~/css/font-awesome.css}" rel="stylesheet"> 
+<link rel="stylesheet" href="../static/css/slider.css" th:href="@{~/css/slider.css}">
+<link href="../static/css/style.css" th:href="@{~/css/style.css}" rel='stylesheet' type='text/css' />	
+<link rel="stylesheet" type="text/css" href="../static/css/mislider.css" th:href="@{~/css/mislider.css}"/>
+<link rel="stylesheet" type="text/css" href="../static/css/mislider-skin-cameo.css" th:href="@{~/css/mislider-skin-cameo.css}"/>
+<link rel="stylesheet" type="text/css" href="../static/css/login.css" th:href="@{~/css/login.css}"/>
+<link th:href="@{/css/nav.css}" rel='stylesheet' type='text/css' />
+<style type="text/css">
+	 body{background: #f0f0f0;}
+	.top_header_agile_info_w3ls{background: #fff;}
+	 #m_nav_list li a{color: #666;}
+
+</style>
+</head>
+	<body>
+	<div id="" style="position: relative;">
+
+
+	<div class="top_banner" id="topl">
+		<!-- SVG Arrows -->
+	
+		<div class="top_header_agile_info_w3ls">
+		  <nav class="navbar navbar-default">
+				<div class="navbar-header navbar-left">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">版权</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<h1>
+						<a class="navbar-brand" href="index.html" th:href="@{~/}">
+							<!--<span>w</span>shanghai-->
+							<img src="../static/images/logoll.png" th:src="@{~/images/logoll.png}"/>
+						</a></h1>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+
+					<div id="m_nav_container" class="m_nav wthree_bg">
+						<nav class="menu menu--sebastian">
+							<ul id="m_nav_list" class="m_nav menu__list">
+								<li class="m_nav_item" id="m_nav_item_1"> <a href="home.html" th:href="@{~/home.html}" class="link link--kumya"><span >首页</span></a></li>
+								<li class="m_nav_item" id="moble_nav_item_3"> <a href="affirm.html" th:href="@{~/affirm.html}" class="link link--kumya"><span >版权确权</span></a></li>
+								<li class="m_nav_item active" id="moble_nav_item_4"> <a href="copyright_show.html" th:href="@{~/copyright.html}" class="link link--kumya"><span >版权展示</span></a></li>
+							    <li class="m_nav_item" id="moble_nav_item_4"> <a href="consulting.html" th:href="@{~/consulting.html}" class="link link--kumya"><span >资讯阅读</span></a></li>
+							    <li class="m_nav_item" id="moble_nav_item_2"><a href="case.html" th:href="@{~/case.html}" class="link link--kumya"><span >经典案例</span></a></li>
+								 <li class="m_nav_item" id="moble_nav_item_2" th:if="${session.user} != null"><a href="blockchain_show.html" th:href="@{~/chain/statistics.html}" class="link link--kumya"><span>区块展示</span></a></li>
+								<li class="m_nav_item" id="m_nav_item_1"> <a th:href="@{~/}" class="link link--kumya"><span >公司简介</span></a></li>
+								<li th:if="${session.user} != null" class="m_nav_item dropdown-back-white" id="moble_nav_item_6"> 
+									<span class="link link--kumya"><span class="dropbtn-back-white" th:text="${session.user.userName}==null?${#strings.length(session.user.userNickname)>5?#strings.substring(session.user.userNickname,0,5)+'...':session.user.userNickname}:${#strings.length(session.user.userName)>5?#strings.substring(session.user.userName,0,5)+'...':session.user.userName}">登录/注册</span><i class="menu-ico-back-white"></i></span>
+									<div class="dropdown-content-back-white">
+									    <a th:href="@{~/user/userInfo.html}">用户中心</a>
+									    <a th:href="@{~/auth/longOut}">退出</a>
+								  </div>
+								</li>
+								<li th:unless="${session.user} != null" class="m_nav_item" id="moble_nav_item_6"> 
+									<a  href="login.html" class="link link--kumya" th:href="@{/auth/loginPage.html}">
+										<span>登录/注册</span>
+									</a> 
+								</li>
+							</ul>
+						</nav>
+					</div>
+
+					</nav>
+				</div>
+		</div>
+      <!--welcome-->
+ </div>
+	</div>
+
+<style type="text/css">
+	 .formd{padding-top: 120px; min-height: 892px;}
+	 .formd ul{width: 100%; clear: both;}
+     .formd ul li{ background: #fff;position: relative; float: left; padding:20px 20px 20px 10px;  font-weight: 600; color: #666; font-size: 16px;}
+    
+      .formdo{background: #fff; min-height: 100px;padding: 30px 20px;margin-bottom: 20px;}
+      .oultitle li{ padding:5px 10px !important;border:1px solid #ccc;border-radius :50px; margin: 0 5px ;}
+      .oultitle li{ color:#6e6767 !important; margin-bottom: 20px; font-size: 14px !important;}
+     .formdo img{width: 100%; min-height: 120px; border: 1px solid #f0f0f0;}
+     .formdo div{padding: 0;}
+     .formdo>div{margin-top: 20px;}
+     .formdo h5{ font-size: 16px; color: #F39C12;}
+     .formdo p{color: #0083C7;}
+     .tadaws >img{ min-height: 50px !important;}
+      .oimg_cun{width: 800px; height: 560px; overflow: hidden;margin: 0 auto;}
+     .oimg_cun img{
+     	-webkit-transform:scale(1.5,1.5);
+        -moz-transform:scale(1.5,1.5);
+        -transform:scale(1.5,1.5);
+    }
+     .oultitle{padding-left:15px}
+    .olititle{ border:0!important; font-size: 16px;background: #fff;position: relative; float: left; margin:0px 10px 20px 10px; font-weight: 600; color: #666; font-size: 16px; }
+ 
+</style>
+<div class="formd">
+
+   <div class="container formdo">
+    <div style="border-bottom: 1px dashed #ccc; height: 100%; width: 100%;">
+    	
+    
+    <div class="col-lg-4" >
+    	<img th:src="${(#strings.endsWith(works.works_url,'.jpg') || #strings.endsWith(works.works_url,'.png') || #strings.endsWith(works.works_url,'.jpeg'))}?${works.works_url}:@{~/images/copyright_510x630.jpg}"/>
+    </div>
+    <div class="col-lg-6" style="padding-left: 10px">
+    	<h2 th:text="${works.works_name}" style="padding-left: 9px; color:#f39c12; font-size:36px; font-family:'宋体' ;font-weight: 600;">九真九阳</h2>
+    	<ul>
+   		
+   			<li>作者：<span th:text="${works.author}" style="color:#26bdef; font-size: 14px;">杜灿</span> </li>
+   			<li>类别：<span th:text="${works.type}" style="color:#26bdef; font-size: 14px;">小说</span></li>
+   			<!-- <li>状态：<span>待审核</span></li> -->
+   			
+   		</ul>
+    	<!-- <ul>
+   			<li class="olititle">全部分类：  </li>
+   			<li>不限 </li>
+   			<li>动漫IP</li>
+   			<li>小说IP</li>
+   			<li>影视IP</li>
+   			<li>游戏IP </li>
+   			<li>自媒体IP</li>
+   			<li>明星IP </li>
+   			<li>其他</li>
+   			
+   		</ul> -->
+   			<div class="olititle"  style="clear: both;">权利拥有状况和说明：  </div>
+   			
+   		<ul class="oultitle">
+   		   
+   			<li th:each="item : ${status}" th:text="${item}" ></li>
+   			<!-- <li>不限 </li>
+   			<li>动漫IP</li>
+   			<li>小说IP</li>
+   			<li>影视IP</li>
+   			<li>游戏IP </li>
+   			<li>自媒体IP</li>
+   			<li>明星IP </li>
+   			<li>其他</li> -->
+   			
+   		</ul>
+    </div>
+    <div style="height: 30px; clear: both;">
+    </div>
+    
+    <div class="col-lg-12 table-h5">
+	 <div style="margin-top: 30px;">
+	 	<div class="col-lg-1 tadaws">
+	 		<img src="../static/images/zcdjtu.jpg" th:src="@{~/images/zcdjtu.jpg}"/>
+	 	</div>
+	 	<div class="col-lg-11">
+	 		<h1>登记详情 </h1>
+	     <p>记录作品相关信息如作品名称、作品摘要、作者、创作性质及区块链确权信息，如区块ID、区块摘要、创建时间等</p>
+	
+	 	</div>
+	 	 
+	 </div>
+	
+	
+  	<div class="">
+<div class="col-lg-12" style=" padding: 20px;">
+			<h5>登记详情</h5>
+			
+   <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+   
+      <tbody>
+        <tr>
+          <th>作品</th>
+          <th th:text="${info.works_name}">白与黑</th>
+        
+        </tr>
+        <tr>
+          <th>作者</th>
+          <th th:text="${info.author}">张三</th>
+        
+        </tr>
+          <tr>
+          <th>状态</th>
+          <th>已审核</th>
+        
+        </tr>
+        <tr>
+          <th>区块链版权ID</th>
+          <th th:text="${info.block_id}">238</th>
+        
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+			
+			
+	</div>
+			
+		</div>
+		
+		<div class="">
+<div class="col-lg-12" style=" padding: 20px; border-top: 1px dashed #ccc;">
+			<h5>作品信息</h5>
+			<style type="text/css">
+				.table1 th{background: #fff; border: 0; padding: 10px;}
+				.table1 th:last-of-type{text-align: left;}
+			</style>
+   <div class="">
+    <table class="table table1" style="background: #fff;">
+   
+      <tbody>
+        <tr>
+          <th>作品</th>
+          <th th:text="${info.works_name}">白与黑</th>
+        
+        </tr>
+        <tr>
+          <th>作者</th>
+          <th th:text="${info.author}">张三</th>
+        
+        </tr>
+          <tr>
+          <th>存在数据（SHA256）</th>
+          <th th:text="${info.tx_hash}">6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b</th>     
+        </tr>     
+      </tbody>
+    </table>
+  </div>						
+	</div>
+			
+		</div>
+		
+		<div class="">
+<div class="col-lg-12" style=" padding: 20px; border-top: 1px dashed #ccc;">
+			<h5>区块信息</h5>
+			<style type="text/css">
+				.table1 th{background: #fff; border: 0; padding: 10px;}
+				.table1 th:last-of-type{text-align: left;}
+			</style>
+   <div class="">
+    <table class="table table1" style="background: #fff;">
+   
+      <tbody>
+        <tr>
+          <th>区块ID</th>
+          <th th:text="${info.block_id}">238</th>
+        
+        </tr>
+        <tr>
+          <th>区块Hash</th>
+          <th th:text="${info.hash}">6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b</th>
+        
+        </tr>
+          <tr>
+          <th>前一区块Hash</th>
+          <th th:text="${info.pre_hash}">1bad6b8cf97131fceab8543e81f7757195fbb1d36b376ee994ad1cf17699c464</th>
+        
+        </tr>
+         <tr>
+          <th>创建时间</th>
+          <th th:text="${#dates.format(info.timestamp, 'yyyy-MM-dd HH:mm:ss SSS')}">2017-07-19 10:23:13</th>
+        
+        </tr>
+      
+
+      </tbody>
+    </table>
+  </div>
+			
+			
+	</div>
+		
+		</div>
+		
+	<div style="margin-top: 30px;">
+	 	<div class="col-lg-1 tadaws">
+	 		<img src="images/quequanban.jpg" th:src="@{~/images/quequanban.jpg}"/>
+	 	</div>
+	 	<div class="col-lg-11">
+	 		<h1>区块链版权证书 </h1>
+	     <p>给作品签发一张互联网版权证书，证书中记录作品相关信息如作品名称、作品摘要、作者、创作性质及区块链确权信息，如区块ID、区块摘要、创建时间等</p>
+	
+	 	</div>
+	 	 
+	 </div>
+	 <div class="col-lg-12" style="margin-top: 30px; overflow: auto;">
+	 	<div class="oimg_cun" ><img src="../static/images/zszs.jpg" th:src="${info.works_certificate_url}" style="border: 0;" /></div>
+	 </div>	
+	
+
+</div>
+
+    
+    
+    
+   </div>
+ 
+
+ 
+
+<div style="height: 30px; clear: both;">
+		
+	</div>
+</div>
+
+	<div class="footer" >
+
+    <div class="agileinfo_footer_bottom1">
+			<div class="container">
+				    <p class="col-lg-2" style="padding-right: 0;"><a th:href="@{~/}">关于我们</a>&nbsp;&nbsp;<a href="javascript:;">法律协议</a></p>
+				
+					<p class="col-lg-10 text-right"> &copy;2017 wevolution Allg Rights Reserved. powered by 上海我们信息科技有限公司 <img th:src="@{~/images/pic1.gif}"  style="margin-top:5px;"/> 沪ICP备17045920号</p>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+		
+
+
+<script type="text/javascript" src="..static/js/jquery-2.1.4.min.js" th:src="@{~/js/jquery-2.1.4.min.js}"></script>
+<script type="text/javascript" src="..static/js/sleekslider.js" th:src="@{~/js/sleekslider.js}"></script>
+<script type="text/javascript" src="..static/js/app.js" th:src="@{~/js/app.js}"></script>
+<script src="..static/js/bootstrap.js" th:src="@{~/js/bootstrap.js}"></script>
+<script src="..static/js/wow.min.js" type="text/javascript" charset="utf-8" th:src="@{~/js/wow.min.js}"></script>
+<!-- //for bootstrap working -->
+</body>
+</html>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<oauths>
+
+	<oauth>
+		<name><![CDATA[qq]]></name>
+		<clientId><![CDATA[101294356]]></clientId>
+		<clientSecret><![CDATA[2ec55e54e01e48224fe41a326bca6473]]></clientSecret>
+		<redirectUri><![CDATA[http://www.wevolution.cn/auth/callback/qq.html]]></redirectUri>
+		<intro><![CDATA[腾讯QQ第三方登录配置,申请网址：http://connect.qq.com/manage/index]]></intro>
+	</oauth>
+
+	<oauth>
+		<name><![CDATA[weibo]]></name>
+		<clientId><![CDATA[1263458858]]></clientId>
+		<clientSecret><![CDATA[20ad10428f265edaf1bc4172375b2466]]></clientSecret>
+		<redirectUri><![CDATA[http://www.wevolution.cn/auth/callback/weibo.html]]></redirectUri>
+		<intro><![CDATA[新浪微博第三方登录配置,申请网址：http://open.weibo.com/webmaster/add]]></intro>
+	</oauth>
+
+	<oauth>
+		<name><![CDATA[oschina]]></name>
+		<clientId><![CDATA[azCwdF2tSL3d6O5cyUaz]]></clientId>
+		<clientSecret><![CDATA[ZRcCw59t2eqSrIQrCU0FGQW493l67TuF]]></clientSecret>
+		<redirectUri><![CDATA[http://www.wevolution.cn/auth/callback/oschina.html]]></redirectUri>
+		<intro><![CDATA[OSChina第三方登录配置,申请网址：http://www.oschina.net/openapi/docs/oauth2_authorize]]></intro>
+	</oauth>
+
+	<oauth>
+		<name><![CDATA[wechat]]></name>
+		<clientId><![CDATA[wxe6d5c99ecb8c2b8a]]></clientId>
+		<clientSecret><![CDATA[cd810b5229756c2f85c7c3719671a44f]]></clientSecret>
+		<redirectUri><![CDATA[http://www.wevolution.cn/auth/callback/wechat.html]]></redirectUri>
+		<intro><![CDATA[微信第三方登录配置,申请网址：https://open.weixin.qq.com/cgi-bin/appcreate?t=manage/createWeb&type=app&lang=zh_CN&token=32f962272ff06376e78246325df7d16710c5e343]]></intro>
+	</oauth>
+
+	<oauth>
+		<name><![CDATA[github]]></name>
+		<clientId><![CDATA[ef0b0e93438d28eb2129]]></clientId>
+		<clientSecret><![CDATA[2b8ee74d79c7fbc587cf0d922bf30710c9f3ad41]]></clientSecret>
+		<redirectUri><![CDATA[http://www.wevolution.cn/auth/callback/github.html]]></redirectUri>
+		<intro><![CDATA[github第三方登录配置,申请网址：https://github.com/settings/applications/new]]></intro>
+	</oauth>
+
+</oauths>

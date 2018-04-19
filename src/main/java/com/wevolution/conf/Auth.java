@@ -1,0 +1,21 @@
+package com.wevolution.conf;
+
+import java.lang.annotation.Documented;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+/**
+ * 
+* @ClassName: Auth 
+* @Description: 登录认证注解
+* @author jiangjian
+* @date 2017年8月22日 下午5:20:01 
+*
+ */
+@Target({ElementType.TYPE, ElementType.METHOD})
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+public @interface Auth {
+
+}

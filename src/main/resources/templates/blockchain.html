@@ -1,0 +1,375 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>我们科技-区块查询</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<link rel="icon" type="image/x-icon" th:href="@{~/images/favicon.ico}">
+<link th:href="@{/css/bootstrap.css}" rel='stylesheet' type='text/css'/>
+<link th:href="@{/css/font-awesome.css}" rel="stylesheet"> 
+<link rel="stylesheet" th:href="@{/css/slider.css}">
+<link th:href="@{/css/style.css}" rel='stylesheet' type='text/css' />
+<link th:href="@{/css/nav.css}" rel='stylesheet' type='text/css' />
+<link rel="stylesheet" type="text/css" th:href="@{/css/mislider.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{/css/mislider-skin-cameo.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{/css/avatar.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{~/css/jquery.datetimepicker.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{/css/page.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{/css/load.css}"/>
+<link rel="stylesheet" type="text/css" href="../static/css/login.css" th:href="@{~/css/login.css}"/>
+<style type="text/css">
+	 body{background: #f0f0f0;}
+	.top_header_agile_info_w3ls{background: #fff;}
+</style>
+</head>
+	<body>
+	<div id="" style="position: relative;">
+	
+
+	<div class="top_banner" id="topl">
+		<!-- SVG Arrows -->
+		<div class="svg-wrap">
+			<svg width="64" height="64" viewBox="0 0 64 64">
+				<path id="arrow-left" d="M46.077 55.738c0.858 0.867 0.858 2.266 0 3.133s-2.243 0.867-3.101 0l-25.056-25.302c-0.858-0.867-0.858-2.269 0-3.133l25.056-25.306c0.858-0.867 2.243-0.867 3.101 0s0.858 2.266 0 3.133l-22.848 23.738 22.848 23.738z" />
+			</svg>
+			<svg width="64" height="64" viewBox="0 0 64 64">
+				<path id="arrow-right" d="M17.919 55.738c-0.858 0.867-0.858 2.266 0 3.133s2.243 0.867 3.101 0l25.056-25.302c0.858-0.867 0.858-2.269 0-3.133l-25.056-25.306c-0.858-0.867-2.243-0.867-3.101 0s-0.858 2.266 0 3.133l22.848 23.738-22.848 23.738z" />
+			</svg>
+		</div>
+		<div class="top_header_agile_info_w3ls">
+		  <nav class="navbar navbar-default">
+				<div class="navbar-header navbar-left">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">版权</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<h1><a class="navbar-brand" href="index.html"  th:href="@{/}"><img src="../static/images/logoll.png" th:src="@{~/images/logoll.png}"/></a><span class="ospan">用户中心 > 区块查询</span></h1>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+					<div id="m_nav_container" class="m_nav wthree_bg">
+						<nav class="menu menu--sebastian">
+							<div class="dropdown-back-white">
+							  <span class="dropbtn-back-white" th:text="${session.user.userName}==null?${#strings.length(session.user.userNickname)>5?#strings.substring(session.user.userNickname,0,5)+'...':session.user.userNickname}:${#strings.length(session.user.userName)>5?#strings.substring(session.user.userName,0,5)+'...':session.user.userName}">登录/注册</span><i class="menu-ico-back-white"></i>
+							  <div class="dropdown-content-back-white">
+							    <a th:href="@{~/user/userInfo.html}">用户中心</a>
+							    <a th:href="@{~/auth/longOut}">退出</a>
+							  </div>
+							</div>
+						</nav>
+					</div>
+
+					</nav>
+				</div>
+		</div>
+	
+	
+		<!--<div class="sleekslider" id="home">
+	
+			<div class="slide active bg-1">
+				
+			</div>	
+		</div>	-->
+		
+		
+      <!--welcome-->
+ </div>
+	</div>
+
+<style type="text/css">
+	.formd{padding-top: 120px; min-height: 892px;}
+	.upload{
+	position: relative; /* 保证子元素的定位 */
+    width: 120px;
+    height: 30px;
+    background: #eee;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 5px;
+    color: #666;
+    /* font-family: "黑体"; */
+    font-size: 18px;
+   /*  padding: 4px 10px;
+    height: 20px;
+    line-height: 20px;
+    position: relative;
+    border: 1px solid #999;
+    text-decoration: none;
+    color: #666; */
+}
+.change{
+	display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120px; /* 宽高和外围元素保持一致 */
+    height: 30px;
+    opacity: 0;
+    -moz-opacity: 0;  /* 兼容老式浏览器 */
+    filter: alpha(opacity=0); /* 兼容IE */
+    /* position: absolute;
+    overflow: hidden;
+    right: 0;
+    top: 0;
+    opacity: 0; */
+}
+	
+</style>
+<div class="formd">
+	
+<div class="container">
+	
+<div class="box " style="margin-top: 40px;">
+<div class="col-lg-2 user-left">
+        	<ul class="user-ul">
+        		<li ><i class="fa fa-user"></i> 用户信息</li>
+        		<li><a href="user.html" th:href="@{~/user/userInfo.html}">个人资料</a></li>
+        		<li th:if="${session.user.identifyType==3 && session.user.identifyStatus==3}"><a href="enterprise_info_en.html" th:href="@{~/certification/getEnterprise.html}">企业资料</a></li>
+        		<li><a href="user_auth.html" th:href="@{~/certification/getCertification.html}">实名认证</a></li>
+        		<!-- <li><a href="">版权证书</a></li> -->
+        	</ul>
+        	<ul class="user-ul">
+        		<li ><i class="fa fa-cog"></i> 用户操作</li>	
+        		<!-- <li><a href="">实名认证</a></li> -->
+        		<li><a href="works_list.html.html" th:href="@{~/works/workses.html}">作品查询</a></li>
+        		<li class="activeuser"><a th:href="@{~/chain/search.html}" class="activeuser">区块查询</a></li>
+        		<!-- <li><a th:href="@{~/works/worksFirst.html}">版权登记</a></li> -->
+        		<li><a href="javascript:;" onclick="confirmation()">版权登记</a></li>
+        	
+        	</ul>
+        </div>
+        <div class="col-lg-10 ">
+        	<div class="user-right" style="margin-bottom: 70px;">  
+        	<div id="input">
+				<span>开始时间: <input type="text" name="begindate" class="form-control"  readonly placeholder="yyyy-MM-dd" style="width: auto;display: inline;height: auto;"/></span> 
+				&nbsp;&nbsp;
+				<span>结束时间: <input type="text" name="endDate" class="form-control" readonly placeholder="yyyy-MM-dd" style="width: auto;display: inline;height: auto;"/></span> 
+			   <div style="margin-top: 20px;">
+				<span>区&nbsp;块&nbsp;ID&nbsp;: <input type="text" name="id" class="form-control" style="margin-left: 2px;width: auto;display: inline;height: auto;"/></span> 
+				&nbsp;&nbsp;
+				<span>区块hash: <input type="text" name="hash" class="form-control" style="margin-left: -1px; width: auto;display: inline;height: auto;"/></span> 
+				<span id="search" style="margin-left: 20px;"><button class="btn btn-default">查询</button></span>
+			</div>
+			</div>      		
+        		<ul class="user-ulr3" style="border-top:1px dashed #ccc;margin-top: 20px;">
+        			<li style="padding: 0;">
+        				<div class="col-lg-1" >
+        					 区块ID
+        				</div>
+        				<div class="col-lg-3 " >
+        					<p class="edit" style="line-height: 2.4em; text-align: center;"> 创建时间</p>
+        				</div>
+        				<div class="col-lg-2" style="text-align: center;">
+        					 交易数量
+        				</div>
+        				<div class="col-lg-2 " >
+        					<p class="edit" style="line-height: 2.4em; text-align: center;"> 区块高度</p>
+        				</div>
+        				<div class="col-lg-4" style="text-align: center;">
+        					 区块Hash
+        				</div>
+        				<div style="clear: both;">
+        				</div>
+        			</li>
+        			<div id="list-box"></div>
+        				<!-- <li style="padding: 10px 0;">
+        				<div class="col-lg-1" >
+        					2001
+        				</div>
+        				<div class="col-lg-3 " >
+        					<p class="edit" style="line-height: 2.4em; text-align: center;"> 2017-07-19 10:24:12</p>
+        				</div>
+        				<div class="col-lg-2" style="text-align: center;">
+        					
+        					3
+        				</div>
+        				<div class="col-lg-2 " >
+        					<p class="edit" style="line-height: 2.4em; text-align: center;"> 2001</p>
+        				</div>
+        				<div class="col-lg-4" style="display:block;word-break: break-all;word-wrap: break-word;text-align: center;line-height: 25px;">
+        					 f8d2499374e45e5472679bfc2226f389559042ca910927adae318da9a8a731c7
+        				</div>
+
+        				<div style="clear: both;">
+        					
+        				</div>
+        			</li> -->
+        		</ul>
+        		 <div class="col-lg-11" style="position: absolute;bottom: 80px;">
+        		 <ul class="page" maxshowpageitem="5" pagelistcount="10"  id="page" style="/* float: inline-end; */float: right;"></ul></div>
+        	</div>
+        </div>
+        
+</div>
+</div>
+
+</div>
+
+
+<div style="clear: both;">
+	
+</div>
+<!-- footer -->
+
+
+	<div class="footer" >
+    <div class="agileinfo_footer_bottom1" th:replace="footer::footer">
+		</div>
+	</div>
+		
+
+<!-- //footer -->
+<!-- JavaScripts -->
+<script type="text/javascript" th:src="@{/js/jquery-2.1.4.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/sleekslider.js}"></script>
+<script type="text/javascript" th:src="@{/js/app.js}"></script>
+<script th:src="@{/js/bootstrap.js}"></script>
+<script th:src="@{/js/cropbox.js}"></script>
+<script th:src="@{/js/page.js}"></script>
+<script th:src="@{/js/load-min.js}"></script>
+<script th:src="@{/js/layer/layer.js}"></script>
+<script th:src="@{/js/laydate/laydate.js}"></script>
+<script type="text/javascript" th:src="@{~/js/jquery.datetimepicker.js}"></script>
+<script th:inline="javascript">
+/*<![CDATA[*/
+    var user = /*[[${session.user}]]*/ 'null';
+/*]]>*/
+</script>
+<!-- //for bootstrap working -->
+<script type="text/javascript">
+$(function(){
+	GG.kk(1);
+	$("#page").initPage(0,1,GG.kk);
+	$("#search").on('click',function(){
+		if($.trim($('input[name="id"]').val())==""&&$.trim($('input[name="hash"]').val())==""){
+			if(($("input[name='begindate']").val()!=""&&$("input[name='begindate']").val()!=null)&&($("input[name='endDate']").val()==""||$("input[name='endDate']").val()==null)){
+				layer.msg("请选择结束时间");
+				return;
+			}
+			if(($("input[name='endDate']").val()!=""&&$("input[name='endDate']").val()!=null)&&($("input[name='begindate']").val()==""||$("input[name='begindate']").val()==null)){
+				layer.msg("请选择开始时间");
+				return;
+			}
+		}
+		var startTime=$("input[name='begindate']").val();  
+	    var start=new Date(startTime.replace("-", "/").replace("-", "/"));  
+	    var endTime=$("input[name='endDate']").val();  
+	    var end=new Date(endTime.replace("-", "/").replace("-", "/"));  
+	    if(end<start){ 
+	    	layer.msg("开始时间不能大于结束时间");
+	        return;  
+	    }
+		GG.kk(1);
+	});
+})
+var GG = {
+    "kk":function(mm){
+    	$.mask_element('#list-box');
+    	$.ajax({
+			url : "/chain/blockList",
+			type : "GET",
+			data : {
+				'pageNum':mm,
+				'pageSize':$("#page").attr("pagelistcount"),
+				'id':$('input[name="id"]').val(),
+				'hash':$('input[name="hash"]').val(),
+				'begindate':$('input[name="begindate"]').val(),
+				'endDate':$('input[name="endDate"]').val()
+			},
+			cache : false,
+			success : function(data) {
+				$.mask_close('#list-box');
+				var jsondata = JSON.parse(data); 
+				var _data = jsondata.data.list;
+				$("#list-box").empty();
+				var cells = '';
+				for(var i=0;i<_data.length;i++){
+					cells += '<li style="padding: 10px 0;">';
+					cells += '<div class="col-lg-1" >'+_data[i].id+'</div>';
+					cells += '<div class="col-lg-3 " ><p class="edit" style="line-height: 2.4em; text-align: center;"> '+_data[i].timestamp+'</p></div>';
+					cells += '<div class="col-lg-2" style="text-align: center;">'+_data[i].tx_lenth+'</div>';
+					cells += '<div class="col-lg-2 " >';
+					cells += '<p class="edit" style="line-height: 2.4em; text-align: center;">'+_data[i].height+'</p>';
+					cells += '</div>';
+					cells += '<div class="col-lg-4" style="display:block;word-break: break-all;word-wrap: break-word;text-align: center;line-height: 25px;">'+_data[i].hash;
+					cells += '</div><div style="clear: both;"></div></li>';
+				}
+					cells += '<div style="height: 40px;"></div>';
+				var count=jsondata.data.total;
+				var current=jsondata.data.pageNum;
+				$("#list-box").append(cells);
+				$("#page").initPage(count,current,GG.kk);
+			},
+			error : function() {
+				layer.msg("服务器错误");
+			}
+		});
+    }
+}
+/* 	$('#datetimepicker').datetimepicker();
+$('#datetimepicker').datetimepicker({value:'2015/04/15 05:03',step:10});
+	$('#datetimepicker1').datetimepicker();
+$('#datetimepicker1').datetimepicker({value:'2015/04/15 05:03',step:10}); */
+//时间控件
+laydate.render({
+  	elem: 'input[name="begindate"]'//指定元素
+  	,trigger: 'click'
+});
+laydate.render({
+	elem:'input[name="endDate"]'//指定元素
+	,trigger: 'click'
+});
+function confirmation(){
+	if(user == null){
+		window.location.href="/auth/loginPage.html";
+	}else{
+		if(user.phone==null||user.phone==""){
+			layer.confirm('尚未绑定手机号，是否立即绑定？', function(index){
+				  window.location.href="/user/bind.html";
+				  layer.close(index);
+				});       
+		}else{
+			$.ajax({
+				url : "/certification/getCertificationStatus",
+				type : "GET",
+				cache : false,
+				success : function(data) {
+					var jsondata = JSON.parse(data); 
+					var au = jsondata.data;
+					if(jsondata.status=="0"){
+						if(au.identityStatus==null||au.identityStatus==1){
+							layer.confirm('尚未实名认证，是否立即认证？', function(index){
+								  window.location.href="/certification/certificateSelect.html";
+								  layer.close(index);
+							});  
+						}else if(au.identityStatus==2){
+							layer.alert('实名认证尚在审核中，无法进行操作');
+						}else if(au.identityStatus==4){
+							layer.confirm('未通过实名认证，是否重新认证？', function(index){
+								  window.location.href="/certification/certificateSelect.html";
+								  layer.close(index);
+							}); 
+						}else{
+							window.location.href="/works/worksFirst.html";
+						}
+					}else{
+						layer.msg(jsondata.msg);
+					}
+				},
+				error : function() {
+					layer.msg("服务器错误");
+				}
+			});
+		}
+	}
+}
+</script>
+</body>
+</html>

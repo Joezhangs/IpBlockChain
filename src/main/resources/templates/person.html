@@ -1,0 +1,509 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>我们科技-实名认证</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<link rel="icon" type="image/x-icon" th:href="@{~/images/favicon.ico}">
+<link href="../static/css/bootstrap.css" th:href="@{~/css/bootstrap.css}" rel='stylesheet' type='text/css' />
+<link href="../static/css/font-awesome.css" rel="stylesheet" th:href="@{~/css/font-awesome.css}"> 
+<link rel="stylesheet" href="../static/css/slider.css" th:href="@{~/css/slider.css}">
+<link href="../static/css/style.css" rel='stylesheet' type='text/css' th:href="@{~/css/style.css}"/>	
+<link rel="stylesheet" type="text/css" href="../static/css/mislider.css" th:href="@{~/css/mislider.css}"/>
+<link rel="stylesheet" type="text/css" href="../static/css/mislider-skin-cameo.css" th:href="@{~/css/mislider-skin-cameo.css}"/>
+<link th:href="@{/css/nav.css}" rel='stylesheet' type='text/css' />
+<style type="text/css">
+	 body{background: #f0f0f0;}
+	.top_header_agile_info_w3ls{background: #fff;}
+</style>
+</head>
+	<body>
+	<div id="" style="position: relative;">
+	
+
+	<div class="top_banner" id="topl">
+		<!-- SVG Arrows -->
+		<div class="svg-wrap">
+			<svg width="64" height="64" viewBox="0 0 64 64">
+				<path id="arrow-left" d="M46.077 55.738c0.858 0.867 0.858 2.266 0 3.133s-2.243 0.867-3.101 0l-25.056-25.302c-0.858-0.867-0.858-2.269 0-3.133l25.056-25.306c0.858-0.867 2.243-0.867 3.101 0s0.858 2.266 0 3.133l-22.848 23.738 22.848 23.738z" />
+			</svg>
+			<svg width="64" height="64" viewBox="0 0 64 64">
+				<path id="arrow-right" d="M17.919 55.738c-0.858 0.867-0.858 2.266 0 3.133s2.243 0.867 3.101 0l25.056-25.302c0.858-0.867 0.858-2.269 0-3.133l-25.056-25.306c-0.858-0.867-2.243-0.867-3.101 0s-0.858 2.266 0 3.133l22.848 23.738-22.848 23.738z" />
+			</svg>
+		</div>
+		<div class="top_header_agile_info_w3ls">
+		  <nav class="navbar navbar-default">
+				<div class="navbar-header navbar-left">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">版权</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<h1><a class="navbar-brand" href="index.html"  th:href="@{/}"><img src="../static/images/logoll.png" th:src="@{~/images/logoll.png}"/></a><span class="ospan">实名认证 > 个人认证</span></h1>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+<style type="text/css">
+	.m_nav li>a {color: #666; font-weight: 600;}
+	.top_header_agile_info_w3ls{border-bottom: 1px solid #ccc;}
+	.navbar-default .navbar-brand, .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus{color: #666;}
+	.ospan{margin: 15px; display: inline-block;}
+.dropbtn {
+	color: #666;
+	padding: 16px;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+	font-weight: 600;
+}
+
+/*容器 <div> - 需要定位下拉内容 */
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+/*下拉内容 (默认隐藏) */
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+/*下拉菜单的链接 */
+.dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+/*鼠标移上去后修改下拉菜单链接颜色 */
+.dropdown-content a:hover {
+	background-color: #f1f1f1
+}
+
+/*在鼠标移上去后显示下拉菜单 */
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+/* 当下拉内容显示后修改下拉按钮的背景颜色 */
+.dropdown:hover .dropbtn {
+	color: #3e8e41;
+}
+</style>
+					<div id="m_nav_container" class="m_nav wthree_bg">
+						<nav class="menu menu--sebastian">
+							<div class="dropdown-back-white">
+							  <span class="dropbtn-back-white" th:text="${session.user.userName}==null?${#strings.length(session.user.userNickname)>5?#strings.substring(session.user.userNickname,0,5)+'...':session.user.userNickname}:${#strings.length(session.user.userName)>5?#strings.substring(session.user.userName,0,5)+'...':session.user.userName}">登录/注册</span><i class="menu-ico-back-white"></i>
+							  <div class="dropdown-content-back-white">
+							    <a th:href="@{~/user/userInfo.html}">用户中心</a>
+							    <a th:href="@{~/auth/longOut}">退出</a>
+							  </div>
+							</div>
+						</nav>
+					</div>
+
+
+					</nav>
+				</div>
+		</div>
+	
+	
+		<!--<div class="sleekslider" id="home">
+	
+			<div class="slide active bg-1">
+				
+			</div>	
+		</div>	-->
+		
+		
+      <!--welcome-->
+ </div>
+	</div>
+
+<style type="text/css">
+	.formd{padding-top: 120px; min-height: 892px;}
+	.formdr{background: #fff; width:100%; height: 100%;}
+	.formdl{padding: 80px 0 40px 0; min-height: 600px; }
+	.formdl label{font-size: 14px;}
+</style>
+<div class="formd">
+	
+
+<div class=" container">
+<div class="formdr col-lg-12" >
+	<form class="col-md-offset-2 col-lg-7 formdl" onsubmit="return false" id="auth-form">
+ 	<input type="hidden" th:value="${session.token}" name="token">
+   <div class="form-group">
+    <label for="inputEmail3" class="col-sm-3 control-label text-right"><span style="color: #FF0000;">*</span> 真实姓名 </label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" id="inputEmail3" placeholder="真实姓名" name="realName" maxlength="20" onkeyup="value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')" onpaste="value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')" oncontextmenu = "value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')">
+      <input type="hidden" name="authId" th:value="${authId}">
+      <input type="hidden" name="idType" value="1">
+      <input type="hidden" name="identifyType" value="2">
+      <input type="hidden" name="userId" th:value="${session.user.userId}">
+    </div>
+   <div style="clear: both;"></div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-3 control-label text-right"><span style="color: #FF0000;">*</span> 身份证号码</label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" id="inputPassword3" placeholder="身份证号码" name="idNumber" maxlength="25" onkeyup="this.value=this.value.replace(/[^\w_]/g,'');">
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+  <div class="form-group" >
+   <style type="text/css"> 
+
+* { font-size:12px; } 
+ .form-control{border-radius: 2px; border:1px solid #ccc;}
+ .report-file {
+            display: block;
+            position: relative;
+            width: 100%;
+            height: 120px;
+            overflow: hidden;
+            border: 1px solid #ccc;
+            color: #666;
+            cursor: pointer;
+            text-align: center;
+            float: left;
+            margin-right:5px;
+        }
+        .report-file span {
+            cursor: pointer;
+            display: block;
+            line-height: 120px;
+        }
+        .file-prew {
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            left:0;
+            width: 100%;
+            height: 120px;
+            font-size: 100px; 
+            opacity: 0; 
+            filter: alpha(opacity=0);
+        }
+        .odbg div{padding-right:0}
+        .btnn{padding: 10px 80px; background: #00BFFF; border-radius: 2px; color: #fff; }
+         #wenzi{margin: 20px 0;}
+        #wenzi p{ font-size: 12px;line-height: 30px;}
+        .wenjian{text-align: center; line-height: 40px;border: 1px solid #ccc;}
+</style>  
+   <label for="inputEmail3" class="col-sm-3 control-label text-right"><span style="color: #FF0000;">*</span> 身份证正反面 </label><br>
+  
+  <div class="odbg" style="margin-top:30px; margin-left:40px">
+   <div class="col-sm-4">
+   <div class="report-file">
+      <span><img src="../static/images/zheng1.png" th:src="@{~/images/zheng1.png}" style="height: 120px;"></span>
+      <input tabindex="3" size="3" name="report" class="file-prew" type="file" onchange="uploadFile(this)" photo-type="1">
+      <input type="hidden" name="photoId" th:value="${photo1} eq null ? null : ${photo1.recordId}">
+   </div>
+   <div class="wenjian">
+   	  正面
+   </div>
+   </div>
+   <div class="col-sm-4">
+   <div class="report-file">
+      <span><img src="../static/images/zheng2.png" th:src="@{~/images/zheng2.png}" style="height: 120px;"></span><input tabindex="3" size="3" name="report" class="file-prew" type="file" onchange="uploadFile(this)" photo-type="2">
+      <input type="hidden" name="photoId" th:value="${photo2} eq null ? null : ${photo2.recordId}">
+   </div>
+    <div class="wenjian">
+   	  反面
+   </div>
+   </div>
+   <div class="col-sm-4">
+   <div class="report-file">
+      <span><img src="../static/images/szheng.png" th:src="@{~/images/szheng.png}" style="height: 120px;"></span><input tabindex="3" size="3" name="report" class="file-prew" type="file" onchange="uploadFile(this)" photo-type="3">
+      <input type="hidden" name="photoId" th:value="${photo3} eq null ? null : ${photo3.recordId}">
+   </div>
+    <div class="wenjian" style="font-size: 12px; line-height: 40px;  ">
+   	  本人手持身份证照片，包含图像
+   </div>
+   </div>
+   </div> 
+    <div style="clear: both;"></div>
+  </div>
+<div class="col-md-offset-3 col-lg-9">
+	<div id="wenzi">
+    <h2>证件扫描上传说明：</h2>
+   <p>1. 请上传该企业证件照片</p>
+   <p>2. 拍照时对焦请置于身份证上，保证身份证信息清晰且无遮挡</p>
+   <p>3. 上传文件格式为png，jpg和jpeg</p>
+   <p>4. 文件大小不超过3M</p>
+   <p>5. 使用电子版版权合同文件时，请包含盖章页</p>
+   <p>6. 所有上传信息均会被上海我们信息科技妥善保管，不会用于其它
+       商业用途或传输给其它第三方</p>
+		
+	</div>
+	<button type="button" class="btn btnn" onclick="formSubmit()">提交</button>
+	<button type="button" class="btn btnn" onclick="window.history.back()" style="float: right;">返回</button>
+</div>
+  
+</form>
+<div style="clear: both;"></div>
+</div>
+
+
+</div>
+
+</div>
+
+
+<div style="clear: both;">
+	
+</div>
+<!-- footer -->
+
+
+	<div class="footer" >
+
+    <div class="agileinfo_footer_bottom1">
+			<div class="container">
+				    <p class="col-lg-2" style="padding-right: 0;"><a th:href="@{~/}">关于我们</a>&nbsp;&nbsp;<a href="javascript:;">法律协议</a></p>
+				
+					<p class="col-lg-10 text-right"> &copy;2017 wevolution Allg Rights Reserved. powered by 上海我们信息科技有限公司 <img th:src="@{~/images/pic1.gif}"  style="margin-top:5px;"/> 沪ICP备17045920号</p>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+		
+
+<!-- //footer -->
+<!-- JavaScripts -->
+<script type="text/javascript" src="../static/js/jquery-2.1.4.min.js" th:src="@{~/js/jquery-2.1.4.min.js}"></script>
+<script type="text/javascript" src="../static/js/sleekslider.js" th:src="@{~/js/sleekslider.js}"></script>
+<script type="text/javascript" src="../static/js/app.js" th:src="@{~/js/app.js}"></script>
+<script src="../static/js/bootstrap.js" th:src="@{~/js/bootstrap.js}"></script>
+<script src="../static/js/layer/layer.js" th:src="@{/js/layer/layer.js}"></script>
+<!-- //for bootstrap working -->
+<script type="text/javascript">
+function uploadFile(obj) {
+	var formData = new FormData();
+	formData.append('uploadfile', $(obj)[0].files[0]);
+	formData.append('photoId', $(obj).next().val());
+	formData.append('photoType', $(obj).attr("photo-type"));
+	 var file = $(obj)[0].files[0];
+	  //检测文件类型 
+	    if(file.type!='image/jpeg' && file.type!='image/png') { 
+	    	layer.msg("文件类型非法"); 
+		    return false; 
+	    } else{
+	        var size = Math.floor(file.size/1024); 
+	        if (size > 3000) { 
+	        	layer.msg("上传文件不得超过3M"); 
+		        return false; 
+	        }; 
+
+	     }
+	$.ajax({
+		//url : "/certification/auth",
+		url : "/certification/avatarS3/auth",
+		type : "POST",
+		data : formData,
+		enctype : 'multipart/form-data',
+		processData : false,
+		contentType : false,
+		cache : false,
+		success : function(data) {
+			var jsondata = JSON.parse(data);
+			if(jsondata.status=="0"){
+				$(obj).next().val(jsondata.data.photoId);
+				$(obj).prev().html('<img src="' + jsondata.data.fileName +'" style="height: 120px;">')
+//				$(obj).prev().html('<img src="/certification/auth/' + jsondata.data.fileName +'" style="height: 120px;">')
+			}else{
+				layer.msg(jsondata.msg);
+			}
+		},
+		error : function() {
+			layer.msg("服务器错误");
+		}
+	});
+
+} // function uploadFile
+function formSubmit() {
+	if($("input[name='realName']").val()==null||$("input[name='realName']").val()==""){
+		layer.msg("姓名不能为空");
+		return false;
+	}
+	if($.trim($("input[name='idNumber']").val())==null||$.trim($("input[name='idNumber']").val())==""){
+		layer.msg("证件号不能为空");
+		return false;
+	}else{
+		var allowancePersonValue = $.trim($("input[name='idNumber']").val());
+		if(isCardNo(allowancePersonValue) === false) { 
+			layer.msg("证件号非法");
+		 	return false; 
+		 } 
+		 //检查省份 
+		 else if(checkProvince(allowancePersonValue) === false) { 
+			layer.msg("证件号非法");
+		 	return false; 
+		 } 
+		 //校验生日 
+		 else if(checkBirthday(allowancePersonValue) === false) { 
+			 layer.msg("证件号非法");
+			 return false; 
+		 } 
+		 //检验位的检测 
+		 else if(checkParity(allowancePersonValue) === false) { 
+			 layer.msg("证件号非法");
+			 return false; 
+		 }
+	}
+	if($("input[name='photoId']").eq(0).val()==null||$("input[name='photoId']").eq(0).val()==""){
+		layer.msg("请上传证件正面");
+		return false;
+	}
+	if($("input[name='photoId']").eq(1).val()==null||$("input[name='photoId']").eq(1).val()==""){
+		layer.msg("请上传证件照反面");
+		return false;
+	}
+	if($("input[name='photoId']").eq(2).val()==null||$("input[name='photoId']").eq(2).val()==""){
+		layer.msg("请上传本人手持证件照");
+		return false;
+	}
+	$.ajax({
+		url : "/certification/certificate",
+		type : "POST",
+		data : $('#auth-form').serialize(),
+		cache : false,
+		success : function(data) {
+			var jsondata = JSON.parse(data);
+			if(jsondata.status=="0"){
+				window.location.href="/certification/getCertification.html";
+			}else {
+				layer.msg(jsondata.msg);
+			}
+		},
+		error : function() {
+			layer.msg("服务器错误");
+		}
+	});
+
+} // function uploadFile
+//身份证省的编码 
+var vcity={ 11:"北京",12:"天津",13:"河北",14:"山西",15:"内蒙古", 
+    21:"辽宁",22:"吉林",23:"黑龙江",31:"上海",32:"江苏", 
+    33:"浙江",34:"安徽",35:"福建",36:"江西",37:"山东",41:"河南", 
+    42:"湖北",43:"湖南",44:"广东",45:"广西",46:"海南",50:"重庆", 
+    51:"四川",52:"贵州",53:"云南",54:"西藏",61:"陕西",62:"甘肃", 
+    63:"青海",64:"宁夏",65:"新疆",71:"台湾",81:"香港",82:"澳门",91:"国外" 
+    }; 
+ 
+//检查号码是否符合规范，包括长度，类型 
+function isCardNo(card){ 
+ //身份证号码为15位或者18位，15位时全为数字，18位前17位为数字，最后一位是校验位，可能为数字或字符X 
+ var reg = /(^\d{15}$)|(^\d{17}(\d|X)$)/; 
+ if(reg.test(card) === false){ 
+ //alert("demo"); 
+ return false; 
+ } 
+ return true; 
+} 
+ 
+//取身份证前两位,校验省份 
+function checkProvince(card){ 
+ var province = card.substr(0,2); 
+ if(vcity[province] == undefined){ 
+ return false; 
+ } 
+ return true; 
+} 
+ 
+//检查生日是否正确 
+function checkBirthday(card){ 
+ var len = card.length; 
+ //身份证15位时，次序为省（3位）市（3位）年（2位）月（2位）日（2位）校验位（3位），皆为数字 
+ if(len == '15'){ 
+   var re_fifteen = /^(\d{6})(\d{2})(\d{2})(\d{2})(\d{3})$/; 
+   var arr_data = card.match(re_fifteen); 
+   var year = arr_data[2]; 
+   var month = arr_data[3]; 
+   var day = arr_data[4]; 
+   var birthday = new Date('19'+year+'/'+month+'/'+day); 
+   return verifyBirthday('19'+year,month,day,birthday); 
+ } 
+ //身份证18位时，次序为省（3位）市（3位）年（4位）月（2位）日（2位）校验位（4位），校验位末尾可能为X 
+ if(len == '18'){ 
+   var re_eighteen = /^(\d{6})(\d{4})(\d{2})(\d{2})(\d{3})([0-9]|X)$/; 
+   var arr_data = card.match(re_eighteen); 
+   var year = arr_data[2]; 
+   var month = arr_data[3]; 
+   var day = arr_data[4]; 
+   var birthday = new Date(year+'/'+month+'/'+day); 
+   return verifyBirthday(year,month,day,birthday); 
+ } 
+ return false; 
+} 
+ 
+//校验日期 
+function verifyBirthday(year,month,day,birthday){ 
+ var now = new Date(); 
+ var now_year = now.getFullYear(); 
+ //年月日是否合理 
+ if(birthday.getFullYear() == year && (birthday.getMonth() + 1) == month && birthday.getDate() == day) 
+ { 
+   //判断年份的范围（3岁到100岁之间) 
+   var time = now_year - year; 
+   if(time >= 3 && time <= 100) 
+   { 
+     return true; 
+   } 
+   return false; 
+ } 
+ return false; 
+} 
+ 
+//校验位的检测 
+function checkParity(card){ 
+ //15位转18位 
+ card = changeFivteenToEighteen(card); 
+ var len = card.length; 
+ if(len == '18'){ 
+   var arrInt = new Array(7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2); 
+   var arrCh = new Array('1', '0', 'X', '9', '8', '7', '6', '5', '4', '3', '2'); 
+   var cardTemp = 0, i, valnum; 
+   for(i = 0; i < 17; i ++) 
+   { 
+     cardTemp += card.substr(i, 1) * arrInt[i]; 
+   } 
+   valnum = arrCh[cardTemp % 11]; 
+   if (valnum == card.substr(17, 1)) 
+   { 
+     return true; 
+   } 
+   return false; 
+ } 
+ return false; 
+} 
+ 
+//15位转18位身份证号 
+function changeFivteenToEighteen(card){ 
+ if(card.length == '15') 
+ { 
+   var arrInt = new Array(7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2); 
+   var arrCh = new Array('1', '0', 'X', '9', '8', '7', '6', '5', '4', '3', '2'); 
+   var cardTemp = 0, i;  
+   card = card.substr(0, 6) + '19' + card.substr(6, card.length - 6); 
+   for(i = 0; i < 17; i ++) 
+   { 
+     cardTemp += card.substr(i, 1) * arrInt[i]; 
+   } 
+   card += arrCh[cardTemp % 11]; 
+   return card; 
+ } 
+ return card; 
+} 
+</script>
+</body>
+</html>

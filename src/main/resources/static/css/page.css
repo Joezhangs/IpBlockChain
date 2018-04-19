@@ -1,0 +1,29 @@
+.page{
+    list-style: none !important;
+}
+.page>li{
+    float: left !important;
+    padding: 5px 10px !important;
+    cursor: pointer !important;
+    min-height: auto !important;
+}
+.page .pageItem{
+    border: solid thin #DDDDDD !important;
+    margin: 5px !important;
+}
+.page .pageItemActive{
+    border: solid thin #0099FF !important;
+    margin: 5px !important;
+    background-color: #0099FF !important;
+    color:white !important;
+}
+.page .pageItem:hover{
+    border: solid thin #0099FF !important;
+    background-color: #0099FF !important;
+    color:white !important;
+}
+.page .pageItemDisable{
+    border: solid thin #DDDDDD !important;
+    margin: 5px !important;
+    background-color: #DDDDDD !important;
+}

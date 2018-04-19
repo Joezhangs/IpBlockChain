@@ -1,0 +1,379 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+	  xmlns:width="http://www.w3.org/1999/xhtml" xmlns:height="http://www.w3.org/1999/xhtml">
+<head>
+<title>Our technology - company profile.</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<link rel="icon" type="image/x-icon" th:href="@{~/images/favicon.ico}">
+<link th:href="@{/css/bootstrap.css}" rel='stylesheet' type='text/css'/>
+<link th:href="@{/css/font-awesome.css}" rel="stylesheet"> 
+<link rel="stylesheet" th:href="@{/css/slider_en.css}">
+<link th:href="@{/css/style.css}" rel='stylesheet' type='text/css' />	
+<link rel="stylesheet" type="text/css" th:href="@{/css/mislider.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{/css/mislider-skin-cameo.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{/css/avatar.css}"/>
+<link rel="stylesheet" type="text/css" href="../static/css/nav.css" th:href="@{~/css/nav.css}"/>
+</head>
+<style type="text/css">
+	/** 重置浏览器默认标签样式 */
+	body,ul,li{margin:0;padding:0;}
+	.xttblog{
+		width: 1150px;
+		margin-top:50px;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+	}
+	.box{margin-left: 5px;margin-top: 5px;list-style-type:none;}
+	.box:after{
+		content: ".";
+		display: block;
+		line-height: 0;
+		width:0;
+		height: 0;
+		clear: both;
+		visibility: hidden;
+		overflow: hidden;
+	}
+	.box li{float:left;line-height: 230px;text-align: center;padding-left: 50px}
+	.box li a,.box li a:visited{
+		display:block;
+		border: 5px solid #ccc;
+		width: 380px;
+		height: 230px;
+		text-align: center;
+		margin-left: -5px;
+		margin-top: -5px;
+		position: relative;
+		z-index: 1;
+	}
+	.box li a:hover{border-color: #f00;z-index: 2;}
+</style>
+<body>
+	<div id="" style="position: relative;">
+		<a  onclick="click_scroll();"><i class="fa fa-angle-double-down"   style="position: absolute; bottom: 0; left: 50%; z-index: 999; color: #fff; font-size: 36px; " ></i></a>
+
+	<script type="text/javascript"> 
+		function click_scroll() {
+			var scroll_offset = $("#pos").offset(); //得到pos这个div层的offset，包含两个值，top和left 
+			$("body,html").animate({
+				scrollTop : scroll_offset.top
+			//让body的scrollTop等于pos的top，就实现了滚动 
+			}, 0);
+		}
+        function whitebook(){
+            var url="/IpBlockChain?fileName%3Dwhitebook_en.pdf";
+            window.open("pdfjs/web/viewer.html?file="+url);
+        }
+	</script> 
+
+	<div class="top_banner" id="topl">
+		<!-- SVG Arrows -->
+		<div class="svg-wrap">
+			<svg width="64" height="64" viewBox="0 0 64 64">
+				<path id="arrow-left" d="M46.077 55.738c0.858 0.867 0.858 2.266 0 3.133s-2.243 0.867-3.101 0l-25.056-25.302c-0.858-0.867-0.858-2.269 0-3.133l25.056-25.306c0.858-0.867 2.243-0.867 3.101 0s0.858 2.266 0 3.133l-22.848 23.738 22.848 23.738z" />
+			</svg>
+			<svg width="64" height="64" viewBox="0 0 64 64">
+				<path id="arrow-right" d="M17.919 55.738c-0.858 0.867-0.858 2.266 0 3.133s2.243 0.867 3.101 0l25.056-25.302c0.858-0.867 0.858-2.269 0-3.133l-25.056-25.306c-0.858-0.867-2.243-0.867-3.101 0s-0.858 2.266 0 3.133l22.848 23.738-22.848 23.738z" />
+			</svg>
+		</div>
+		<div class="top_header_agile_info_w3ls">
+		  <nav class="navbar navbar-default">
+				<div class="navbar-header navbar-left">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">版权</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<h1>
+						<a class="navbar-brand" href="company_en.html" th:href="@{~/company_en.html}">
+							<!--<span>w</span>shanghai-->
+							<img src="../static/images/LOGOL.png" th:src="@{~/images/LOGOL.png}"/>
+						</a></h1>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+
+					<div id="m_nav_container" class="m_nav wthree_bg">
+						<nav class="menu menu--sebastian">
+							<ul id="m_nav_list" class="m_nav menu__list">
+								<li class="m_nav_item" id="m_nav_item_1"> <a th:href="@{~/home_en}" class="link link--kumya"><span >Home</span></a></li>
+								<li class="m_nav_item" id="moble_nav_item_3"> <a th:href="@{~/affirm_en.html}" class="link link--kumya"><span >CopyrightAffirm</span></a></li>
+								<li class="m_nav_item" id="moble_nav_item_4"> <a th:href="@{~/copyright_show_en.html}" class="link link--kumya"><span >Copyright</span></a></li>
+							    <li class="m_nav_item" id="moble_nav_item_4"> <a th:href="@{~/consulting_en.html}" class="link link--kumya"><span >Consulting</span></a></li>
+							    <li class="m_nav_item dropdown" id="moble_nav_item_2"><a th:href="@{~/case_en.html}" class="dropdown-toggle link link--kumya" ><span >Cases</span></a>	</li>
+								 <li class="m_nav_item dropdown" id="moble_nav_item_2" th:if="${session.user} != null"><a href="blockchain_show_en.html" th:href="@{~/chain/statistics_en.html}" class="dropdown-toggle link link--kumya" ><span>BlockDisplay</span></a>	</li>
+								<li class="m_nav_item active" id="m_nav_item_1" > <a href="javascript:;" class="link link--kumya"><span >Company</span></a></li>
+								<li th:if="${session.user} != null" class="m_nav_item dropdown" id="moble_nav_item_6"> 
+									<span class="link link--kumya"><span class="dropbtn" th:text="${session.user.userName}==null?${#strings.length(session.user.userNickname)>5?#strings.substring(session.user.userNickname,0,5)+'...':session.user.userNickname}:${#strings.length(session.user.userName)>5?#strings.substring(session.user.userName,0,5)+'...':session.user.userName}">登录/注册</span><i class="menu-ico"></i></span>
+									<div class="dropdown-content">
+									    <a th:href="@{~/user/userInfo_en.html}">UserCentered</a>
+									    <a th:href="@{~/auth/longOut_en}">Sign Out</a>
+								  </div>
+								</li>
+								<li th:unless="${session.user} != null" class="m_nav_item" id="moble_nav_item_6"> 
+									<a  href="login.html" class="link link--kumya" th:href="@{/auth/loginPage_en.html}">
+										<span>Login/Register</span>
+									</a> 
+								</li>
+								<li class="m_nav_item"  style="float: right;">
+									<select  name="selectDropDown" style="height: 34px; margin-top:5px;">
+										<option value="0">ENGLISH</option>
+										<option value="1">中文 (简体)</option>
+									</select>
+								</li>
+							</ul>
+						</nav>
+					</div>
+
+					</nav>
+				</div>
+		</div>
+	<!--<div class="r-content">-->
+	<div class="sleekslider" id="home">
+		<div id=""  style="width: 100%; height:600px ; background: url(images/wallhaven14_en.jpg) no-repeat;  background-size: cover;">
+        </div>
+		<div class="slide active bg-6">
+			<div class="slide-container">
+				<div class="slide-content">
+					<p class="wow fadeInLeft" data-wow-duration=".8s" data-wow-delay=".2s"></p>
+				</div>
+			</div>
+		</div>
+		<div class="slide bg-8">
+			<div class="slide-container">
+				<div class="slide-content">
+					<p class="wow fadeInLeft" data-wow-duration=".8s" data-wow-delay=".4s"></p>
+
+				</div>
+			</div>
+		</div>
+    </div>
+
+	
+<!--<div class="item" style="width: 100%; height: 100%; position: relative;" >
+  <img src="images/wallhaven-12018.jpg" alt="..." style="width: 100%; min-height: 400px;height:500px;">
+  
+</div>-->
+ </div>
+</div>
+<div class="" style="background: #f0f0f0;">
+
+    <!--team-->
+<div  style="background: #05193d;">
+
+</div>
+</div>
+	<div>
+		<img  th:src="@{~/images/about_wec_en.png}" style="width: 100%; "/>
+
+		<img  th:src="@{~/images/ip_manager_en.png}" style="width: 100%; "/>
+		<!--<a href="https://pan.baidu.com/s/1O73ZBH-E6f8_tuSFQOIdDA">
+			<div style="font-size: 20px;text-align: center; font-weight: bold;margin-bottom: 20px;margin-top: -10px;">
+				<img src="../static/images/ic_white_book.png" th:src="@{~/images/ic_white_book.png}" width="50px" height="50px" style="border: 0px;margin-bottom: -15px;margin-right: 10px"/>
+				白皮书
+			</div>
+		</a>-->
+
+		<div style="font-size: 20px;text-align: center; font-weight: bold;margin-bottom: 20px;margin-top: -10px;">
+			<img src="../static/images/ic_white_book.png" th:src="@{~/images/ic_white_book.png}" width="50px" height="50px" style="border: 0px;margin-bottom: -15px;margin-right: 10px"/>
+			<button onclick="whitebook()">Whitepaper</button>
+		</div>
+		<img  th:src="@{~/images/changjing_wec_en.png}" style="width: 100%; "/>
+		<!--<img  th:src="@{~/images/wallhaven15.jpg}" style="width: 100%; "/>-->
+		<img  th:src="@{~/images/case_en.jpg}" style="width: 100%; "/>
+		<img  th:src="@{~/images/ip_card_en.png}" style="width: 100%; "/>
+	</div>
+
+
+<!--<div class="container">
+	<div class="home_news">
+		<div style="font-size: 25px;text-align: center; font-weight: bold">活动案例</div>
+	 	<div class="news_com">
+			<div class="xttblog">
+				<ul class="box">
+					<li>
+						<img th:src="@{~/images/ali1.jpg}" style="width: 300px;height: 350px"/>
+					</li>
+					<li>
+						<img th:src="@{~/images/ali2.jpg}" style="width: 300px;height: 350px"/>
+					</li>
+					<li>
+						<img th:src="@{~/images/ali3.jpg}" style="width: 300px;height: 350px"/>
+					</li>
+					<li>
+						<img th:src="@{~/images/ali4.jpg}" style="width: 300px;height: 350px"/>
+					</li>
+					<li>
+						<img th:src="@{~/images/dula1.jpg}" style="width: 300px;height: 350px"/>
+					</li>
+					<li>
+						<img th:src="@{~/images/dula2.jpg}" style="width: 300px;height: 350px"/>
+					</li>
+					<li>
+						<img th:src="@{~/images/kenan1.jpg}" style="width: 300px;height: 350px"/>
+					</li>
+					<li>
+						<img th:src="@{~/images/kenan2.jpg}" style="width: 300px;height: 350px"/>
+					</li>
+					<li>
+						<img th:src="@{~/images/yintao1.jpg}" style="width: 300px;height: 350px"/>
+					</li>
+					<li>
+						<img th:src="@{~/images/yintao2.jpg}" style="width: 300px;height: 350px"/>
+					</li>
+					<li>
+						<img th:src="@{~/images/zhangxiao1.jpg}" style="width: 300px;height: 350px"/>
+					</li>
+					<li>
+						<img th:src="@{~/images/zhangxiao2.jpg}" style="width: 300px;height: 350px"/>
+						&lt;!&ndash;<div style="font-size: 14px;word-wrap:break-word; word-break:break-all;width: 200px;text-align: center">知名耽美作家水千丞原作改编阿里影业影视化预定中</div>&ndash;&gt;
+					</li>
+				</ul>
+			</div>
+	 		<div class="top_all" id="ren3">
+				<h3><img src="images/logoll.png" width="30px"/>区块链版权登记证书</h3>
+				
+			</div>
+			<div class="news_nei clearfix">
+				<div class="n_left  wow bounceInLeft">
+					<div class="imgd">
+						<a href="#"><img src="../static/images/company.jpg" th:src="@{~/images/company.jpg}" alt="" class="vcenter" width="100%" /></a>
+						<i></i>	
+					</div>
+				</div>
+				<div class="n_right">
+					<ul>
+						<li class="clearfix wow bounceInRight"  data-wow-delay="0.5s">
+							<a href="#">
+							<span class="ri">
+								<i style="color: #7be3fa;">01</i>
+								
+							</span>
+							<div class="wen_nei">
+								<h4>填写相关信息
+</h4>
+								<p>上海我们信息科技有限公司</p>
+							</div>
+							</a>
+						</li>
+						<li class="clearfix wow bounceInRight"  data-wow-delay="1s">
+							<a href="javascript:;">
+							<span class="ri">
+								<i style="color: #5bd0ea;">02</i>
+								
+							</span>
+							<div class="wen_nei">
+								<h4>上传作品文件
+</h4>
+								<p>www.wevolution.cn</p>
+							</div>
+							</a>
+						</li>
+						<li class="clearfix wow bounceInRight"  data-wow-delay="1.5s">
+							<a href="javascript:;">
+							<span class="ri">
+								<i style="color: #43b4cc;">03</i>
+								
+							</span>
+							<div class="wen_nei">
+								<h4>填写作品信息
+</h4>
+								<p>2015年8月1日</p>
+							</div>
+							</a>
+						</li>
+							<li class="clearfix wow bounceInRight"  data-wow-delay="2s">
+							<a href="javascript:;">
+							<span class="ri">
+								<i style="color: #2e9eb6;">04</i>
+								
+							</span>
+							<div class="wen_nei">
+								<h4>填写作者及著作权信息
+
+</h4>
+								<p>我们的版权管家</p>
+							</div>
+							</a>
+						</li>
+							<li class="clearfix wow bounceInRight"  data-wow-delay="2.5s">
+							<a href="javascript:;">
+							<span class="ri">
+								<i style="color: #2e9eb6;">05</i>
+								
+							</span>
+							<div class="wen_nei">
+								<h4>审核、生成区块链版权证书
+
+</h4>
+								<p>审核用户登记的作品、生成区块链版权证书</p>
+							</div>
+							</a>
+						</li>
+							
+					</ul>
+				</div>
+			</div>
+	 	</div>
+	 </div>
+</div>-->
+
+
+<span id="" style="position: fixed; bottom: 20px; right: 20px; color: #fff; width: 60px; height: 60px; background: rgba(50,195,255,0.4);font-size: 36px; text-align: center; line-height: 60px;">
+	<a href="#topl" style="color: #fff;"><i class="fa fa-chevron-circle-up"></i></a>
+</span>
+
+
+<!-- footer -->
+	<div class="footer">
+		<img  th:src="@{~/images/huoban_wec_en.jpg}" style="width: 100%; "/>
+		<div class="agileinfo_footer_bottom1">
+			<div class="container">
+				<p class="col-lg-3" style="display: inline-block; letter-spacing:0px;"><a th:href="@{~/company_en.html}">About Us</a>&nbsp; &nbsp;<a href="javascript:;">Legal Agreements</a></p>
+
+				<p class="col-lg-9  text-right" style="display: inline-block;letter-spacing:0px;" > &copy;2017 wevolution Allg Rights Reserved. powered by Shanghai WE Info and Tech Co.,Ltd <img th:src="@{~/images/pic1.gif}"  style="margin-top:5px;"/> Shanghai ICP no. 17045920</p>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- JavaScripts -->
+<script type="text/javascript" th:src="@{~/js/jquery-2.1.4.min.js}"></script>
+<script type="text/javascript" th:src="@{~/js/sleekslider.js}"></script>
+<script type="text/javascript" th:src="@{~/js/app.js}"></script>
+<script th:src="@{~/js/bootstrap.js}"></script>
+<script th:src="@{~/js/wow.min.js}" type="text/javascript" charset="utf-8"></script>
+<script th:src="@{~/js/pdf/pdf.js}" type="text/javascript"></script>
+<script th:src="@{~/js/pdf/pdf.worker.js}" type="text/javascript"></script>
+<!-- //for bootstrap working -->
+<script>
+if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))){
+	new WOW().init();
+};
+window.onload = function ()
+{
+    var sel = document.getElementsByName('selectDropDown')[0];
+    sel.onchange = function ()
+    {
+        // var options=$("#test option:selected");
+        var val = this.value;
+        switch (val)
+        {
+            case "0":
+                break;
+            case "1":
+                window.location.href='/';
+                break;
+            default:
+                break;
+        }
+    }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,406 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Our technology - block display</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<link rel="icon" type="image/x-icon" th:href="@{~/images/favicon.ico}">
+<link th:href="@{~/css/bootstrap.css}" rel='stylesheet' type='text/css' />
+<link th:href="@{~/css/font-awesome.css}" rel="stylesheet"> 
+<link rel="stylesheet" th:href="@{~/css/slider.css}">
+<link th:href="@{~/css/style.css}" rel='stylesheet' type='text/css' />	
+<link rel="stylesheet" type="text/css" th:href="@{~/css/mislider.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{~/css/mislider-skin-cameo.css}"/>
+<link rel="stylesheet" type="text/css" href="../static/css/login.css" th:href="@{~/css/login.css}"/>
+<link th:href="@{/css/nav.css}" rel='stylesheet' type='text/css' />
+</head>
+<style type="text/css">
+	 body{background: #f0f0f0;}
+	.top_header_agile_info_w3ls{background: #fff;}
+	 #m_nav_list li a{color: #666;}
+</style>
+	<body>
+	<div id="" style="position: relative;">
+
+
+	<div class="top_banner" id="topl">
+		<!-- SVG Arrows -->
+	
+		<div class="top_header_agile_info_w3ls">
+		  <nav class="navbar navbar-default">
+				<div class="navbar-header navbar-left">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">copyright</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<h1>
+						<a class="navbar-brand" href="company_en.html" th:href="@{/company_en.html}">
+							<img th:src="@{~/images/logoll.png}"/>
+						</a></h1>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+					
+					<div id="m_nav_container" class="m_nav wthree_bg">
+						<nav class="menu menu--sebastian">
+							<ul id="m_nav_list" class="m_nav menu__list">
+								<li class="m_nav_item" id="m_nav_item_1"> <a href="company_en.html" th:href="@{~/company_en.html}" class="link link--kumya"><span >Home</span></a></li>
+								<li class="m_nav_item" id="moble_nav_item_3"> <a href="right_affirm_en.html" th:href="@{~/affirm_en.html}" class="link link--kumya"><span >CopyrightAffirm</span></a></li>
+								<li class="m_nav_item" id="moble_nav_item_4"> <a href="copyright_show_en.html" th:href="@{~/copyright_show_en.html}" class="link link--kumya"><span >Copyright</span></a></li>
+							    <li class="m_nav_item" id="moble_nav_item_5"> <a href="consulting_en.html" th:href="@{~/consulting_en.html}" class="link link--kumya"><span >Consulting</span></a></li>
+								<li class="m_nav_item" id="moble_nav_item_6"> <a href="case_en.html" th:href="@{~/case_en.html}" class="link link--kumya"><span >Cases</span></a></li>
+								 <li class="m_nav_item  active" id="moble_nav_item_7" th:if="${session.user} != null"><a href="#" class=" link link--kumya active" ><span>BlockDisplay</span></a></li>
+								<li class="m_nav_item" id="m_nav_item_1"> <a th:href="@{~/company_en.html}" class="link link--kumya"><span>Company</span></a></li>
+								<li th:if="${session.user} != null" class="m_nav_item dropdown-back-white" id="moble_nav_item_8"> 
+									<span class="link link--kumya"><span class="dropbtn-back-white" th:text="${session.user.userName}==null?${#strings.length(session.user.userNickname)>5?#strings.substring(session.user.userNickname,0,5)+'...':session.user.userNickname}:${#strings.length(session.user.userName)>5?#strings.substring(session.user.userName,0,5)+'...':session.user.userName}">Sign in/Sign up</span><i class="menu-ico-back-white"></i></span>
+									<div class="dropdown-content-back-white">
+									    <a th:href="@{~/user/userInfo_en.html}">User center</a>
+									    <a th:href="@{~/auth/longOut_en}">Sign Out</a>
+								  </div>
+								</li>
+								<li th:unless="${session.user} != null" class="m_nav_item" id="moble_nav_item_8"> 
+								<!-- <div class="dropdown" th:if="${session.user} != null">
+								  <span class="dropbtn link link--kumya" th:text="${session.user.userName}==null?${session.user.userNickname}:${session.user.userName}">登录/注册</span>
+								  <div class="dropdown-content">
+								    <a th:href="@{~/user/userInfo.html}">用户中心</a>
+								    <a th:href="@{~/auth/longOut}">退出</a>
+								  </div>
+								</div> -->
+									<a  href="login_en.html" class="link link--kumya" th:href="@{/auth/loginPage_en.html}">
+										<span>Sign in/Sign up</span>
+									</a> 
+								</li>
+							</ul>
+						</nav>
+					</div>
+
+					</nav>
+				</div>
+		</div>
+      <!--welcome-->
+ </div>
+	</div>
+
+<style type="text/css">
+	.formd{padding-top: 120px; min-height: 892px;}
+	.formdr{background: #fff; width:100%; height: 100%;}
+	.formdl{padding: 80px 0 40px 0; min-height: 600px; }
+	.formdl label{font-size: 14px;}
+</style>
+<div class="formd">
+	
+
+<div class=" container">
+<div class="formdr col-lg-12" >
+
+   <style type="text/css"> 
+
+* { font-size:12px; } 
+ .form-control{border-radius: 2px; border:1px solid #ccc;}
+ .report-file {
+            display: block;
+            position: relative;
+            width: 150px;
+            height: 150px;
+            overflow: hidden;
+            border: 1px solid #ccc;
+            color: #666;
+            cursor: pointer;
+            text-align: center;
+            float: left;
+            margin-right:5px;
+        }
+        .report-file span {
+            cursor: pointer;
+            display: block;
+            line-height: 150px;
+        }
+        .file-prew {
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            left:0;
+            width: 150px;
+            height: 150px;
+            font-size: 100px; 
+            opacity: 0; 
+            filter: alpha(opacity=0);
+        }
+        .btnn{padding: 10px 80px; background: #00BFFF; border-radius: 2px; color: #fff; }
+         #wenzi{margin: 20px 0;}
+        #wenzi p{ font-size: 12px;line-height: 30px;}
+</style>  
+
+  <div class="" >
+               
+                <!-- /top tiles -->
+                  <div class="col-md-7 col-sm-7 col-xs-12" style="margin-top: 150px;">
+
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+
+                          <div id="candiv1" style="height: 400px; width: 100%;">
+
+                          </div>
+                      </div>
+
+                      <div class="clearfix"></div>
+                      <!-- <div class="col-md-12 col-sm-12 col-xs-12" style="margin-top: 80px;">
+
+                          <div id="candiv" style="height: 260px;width: 100%;"">
+
+                          </div>
+                      </div>
+                      <div class="clearfix"></div> -->
+
+
+                  </div>
+                  <div class="col-md-5 col-sm-5 col-xs-12" style="margin-top: 40px;"  >
+                  <div class="col-md-12 col-sm-12 col-xs-12 " id="kuaizhang" th:text="${total}">667</div>
+                      <div class="col-md-12 col-sm-12 col-xs-12" id="biaogeid">
+                          <div class="col-md-2 col-sm-2 col-xs-2 ">Block ID</div>
+                          <div class="col-md-3 col-sm-2 col-xs-2 ">Before a block hash</div>
+                          <div class="col-md-2 col-sm-2 col-xs-2 ">Block Height </div>
+                          <div class="col-md-2 col-sm-2 col-xs-2 ">The time stamp</div>
+                          <div class="col-md-3 col-sm-2 col-xs-2 "> Block Hash</div>
+                      </div>
+    <div class="bcon">
+	<h2 style="opacity:0;">...</h2>
+	<!-- 代码开始 -->
+	<div class="list_lh">
+		<ul id="dvmq">
+			 <li th:each="list : ${list}">
+                 <div class="col-md-12 col-sm-12 col-xs-12 biaogeidnei">
+                     <div class="col-md-2 col-sm-2 col-xs-2 " th:text="${list.id}">15</div>
+                     <div class="col-md-3 col-sm-2 col-xs-2 " th:title="${list.pre_hash}" th:text="${list.pre_hash}">151</div>
+                     <div class="col-md-2 col-sm-2 col-xs-2 " th:text="${list.height}">10</div>
+                     <div class="col-md-2 col-sm-2 col-xs-2 " th:title="${list.timestamp}" th:text="${list.timestamp}">12826</div>
+                     <div class="col-md-3 col-sm-2 col-xs-2 " th:title="${list.hash}" th:text="${list.hash}">C105858253</div>
+                 </div>
+             </li>
+		</ul>
+	</div>
+	
+
+<div style="clear: both;"></div>
+</div>
+<script type="text/javascript" th:src="@{~/js/jquery.min.js}">
+	
+</script>
+<script th:src="@{~/js/jquery-2.1.4.min.js}"></script>
+<script th:src="@{~/js/chart.js}"></script>
+<script th:src="@{~/js/echarts.min.js}"></script>
+<script type="text/javascript" th:src="@{~/js/scroll.js}" ></script>
+<script type="text/javascript" th:src="@{~/js/jquery.imgscroll.min.js}" ></script>
+<script th:inline="javascript">
+/*<![CDATA[*/
+    var signNum = /*[[${signNum}]]*/;
+    var listLength = /*[[${#lists.size(list)}]]*/;
+/*]]>*/
+</script>
+<script>
+
+	$('.list_lh li:even').addClass('lieven');
+	if(listLength>7){
+		imgScroll.rolling({
+			name:'list_lh',
+			width:'514px',
+			height:'68px',
+			direction:'top',
+			speed:30,
+			addcss:true
+		});
+	}
+
+
+   /*  // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('candiv'));
+
+    // 指定图表的配置项和数据
+    option = {
+
+
+        title: {
+            text: 'Block formations'
+        },
+        tooltip : {
+            trigger: 'axis'
+        },
+        legend: {
+            data:['TBC','Video ABC','Watch ABC','User ABC']
+        },
+        toolbox: {
+            feature: {
+                saveAsImage: {}
+            }
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis : [
+            {
+                type : 'category',
+                boundaryGap : false,
+                data : ['20170226','20170227','20170228']
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value'
+            }
+        ],
+        dataZoom: [
+            {   // 这个dataZoom组件，默认控制x轴。
+                type: 'slider', // 这个 dataZoom 组件是 slider 型 dataZoom 组件
+                start: 10,      // 左边在 10% 的位置。
+                end: 60         // 右边在 60% 的位置。
+            }
+        ],
+        series : [
+            {
+                name:'TBC',
+                type:'line',
+                stack: '总量',
+                areaStyle: {normal: {}},
+                data:[1, 0, 1]
+            },
+            {
+                name:'Video ABC',
+                type:'line',
+                stack: '总量',
+                areaStyle: {normal: {}},
+                data:[2, 0, 1]
+            },
+            {
+                name:'Watch ABC',
+                type:'line',
+                stack: '总量',
+                areaStyle: {normal: {}},
+                data:[5,0, 4]
+            },
+            {
+                name:'User ABC',
+                type:'line',
+                stack: '总量',
+                areaStyle: {normal: {}},
+                data:[3,  0, 2]
+            },
+
+        ]
+    };
+
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option); */
+
+	var date = [];
+    var user_num = [];
+    var works_num = [];
+    var block_size = [];
+    $.each(signNum,function(i,n){
+    	if(i<7){
+	    	date.push(n.date_day);
+	    	user_num.push(n.user_num);
+	    	works_num.push(n.works_num);
+	    	block_size.push(n.block_size);
+    	}
+    })
+    var myChart2 = echarts.init(document.getElementById('candiv1'));
+    option1 = {
+        title: {
+            text: 'count'
+        },
+        tooltip : {
+            trigger: 'axis'
+        },
+        legend: {
+            data:['User','Copyright','BlockNum']
+        },
+        toolbox: {
+            feature: {
+                saveAsImage: {}
+            }
+        },
+        grid: {
+            left: '3%',
+            right: '5%',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis : [
+            {
+                type : 'category',
+                boundaryGap : false,
+                data : date
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value'
+            }
+        ],
+        series : [
+            {
+                name:'User',
+                type:'line',
+                areaStyle: {normal: {}},
+                data:user_num
+            },
+            {
+                name:'Copyright',
+                type:'line',
+                areaStyle: {normal: {}},
+                data:works_num
+            },
+            {
+                name:'BlockNum',
+                type:'line',
+                areaStyle: {normal: {}},
+                data:block_size
+            },
+
+        ]
+    };
+
+    myChart2.setOption(option1);
+</script>
+
+</div>
+
+</div>
+
+
+<div style="clear: both;">
+	
+</div>
+<!-- footer -->
+</div>
+</div>
+</div>
+	<div class="footer">
+		<div class="agileinfo_footer_bottom1">
+			<div class="container">
+				<p class="col-lg-3" style="display: inline-block; letter-spacing:0px;"><a th:href="@{~/company_en.html}">About Us</a>&nbsp; &nbsp;<a href="javascript:;">Legal Agreements</a></p>
+
+				<p class="col-lg-9  text-right" style="display: inline-block;letter-spacing:0px;" > &copy;2017 wevolution Allg Rights Reserved. powered by Shanghai WE Info and Tech Co.,Ltd <img th:src="@{~/images/pic1.gif}"  style="margin-top:5px;"/> Shanghai ICP no. 17045920</p>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+
+
+<!-- //footer -->
+<!-- JavaScripts -->
+<script type="text/javascript" th:src="@{~/js/jquery-2.1.4.min.js}"></script>
+<script type="text/javascript" th:src="@{~/js/sleekslider.js}"></script>
+<script type="text/javascript" th:src="@{~/js/app.js}"></script>
+<script th:src="@{~/js/bootstrap.js}"></script>
+<!-- //for bootstrap working -->
+</body>
+</html>

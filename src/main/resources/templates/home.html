@@ -1,0 +1,660 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>我们科技</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<link rel="icon" type="image/x-icon" th:href="@{~/images/favicon.ico}">
+<link th:href="@{/css/bootstrap.css}" rel='stylesheet' type='text/css'/>
+<link th:href="@{/css/font-awesome.css}" rel="stylesheet"> 
+<link rel="stylesheet" th:href="@{/css/slider.css}">
+<link th:href="@{/css/style.css}" rel='stylesheet' type='text/css' />	
+<link rel="stylesheet" type="text/css" th:href="@{/css/mislider.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{/css/mislider-skin-cameo.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{~/css/nav.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{~/css/dist/mfb.css}"/>
+</head>
+	<body>
+	<div id="" style="position: relative;">
+		<a  onclick="click_scroll();"><i class="fa fa-angle-double-down"   style="position: absolute; bottom: 0; left: 50%; z-index: 999; color: #fff; font-size: 36px; " ></i></a>
+		<script type="text/javascript">
+			function click_scroll() {
+				var scroll_offset = $("#pos").offset(); //得到pos这个div层的offset，包含两个值，top和left 
+				$("body,html").animate({
+					scrollTop : scroll_offset.top
+				//让body的scrollTop等于pos的top，就实现了滚动 
+				}, 0);
+			}
+		</script>
+
+		<div class="top_banner" id="topl" th:replace="header :: header"></div>
+		<!--<div class="banner_agile_info_wthree"><h2>您的版权管家</h2></div>-->
+		<div class="sleekslider" id="home">
+		
+			<!-- Slider Pages -->
+			 <!--<div class="slide active bg-1">
+				<div class="slide-container">
+					<div class="slide-content">
+						<p class="wow fadeInLeft" data-wow-duration=".8s" data-wow-delay=".4s">我们信息科技</p>	
+					</div>
+				</div>
+			</div>
+			<div class="slide bg-2">
+				<div class="slide-container">
+					<div class="slide-content">
+						<p class="wow fadeInLeft" data-wow-duration=".8s" data-wow-delay=".4s">我们信息科技</p>	
+
+					</div>
+				</div>				
+			</div>
+			<div class="slide bg-3">
+				<div class="slide-container">
+					<div class="slide-content">
+							<p class="wow fadeInLeft" data-wow-duration=".8s" data-wow-delay=".4s">我们信息科技</p>	
+
+					</div>
+				</div>				
+			</div>
+			<div class="slide bg-4">
+				<div class="slide-container">
+					<div class="slide-content">
+							<p class="wow fadeInLeft" data-wow-duration=".8s" data-wow-delay=".4s">我们信息科技</p>	
+
+					</div>
+				</div>				
+			</div>
+			<div class="slide bg-5">
+				<div class="slide-container">
+					<div class="slide-content">
+							<p class="wow fadeInLeft" data-wow-duration=".8s" data-wow-delay=".2s">我们信息科技</p>	
+
+					</div>
+				</div>				
+			</div>-->
+			<!--<div class="slide active bg-6">
+				<div class="slide-container">
+					&lt;!&ndash;<div class="slide-content">
+						<p class="wow fadeInLeft" data-wow-duration=".8s" data-wow-delay=".2s">我们信息科技</p>
+					</div>&ndash;&gt;
+				</div>
+			</div>-->
+			<div class="slide active bg-6">
+				<div class="slide-container">
+					<div class="slide-content">
+						<p class="wow fadeInLeft" data-wow-duration=".8s" data-wow-delay=".2s"></p>
+					</div>
+				</div>
+			</div>
+			<!--<div class="slide bg-7">
+				<div class="slide-container">
+					<div class="slide-content">
+						<p class="wow fadeInLeft" data-wow-duration=".8s" data-wow-delay=".4s"></p>
+
+					</div>
+				</div>
+			</div>-->
+
+			 <!--<div class="slide active bg-1">
+				<div class="slide-container">
+					<div class="slide-content">
+						<p class="wow fadeInLeft" data-wow-duration=".8s" data-wow-delay=".2s">我们信息科技</p>	
+					</div>
+				</div>
+			</div>
+			<div class="slide bg-2">
+				<div class="slide-container">
+					<div class="slide-content">
+						<p class="wow fadeInLeft" data-wow-duration=".8s" data-wow-delay=".4s">我们信息科技</p>	
+
+					</div>
+				</div>				
+			</div>
+			<div class="slide bg-3">
+				<div class="slide-container">
+					<div class="slide-content">
+							<p class="wow fadeInLeft" data-wow-duration=".8s" data-wow-delay=".2s">我们信息科技</p>	
+
+					</div>
+				</div>				
+			</div>
+			<div class="slide bg-4">
+				<div class="slide-container">
+					<div class="slide-content">
+							<p class="wow fadeInLeft" data-wow-duration=".8s" data-wow-delay=".2s">我们信息科技</p>	
+
+					</div>
+				</div>				
+			</div>
+			<div class="slide bg-5">
+				<div class="slide-container">
+					<div class="slide-content">
+							<p class="wow fadeInLeft" data-wow-duration=".8s" data-wow-delay=".2s">我们信息科技</p>	
+
+					</div>
+				</div>				
+			</div>
+			<div class="slide bg-6">
+				<div class="slide-container">
+					<div class="slide-content">
+							<p class="wow fadeInLeft" data-wow-duration=".8s" data-wow-delay=".2s">我们信息科技</p>	
+
+					</div>
+				</div>				
+			</div>
+			<div class="slide bg-7">
+				<div class="slide-container">
+					<div class="slide-content">
+							<p class="wow fadeInLeft" data-wow-duration=".8s" data-wow-delay=".2s">我们信息科技</p>	
+
+					</div>
+				</div>				
+			</div>
+			<div class="slide bg-8">
+				<div class="slide-container">
+					<div class="slide-content">
+							<p class="wow fadeInLeft" data-wow-duration=".8s" data-wow-delay=".2s">我们信息科技</p>	
+
+					</div>
+				</div>				
+			</div>
+			<div class="slide bg-9">
+				<div class="slide-container">
+					<div class="slide-content">
+							<p class="wow fadeInLeft" data-wow-duration=".8s" data-wow-delay=".2s">我们信息科技</p>	
+
+					</div>
+				</div>				
+			</div>
+			<div class="slide bg-10">
+				<div class="slide-container">
+					<div class="slide-content">
+							<p class="wow fadeInLeft" data-wow-duration=".8s" data-wow-delay=".2s">我们信息科技</p>	
+
+					</div>
+				</div>				
+			</div>
+			<div class="slide bg-11">
+				<div class="slide-container">
+					<div class="slide-content">
+							<p class="wow fadeInLeft" data-wow-duration=".8s" data-wow-delay=".2s">我们信息科技</p>	
+
+					</div>
+				</div>				
+			</div>
+			<div class="slide bg-12">
+				<div class="slide-container">
+					<div class="slide-content">
+							<p class="wow fadeInLeft" data-wow-duration=".8s" data-wow-delay=".2s">我们信息科技</p>	
+
+					</div>
+				</div>				
+			</div>-->
+		</div>
+      <!--welcome-->
+ </div>
+	</div>
+<div class="" style="margin-top: 60px;" id="pos">
+	<div class="container">
+		
+		<div class="tittle-agileinfo">
+			<h3 class="title-w3-agileits two">我们的服务</h3>
+			</div>
+	<div class="pageone">
+	<div class="col-lg-5">
+		<img src="..static/images/quequ.jpg" th:src="@{~/images/quequ.jpg}" width="100%" height="100%"/>
+	</div>
+	<div class="col-lg-7">
+		<h1><img src="../static/images/ic_blocksure.png" th:src="@{~/images/ic_blocksure.png}" width="50px" height="50px" style="border: 0px;margin-bottom: -15px;margin-right: 10px"/><font color="black">版权确权</font></h1>
+		<!-- <p>用区块链技术重塑原创价值</p>
+		<p>将区块链与版权产业结合，创造前所未有的版权登记、数据存证、IP生态模式。简单、快捷、免费，为您的创作更添一层保护。从版权保护到价值变现，我们在全生命周期为您打造一条IP价值链。 
+</p>
+        <p><span>革新技术</span> <span>|</span> <span>永久保存</span> <span>|</span> <span>价值颠覆</span></p> -->
+        <!-- <p>用区块链技术重塑原创价值</p> -->
+		<p>区块链赋予版权行业一个更加健康的生存环境，每一个有价值的IP版权都将得到合理的保护，每次一有价值的版权合作都将获得最大化的利润分配。一条健全完善的IP产业链是我们的奋斗目标</p>
+        <!-- <p><span>革新技术</span> <span>|</span> <span>永久保存</span> <span>|</span> <span>价值颠覆</span></p> -->
+	</div>
+	<div style="clear: both;"></div>
+	</div>
+	
+		<div class="pageone">
+	<div class="col-lg-7">
+		<h1><img src="../static/images/ic_blockshow.png" th:src="@{~/images/ic_blockshow.png}" width="50px" height="50px" style="border: 0px;margin-bottom: -15px;margin-right: 10px"/><font color="black">版权展示</font></h1>
+		<!-- <p>用区块链技术重塑原创价值</p>
+		<p>将区块链与版权产业结合，创造前所未有的版权登记、数据存证、IP生态模式。简单、快捷、免费，为您的创作更添一层保护。从版权保护到价值变现，我们在全生命周期为您打造一条IP价值链。 
+</p>
+        <p><span>革新技术</span> <span>|</span> <span>永久保存</span> <span>|</span> <span>价值颠覆</span></p> -->
+        <p>每一个原创作品都应该被保护。区块链的出现，将解决所有原创者的忧顾，全面的版权应用，比如版权使用记录和配套大数据展示，让ip展示愈加完善。随之而来的是，更多优秀的有价值的展示将会走进大家的生活。
+</p>
+	</div>
+	<div class="col-lg-5">
+		<img src="../static/images/zhengsxp.jpg" th:src="@{~/images/zhengsxp.jpg}" width="100%" height="100%"/>
+	</div>
+	<div style="clear: both;"></div>
+	</div>
+	
+
+	
+
+</div>
+</div>
+<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/mislider.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+jQuery(function ($) {
+	var slider = $('.mis-stage').miSlider({
+		stageHeight: 380,
+		slidesOnStage: false,
+		slidePosition: 'center',
+		slideStart: 'mid',
+		slideScaling: 150,
+		offsetV: -5,
+		centerV: true,
+		navButtonsOpacity: 1
+	});
+});
+</script>
+
+<div class="" style="background: #f0f0f0;">
+
+    <!--team-->
+<div id="testimonial" class="testimonial" style="background: #05193d; min-height: 600px;">
+            <div class="tittle-agileinfo">
+			<h3 class="title-w3-agileits two" style="color: #fff;">特别栏目</h3>
+			</div>
+			
+			<div class="mis-stage" style="min-height:500px ;">
+		<!-- The element to select and apply miSlider to - the class is optional -->
+		<ol class="mis-slider">
+			<!-- The slider element - the class is optional -->
+			<li class="mis-slide">
+				<!-- A slide element - the class is optional -->
+				<a href="javascript:;" class="mis-container">
+					<!-- A slide container - this element is optional, if absent the plugin adds it automatically -->
+					<figure>
+						<!-- Slide content - whatever you want -->
+						<img th:src="@{~/images/t1.png}" >
+						<figcaption>						
+							<p>《魂兵之戈》</p>
+							<div style="font-size: 14px;">知名耽美作家水千丞原作改编阿里影业影视化预定中</div>
+						</figcaption>
+					</figure>
+				</a>
+			</li>
+			<li class="mis-slide">
+				<!-- A slide element - the class is optional -->
+				<a href="javascript:;" class="mis-container">
+					<!-- A slide container - this element is optional, if absent the plugin adds it automatically -->
+					<figure>
+						<!-- Slide content - whatever you want -->
+						<img th:src="@{~/images/t2.png}" >
+						<figcaption>						
+							<p>《BOSS》</p>
+							<div style="font-size: 14px;">连载2话即妖气A级作品上升榜第一名，后签约于大角虫app</div>
+						</figcaption>
+					</figure>
+				</a>
+			</li>
+			<li class="mis-slide">
+				<!-- A slide element - the class is optional -->
+				<a href="javascript:;" class="mis-container">
+					<!-- A slide container - this element is optional, if absent the plugin adds it automatically -->
+					<figure>
+						<!-- Slide content - whatever you want -->
+						<img th:src="@{~/images/t3.png}" >
+						<figcaption>						
+							<p>《冥婚》</p>
+							<div style="font-size: 14px;">有妖气S级作品连载期间少女榜单前十</div>
+						</figcaption>
+					</figure>
+				</a>
+			</li>
+			<li class="mis-slide">
+				<!-- A slide element - the class is optional -->
+				<a href="javascript:;" class="mis-container">
+					<!-- A slide container - this element is optional, if absent the plugin adds it automatically -->
+					<figure>
+						<!-- Slide content - whatever you want -->
+						<img th:src="@{~/images/t4.png}" >
+						<figcaption>						
+							<p>《常盘勇者》</p>
+							<div style="font-size: 14px;">有妖气连载期间打赏榜前十专业核心向作品</div>
+						</figcaption>
+					</figure>
+				</a>
+			</li>
+			<li class="mis-slide">
+				<!-- A slide element - the class is optional -->
+				<a href="javascript:;" class="mis-container">
+					<!-- A slide container - this element is optional, if absent the plugin adds it automatically -->
+					<figure>
+						<!-- Slide content - whatever you want -->
+						<img th:src="@{~/images/t5.png}" >
+						<figcaption>						
+							<p>《全职高手》</p>
+							<div style="font-size: 14px;">蝴蝶蓝巅峰原著改编互联网三大热门IP之一大角虫打赏榜稳定前三</div>
+						</figcaption>
+					</figure>
+				</a>
+			</li>
+			<li class="mis-slide">
+				<!-- A slide element - the class is optional -->
+				<a href="javascript:;" class="mis-container">
+					<!-- A slide container - this element is optional, if absent the plugin adds it automatically -->
+					<figure>
+						<!-- Slide content - whatever you want -->
+						<img th:src="@{~/images/t6.png}" >
+						<figcaption>						
+							<p>《玩火攻略》</p>
+							<div style="font-size: 14px;">
+壹星娱乐虚拟偶像计划的核心轴，以条漫形式进行长期连载，与同计划产出的其他漫画、
+小说、音乐和影视作品实时联动</div>
+						</figcaption>
+					</figure>
+				</a>
+			</li>
+			<li class="mis-slide">
+				<!-- A slide element - the class is optional -->
+				<a href="javascript:;" class="mis-container">
+					<!-- A slide container - this element is optional, if absent the plugin adds it automatically -->
+					<figure>
+						<!-- Slide content - whatever you want -->
+						<img th:src="@{~/images/t7.png}" >
+						<figcaption>						
+							<p>《弦火之律》
+</p>
+							<div style="font-size: 14px;">壹星娱乐虚拟偶像计划的第二环，超能系音乐战斗故事，将与《玩火攻略》进行有机联动并宣传</div>
+						</figcaption>
+					</figure>
+				</a>
+			</li>
+			<li class="mis-slide">
+				<!-- A slide element - the class is optional -->
+				<a href="javascript:;" class="mis-container">
+					<!-- A slide container - this element is optional, if absent the plugin adds it automatically -->
+					<figure>
+						<!-- Slide content - whatever you want -->
+						<img th:src="@{~/images/t8.png}">
+						<figcaption>						
+							<p>《簪匣遗珍录》</p>
+							<div style="font-size: 14px;">
+一部讲古玩的绘本作品
+圈内有名、现签约锦绘杂志固定供稿日后会做相关的古玩专栏</div>
+						</figcaption>
+					</figure>
+				</a>
+			</li>
+			<li class="mis-slide">
+				<!-- A slide element - the class is optional -->
+				<a href="javascript:;" class="mis-container">
+					<!-- A slide container - this element is optional, if absent the plugin adds it automatically -->
+					<figure>
+						<!-- Slide content - whatever you want -->
+						<img th:src="@{~/images/t9.png}" >
+						<figcaption>						
+							<p>《龙血》</p>
+							<div style="font-size: 14px;">影视作品预热短篇</div>
+						</figcaption>
+					</figure>
+				</a>
+			</li>
+			<li class="mis-slide">
+				<!-- A slide element - the class is optional -->
+				<a href="javascript:;" class="mis-container">
+					<!-- A slide container - this element is optional, if absent the plugin adds it automatically -->
+					<figure>
+						<!-- Slide content - whatever you want -->
+						<img th:src="@{~/images/t10.png}" >
+						<figcaption>						
+							<p>《废物侠》</p>
+							<div style="font-size: 14px;">反英雄、明年预订</div>
+						</figcaption>
+					</figure>
+				</a>
+			</li>
+			<li class="mis-slide">
+				<!-- A slide element - the class is optional -->
+				<a href="javascript:;" class="mis-container">
+					<!-- A slide container - this element is optional, if absent the plugin adds it automatically -->
+					<figure>
+						<!-- Slide content - whatever you want -->
+						<img th:src="@{~/images/t11.png}" >
+						<figcaption>						
+							<p>《烈火神拳》
+</p>
+							<div style="font-size: 14px;">和混沌工作室合作的连载漫画、共同开发</div>
+						</figcaption>
+					</figure>
+				</a>
+			</li>
+			<li class="mis-slide">
+				<!-- A slide element - the class is optional -->
+				<a href="javascript:;" class="mis-container">
+					<!-- A slide container - this element is optional, if absent the plugin adds it automatically -->
+					<figure>
+						<!-- Slide content - whatever you want -->
+						<img th:src="@{~/images/t12.png}" >
+						<figcaption>						
+							<p>《网瘾战争》</p>
+							<div style="font-size: 14px;">一个恶搞之作...</div>
+						</figcaption>
+					</figure>
+				</a>
+			</li>
+			<li class="mis-slide">
+				<!-- A slide element - the class is optional -->
+				<a href="javascript:;" class="mis-container">
+					<!-- A slide container - this element is optional, if absent the plugin adds it automatically -->
+					<figure>
+						<!-- Slide content - whatever you want -->
+						<img th:src="@{~/images/t13.png}" >
+						<figcaption>						
+							<p>《闪电喵》</p>
+							<div style="font-size: 14px;">都市寓言故事</div>
+						</figcaption>
+					</figure>
+				</a>
+			</li>
+			<li class="mis-slide">
+				<!-- A slide element - the class is optional -->
+				<a href="javascript:;" class="mis-container">
+					<!-- A slide container - this element is optional, if absent the plugin adds it automatically -->
+					<figure>
+						<!-- Slide content - whatever you want -->
+						<img th:src="@{~/images/t14.png}" >
+						<figcaption>						
+							<p>《带娃装逼，最为致命》
+</p>
+							<div style="font-size: 14px;">与十字卿合作脚本，小说与白熊app连载期间全榜第一，漫画大角虫app连载，第二周便位居第二，现长居前五</div>
+						</figcaption>
+					</figure>
+				</a>
+			</li>
+			
+			
+		</ol>
+	</div>
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+<div class="" style="background: #f0f0f0;">
+
+    <!--team-->
+<div id="testimonial" class="testimonial">
+            <div class="tittle-agileinfo">
+			<h3 class="title-w3-agileits two">合作伙伴</h3>
+			</div>
+
+<div class="container" style="margin-top: 40px;">
+<style type="text/css">
+	.oulick{margin: 20px 0;}
+	.oulick li a img{width: 120px; height: 80px;}
+	.oulick li{}
+	.oulick li a{width: 100%;height: 100%; background: #FFFFFF;display: block;
+	transition:width 2s, height 2s;
+-moz-transition:width 2s, height 2s, -moz-transform 2s; /* Firefox 4 */
+-webkit-transition:width 2s, height 2s, -webkit-transform 2s; /* Safari and Chrome */
+-o-transition:width 2s, height 2s, -o-transform 2s; /* Opera */
+	}
+	.oulick li a:hover{
+	    transform:scale(1.2);
+    -webkit-transform:scale(1.2);
+    -moz-transform:scale(1.2);
+    -o-transform:scale(1.2);
+    -ms-transform:scale(1.2);}
+</style>	
+<ul class="oulick">
+	<li class="col-lg-2"><a href="http://www.livedream.com.cn/" target="_blank"><img src="../static/images/35.jpg" th:src="@{~/images/35.jpg}"/></a></li>
+	<li class="col-lg-2"><a href="http://www.tdchain.cn/" target="_blank"><img src="../static/images/545.jpg" th:src="@{~/images/545.jpg}"/> </a></li>
+	<li class="col-lg-2"><a href="http://www.ani-sh.com/" target="_blank"><img src="../static/images/46456.jpg" th:src="@{~/images/46456.jpg}"/></a></li>
+	<li class="col-lg-2"><a href="http://www.of3d.com/" target="_blank"><img src="../static/images/545.png" th:src="@{~/images/545.png}"/></a></li>
+	<li class="col-lg-2"><a href="http://www.hdxy.tv/" target="_blank"><img src="../static/images/hx.jpg" th:src="@{~/images/hx.jpg}"/></a></li>
+	<li class="col-lg-2"><a href="http://www.qwsy.com/" target="_blank"><img src="../static/images/qe.jpg" th:src="@{~/images/qe.jpg}"/></a></li>
+    <div style="clear: both;"></div>
+</ul>
+
+
+
+
+</div>
+
+
+
+
+</div>
+</div>
+	<div>
+		<img  th:src="@{~/images/wallhaven15.png}" style="width: 100%;margin-bottom: -10px"/></div>
+<span id="" style="position: fixed; bottom: 20px; right: 20px; color: #fff; width: 60px; height: 60px; background: rgba(50,195,255,0.4);font-size: 36px; text-align: center; line-height: 60px;">
+	<a href="#topl" style="color: #fff;"><i class="fa fa-chevron-circle-up"></i></a>
+</span>
+
+
+<!-- footer -->
+	<div class="footer">
+
+		<div class="agileinfo_footer_bottom" style="padding: 3em 0;">
+			<div class="container">
+				<div class="col-md-4 agileinfo_footer_bottom_grid">
+					<h2>联系 <span>我们</span></h2>
+					<!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque 
+						id arcu neque, at convallis est felis.</p>-->
+					<ul class="twi agileits_twitter">
+						<li><i class="fa fa-phone" aria-hidden="true"></i>电话： <a href="javascript:;" class="mail">
+						021-51619013</a> <span></span></li>
+						<li><i class="fa fa-envelope" aria-hidden="true"></i>邮箱:<a href="javascript:;" class="mail">
+						service.we@wevolution.cn‍</a> <span></span></li>
+						<li><i class="fa fa-twitter" aria-hidden="true"></i>地址:<a href="javascript:;" class="mail">
+						上海市黄浦区制造局路833弄23号C座H02</a> <span></span></li>
+					</ul>
+					<!-- <ul class="social-nav model-3d-0 footer-social w3_agile_social">
+						<li><a href="javascript:;" class="facebook">
+							  <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+							  <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div></a></li>
+						<li><a href="javascript:;" class="twitter"> 
+							  <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+							  <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div></a></li>
+						<li><a href="javascript:;" class="instagram">
+							  <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+							  <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div></a></li>
+						<li><a href="javascript:;" class="pinterest">
+							  <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+							  <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div></a></li>
+					</ul> -->
+				</div>
+				<div class="col-md-2 agileinfo_footer_bottom_grid">
+				</div>
+				<div class="col-md-3 agileinfo_footer_bottom_grid">
+					<h3>logo</h3>
+					<div class="flickr-grid  agileits_w3layouts_flickr">
+							<a href="javascript:;"><img src="images/LOGOL.png" th:src="@{~/images/LOGOL.png}"/></a>
+					</div>
+				</div>
+				<div class="col-md-3 agileinfo_footer_bottom_grid">
+					<h3>公众号二维码 </h3>
+					<div class="flickr-grids">
+						<div class="flickr-grid agileits_w3layouts_flickr"  style="float: left;">
+							<!--<a href="single.html"><img src="images/s1.png" alt=" " class="img-responsive" /></a>-->
+							<ul id="menu" class="mfb-component--br mfb-zoomin" data-mfb-toggle="hover" style=" float: left;">
+							  <li class="mfb-component__wrap">
+								<a href=" " class="mfb-component__button--main" style="text-align: center; padding: 7px 0;">
+								  <i><img th:src="@{~/images/weixin.png}" style="max-width:40px;"/></i>
+								  
+								</a>
+								<ul class="mfb-component__list">
+								  <li style="padding: 5px; background: rgba(255,255,255,0.3);">
+							        <img th:src="@{~/images/weWechat.jpg}" style="max-width: 100px; "/>
+								  </li>
+								</ul>
+							  </li>
+							</ul>
+				      <div class="clearfix"> </div>
+					</div>
+					
+						<div class="flickr-grid agileits_w3layouts_flickr"  style="float: left;">
+							<ul id="menu" class="mfb-component--br mfb-zoomin" data-mfb-toggle="hover" style=" float: left;">
+							  <li class="mfb-component__wrap">
+								<a href="#" class="mfb-component__button--main" style="text-align: center; padding: 7px 0; background: #E50004;">
+								  <i><img th:src="@{~/images/sinawb.png}" style="max-width:40px;"/></i>
+								  
+								</a>
+								<ul class="mfb-component__list">
+								  <li style="padding: 5px; background: rgba(255,255,255,0.3);">
+							        <img th:src="@{~/images/guanwei.png}" style="max-width: 100px; "/>
+								  </li>
+								</ul>
+							  </li>
+							</ul>
+							 <div class="clearfix"> </div>
+					</div>
+						</div>
+					
+						
+					
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+		<div class="agileinfo_footer_bottom1" th:replace="footer::footer">
+		</div>
+	</div>
+<!-- //footer -->
+<!-- JavaScripts -->
+<script type="text/javascript" th:src="@{/js/jquery-2.1.4.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/sleekslider.js}"></script>
+<script type="text/javascript" th:src="@{/js/app.js}"></script>
+<script th:src="@{/js/bootstrap.js}"></script>
+<script>
+    window.onload = function ()
+    {
+        var sel = document.getElementsByName('selectDropDown')[0];
+        sel.onchange = function ()
+        {
+            // var options=$("#test option:selected");
+            var val = this.value;
+            switch (val)
+            {
+                case "0":
+                    break;
+                case "1":
+                    window.location.href='/home_en.html';
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+</script>
+<!-- //for bootstrap working -->
+</body>
+</html>

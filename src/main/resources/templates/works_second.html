@@ -1,0 +1,486 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>我们科技-版权登记</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<link rel="icon" type="image/x-icon" th:href="@{~/images/favicon.ico}">
+<link th:href="@{/css/bootstrap.css}" rel='stylesheet' type='text/css'/>
+<link th:href="@{/css/font-awesome.css}" rel="stylesheet"> 
+<link rel="stylesheet" th:href="@{/css/slider.css}">
+<link th:href="@{/css/style.css}" rel='stylesheet' type='text/css' />	
+<link rel="stylesheet" type="text/css" th:href="@{/css/mislider.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{/css/mislider-skin-cameo.css}"/>
+<link th:href="@{/css/nav.css}" rel='stylesheet' type='text/css' />
+<style type="text/css">
+	 body{background: #f0f0f0;}
+	.top_header_agile_info_w3ls{background: #fff;}
+</style>
+</head>
+	<body>
+	<div id="" style="position: relative;">
+	
+
+	<div class="top_banner" id="topl">
+		<!-- SVG Arrows -->
+		<div class="svg-wrap">
+			<svg width="64" height="64" viewBox="0 0 64 64">
+				<path id="arrow-left" d="M46.077 55.738c0.858 0.867 0.858 2.266 0 3.133s-2.243 0.867-3.101 0l-25.056-25.302c-0.858-0.867-0.858-2.269 0-3.133l25.056-25.306c0.858-0.867 2.243-0.867 3.101 0s0.858 2.266 0 3.133l-22.848 23.738 22.848 23.738z" />
+			</svg>
+			<svg width="64" height="64" viewBox="0 0 64 64">
+				<path id="arrow-right" d="M17.919 55.738c-0.858 0.867-0.858 2.266 0 3.133s2.243 0.867 3.101 0l25.056-25.302c0.858-0.867 0.858-2.269 0-3.133l-25.056-25.306c-0.858-0.867-2.243-0.867-3.101 0s-0.858 2.266 0 3.133l22.848 23.738-22.848 23.738z" />
+			</svg>
+		</div>
+		<div class="top_header_agile_info_w3ls">
+		  <nav class="navbar navbar-default">
+				<div class="navbar-header navbar-left">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">版权</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<h1><a class="navbar-brand" href="index.html"  th:href="@{/}"><img src="../static/images/logoll.png" th:src="@{~/images/logoll.png}"/></a><span class="ospan">版权登记</span></h1>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+<style type="text/css">
+	.m_nav li>a {color: #666; font-weight: 600;}
+	.top_header_agile_info_w3ls{border-bottom: 1px solid #ccc;}
+	.navbar-default .navbar-brand, .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus{color: #666;}
+	.ospan{margin: 15px; display: inline-block;}
+.dropbtn {
+	color: #666;
+	padding: 16px;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+	font-weight: 600;
+}
+
+/*容器 <div> - 需要定位下拉内容 */
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+/*下拉内容 (默认隐藏) */
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+/*下拉菜单的链接 */
+.dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+/*鼠标移上去后修改下拉菜单链接颜色 */
+.dropdown-content a:hover {
+	background-color: #f1f1f1
+}
+
+/*在鼠标移上去后显示下拉菜单 */
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+/* 当下拉内容显示后修改下拉按钮的背景颜色 */
+.dropdown:hover .dropbtn {
+	color: #3e8e41;
+}
+</style>
+					<div id="m_nav_container" class="m_nav wthree_bg">
+						<nav class="menu menu--sebastian">
+							<div class="dropdown-back-white">
+							  <span class="dropbtn-back-white" th:text="${session.user.userName}==null?${#strings.length(session.user.userNickname)>5?#strings.substring(session.user.userNickname,0,5)+'...':session.user.userNickname}:${#strings.length(session.user.userName)>5?#strings.substring(session.user.userName,0,5)+'...':session.user.userName}">登录/注册</span><i class="menu-ico-back-white"></i>
+							  <div class="dropdown-content-back-white">
+							    <a th:href="@{~/user/userInfo.html}">用户中心</a>
+							    <a th:href="@{~/auth/longOut}">退出</a>
+							  </div>
+							</div>
+						</nav>
+					</div>
+
+					</nav>
+				</div>
+		</div>
+	
+	
+		<!--<div class="sleekslider" id="home">
+	
+			<div class="slide active bg-1">
+				
+			</div>	
+		</div>	-->
+		
+		
+      <!--welcome-->
+ </div>
+	</div>
+
+<style type="text/css">
+	.formd{padding-top: 120px; min-height: 892px;}
+	.formdr{background: #fff; width:100%; height: 100%;}
+	.formdl{padding: 80px 0 40px 0; min-height: 600px; }
+	.formdl label{font-size: 14px;}
+</style>
+<div class="formd">
+	
+
+<div class=" container">
+<div class="formdr col-lg-12" >
+	<form th:action="@{/works/worksInfo}" class="col-md-offset-3 col-lg-6 formdl" method="post" onsubmit="return check()" >
+ 
+   <div class="form-group">
+    <label for="inputEmail3" class="col-sm-3 control-label text-right"><span style="color: #FF0000;">*</span> 作品名称 </label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" id="inputEmail3" placeholder="作品名称" name="worksName" th:value="${worksInfo.worksName}" maxlength="30">
+      <input type="hidden" th:value="${worksId}" name="worksId">
+      <input type="hidden" th:value="${session.user.userId}" name="userId">
+    </div>
+   <div style="clear: both;"></div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-3 control-label text-right">
+    <span style="color: #FF0000;">*</span> 作品类别</label>
+    <div class="col-sm-9">
+	     <select class="form-control" name="worksType">
+	     	<option value="">请选择</option>
+		  	<option th:each="type : ${worksType}" th:value="${type.name}" th:text="${type.name}" th:selected="${worksInfo.worksType==null? false :#strings.contains(worksInfo.worksType,type.name)}">1</option>
+		</select>
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+   <div class="form-group" style="display: none;" id="works-explain">
+    <label for="inputEmail3" class="col-sm-3 control-label  text-right">其他 </label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" id="inputEmail3" placeholder="其他" name="worksExplain" th:value="${worksInfo.worksExplain}" maxlength="30">
+    </div>
+   <div style="clear: both;"></div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-3 control-label   text-right"><span style="color: #FF0000;">*</span> 作品创作性质</label>
+    <div class="col-sm-9">
+      <select class="form-control" name="worksNature">
+		  <option value="">请选择</option>
+		  <option th:each="type : ${worksNatrue}" th:value="${type.name}" th:text="${type.name}" th:selected="${worksInfo.worksNature==null? false :#strings.contains(worksInfo.worksNature,type.name)}">1</option>
+		</select>
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+  <div class="form-group" id="works-natrue" style="display: none;">
+    <label for="inputEmail3" class="col-sm-3 control-label  text-right">其他 </label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" id="inputEmail3" placeholder="其他" maxlength="30" name="worksNatureExplain" th:value="${worksInfo.worksNatureExplain}">
+    </div>
+   <div style="clear: both;"></div>
+  </div>
+   <div class="form-group">
+    <label for="inputPassword3" class="col-sm-3 control-label text-right"><span style="color: #FF0000;">*</span> 创作/制作完成日期</label>
+    <div class="col-sm-9">
+    <input type="text" class="form-control" id="inputEmail3" readonly placeholder="yyyy-MM-dd" name="accomplishTime" th:value="${worksInfo.accomplishTime}">
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+    <div class="form-group">
+    <label for="inputPassword3" class="col-sm-3 control-label text-right"><span style="color: #FF0000;">*</span> 创作/制作完成地点</label>
+    <div class="col-sm-3">
+
+     <select class="form-control" id="s_province" name="province">
+	 <!--  <option>请选择省份</option> -->
+	</select>
+    </div>
+    <div class="col-sm-3">
+     <select class="form-control" id="s_city" name="city">
+	 <!--  <option>请选择城市</option> -->
+	</select>
+    </div>
+     <div class="col-sm-3">
+     <select class="form-control" id="s_county" name="area">
+	  <!-- <option>请选择区域</option> -->
+	</select>
+	<script class="resources library" type="text/javascript" th:src="@{/js/area.js}"></script>
+    <script type="text/javascript">_init_area();</script>
+    </div>
+     <div id="show"></div>
+    <div style="clear: both;"></div>
+  </div>
+  
+   <div class="form-group">
+    <label for="inputEmail3" class="col-sm-3 control-label  text-right"><span style="color: #FF0000;">*</span> 发表状态 </label>
+    <div class="col-sm-9">
+    <label class="radio-inline">
+	  <input type="radio" name="publishStatus" id="inlineRadio1" value="1" th:checked="*{worksInfo.publishStatus == 1} " > 已发表
+	</label>
+	<label class="radio-inline">
+	  <input type="radio" name="publishStatus" id="inlineRadio2" value="2" th:checked="*{worksInfo.publishStatus== 2} "> 未发表
+	</label>
+
+    </div>
+   <div style="clear: both;"></div>
+  </div>
+  
+    <div class="form-group" id="first-publish" style="display: none;">
+    <label for="inputPassword3" class="col-sm-3 control-label text-right"><span style="color: #FF0000;">*</span> 首次发表日期</label>
+    <div class="col-sm-9">
+    <input type="text" class="form-control" id="inputEmail3" readonly placeholder="yyyy-MM-dd" name="firstPublishStatus" th:value="${worksInfo.firstPublishStatus}">
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+  
+  <div class="form-group" id="publish-address" style="display: none;">
+    <label for="inputEmail3" class="col-sm-3 control-label  text-right"><span style="color: #FF0000;">*</span> 作品发表城市 </label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" id="inputEmail3" placeholder="作品发表城市" name="publishAddress" maxlength="50" th:value="${worksInfo.publishAddress}">
+    </div>
+   <div style="clear: both;"></div>
+  </div>
+  
+<style type="text/css"> 
+.btnn{padding: 10px 80px; background: #00BFFF; border-radius: 2px; color: #fff; }   
+</style>  
+  
+<div class="col-md-offset-2 col-lg-10" style="margin-top: 40px;">
+
+	<button type="submit" class="btn btnn">保存并继续</button>
+	<a class="btn btnn" href="works_first.html" th:href="@{~/works/worksFirst.html(worksId=${worksId})}">上一步</a>
+</div>
+  
+</form>
+<div style="clear: both;"></div>
+</div>
+
+
+</div>
+
+</div>
+
+
+<div style="clear: both;">
+	
+</div>
+<!-- footer -->
+
+
+	<div class="footer" >
+
+    <div class="agileinfo_footer_bottom1">
+			<div class="container">
+				    <p class="col-lg-2" style="padding-right: 0;"><a th:href="@{~/}">关于我们</a>&nbsp;&nbsp;<a href="javascript:;">法律协议</a></p>
+				
+					<p class="col-lg-10 text-right"> &copy;2017 wevolution Allg Rights Reserved. powered by 上海我们信息科技有限公司 <img th:src="@{~/images/pic1.gif}"  style="margin-top:5px;"/> 沪ICP备17045920号</p>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+		
+
+<!-- //footer -->
+<!-- JavaScripts -->
+<script type="text/javascript" th:src="@{/js/jquery-2.1.4.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/sleekslider.js}"></script>
+<script type="text/javascript" th:src="@{/js/app.js}"></script>
+<script th:src="@{/js/bootstrap.js}"></script>
+<script th:src="@{/js/layer/layer.js}"></script>
+<script th:src="@{/js/laydate/laydate.js}"></script>
+<script th:inline="javascript">
+/*<![CDATA[*/
+    var province = /*[[${worksInfo.province}]]*/ '省份';
+    var city = /*[[${worksInfo.city}]]*/ '地级市';
+    var area = /*[[${worksInfo.area}]]*/ '市、县级市';
+    $("#s_province").val(province==null?'省份':province);
+    change(1);
+    $("#s_city").val(city==null?'地级市':city);
+    change(2);
+    $("#s_county").val(area==null?'市、县级市':area);
+    console.log(province);
+/*]]>*/
+</script>
+<script type="text/javascript">
+$(function(){
+	//
+	if($("select[name='worksType']").val()=="其他"){
+		$("#works-explain").fadeIn();
+	}else{
+		$("#works-explain").fadeOut();
+	}
+	if($("select[name='worksNature']").val()=="其他"){
+		$("#works-natrue").fadeIn();
+	}else{
+		$("#works-natrue").fadeOut();
+	}
+	//是否发表
+	if($("input[name='publishStatus']:checked").val()=="1"){
+		$("#first-publish").fadeIn();
+		$("#publish-address").fadeIn();
+	}else{
+		$("#first-publish").fadeOut();
+		$("#publish-address").fadeOut();
+	}
+	$("select[name='worksType']").bind("change",function(){
+		if($(this).val()=="其他"){
+			$("#works-explain").fadeIn();
+		}else{
+			$("#works-explain").fadeOut();
+		}
+	});
+	$("select[name='worksNature']").bind("change",function(){
+		if($(this).val()=="其他"){
+			$("#works-natrue").fadeIn();
+		}else{
+			$("#works-natrue").fadeOut();
+		}
+	});
+	$("input[name='publishStatus']").bind("change",function(){
+		if($(this).val()=="1"){
+			$("#first-publish").fadeIn();
+			$("#publish-address").fadeIn();
+		}else{
+			$("#first-publish").fadeOut();
+			$("#publish-address").fadeOut();
+		}
+	});
+})
+function check(){
+	if($.trim($("input[name='worksName']").val())==""){
+		layer.msg("请填写作品名");
+		return false;
+	}else{
+		var check_name = false;
+		$.ajax({
+			url : "/works/checkWorksName",
+			type : "POST",
+			data : {'worksName':$.trim($("input[name='worksName']").val()),'worksId':$('input[name=worksId]').val()},
+			cache : false,
+			async: false,
+			success : function(data) {
+				var jsondata = JSON.parse(data); 
+				if(jsondata.status!="0"){
+					check_name = false;
+				}else{
+					check_name = true;
+				}
+			},
+			error : function() {
+				layer.msg("服务器错误");
+				check_name = false;
+			}
+		});
+		if(!check_name){
+			layer.msg("作品名与上一步作品不符");
+			return false;
+		}
+	}
+	if($.trim($("select[name='worksType']").val())==""){
+		layer.msg("请选择类别");
+		return false;
+	}
+	if($.trim($("select[name='worksType']").val())=="其他"){
+		if($.trim($("input[name='worksExplain']").val())==""){
+			layer.msg("请填写作品类别说明");
+			return false;
+		}
+	}
+	if($.trim($("select[name='worksNature']").val())==""){
+		layer.msg("请选择作品创作性质");
+		console.log($.trim($("select[name='worksNature']").val()))
+		return false;
+	}
+	if($.trim($("select[name='worksNature']").val())=="其他"){
+		if($.trim($("input[name='worksNatureExplain']").val())==""){
+			layer.msg("请填写性质说明");
+			return false;
+		}
+	}
+	if($.trim($("input[name='accomplishTime']").val())==""){
+		layer.msg("请选择创/制作完成日期");
+		return false;
+	}
+	if($.trim($("select[name='province']").val())=="省份"){
+		layer.msg("请选择创作省份");
+		return false;
+	}
+	if($("select[name='province']").val()!="海外"){
+		if($.trim($("select[name='city']").val())=="地级市"){
+			layer.msg("请选择创作城市");
+			return false;
+		}
+		if($.trim($("select[name='area']").val())=="市、县级市"){
+			layer.msg("请选择创作区域");
+			return false;
+		}
+	}
+	
+	if($("input[name='publishStatus']:checked").val()==null){
+		layer.msg("请选择发表状态");
+		return false;
+	}
+	if($("input[name='publishStatus']:checked").val()=="1"){
+		if($.trim($("input[name='firstPublishStatus']").val())==""){
+			layer.msg("请选择首次发表日期");
+			return false;
+		}else{
+			if(new Date($.trim($("input[name='accomplishTime']").val()).replace(/\-/g, '\/')) > new Date($.trim($("input[name='firstPublishStatus']").val()).replace(/\-/g, '\/'))){
+				layer.msg("完成日期大于发表日期");
+				return false;
+			}
+		}
+		if($.trim($("input[name='publishAddress']").val())==""){
+			layer.msg("请填写发表地点");
+			return false;
+		}
+	}
+	
+	
+	return true;
+}
+//时间控件
+	laydate.render({
+	  	elem: 'input[name="accomplishTime"]',
+	  	trigger: 'click',
+	  	max: getFormatDate()
+	});
+	laydate.render({
+		elem:'input[name="firstPublishStatus"]',
+		trigger: 'click',
+		//min: $('input[name="accomplishTime"]').val(),
+	  	max: getFormatDate()
+	});
+	function getFormatDate(){    
+	    var nowDate = new Date();     
+	    var year = nowDate.getFullYear();    
+	    var month = nowDate.getMonth() + 1 < 10 ? "0" + (nowDate.getMonth() + 1) : nowDate.getMonth() + 1;    
+	    var date = nowDate.getDate() < 10 ? "0" + nowDate.getDate() : nowDate.getDate();    
+	    // var hour = nowDate.getHours()< 10 ? "0" + nowDate.getHours() : nowDate.getHours();    
+	    // var minute = nowDate.getMinutes()< 10 ? "0" + nowDate.getMinutes() : nowDate.getMinutes();    
+	    // var second = nowDate.getSeconds()< 10 ? "0" + nowDate.getSeconds() : nowDate.getSeconds();    
+	    return year + "-" + month + "-" + date;    
+	} 
+	/* function getWorksCompleteDate(){
+		var
+	} */ 
+	var Gid  = document.getElementById ;
+
+	var showArea = function(){
+		Gid('show').innerHTML = "<h3>省" + Gid('s_province').value + " - 市" + 	
+
+		Gid('s_city').value + " - 县/区" + 
+
+		Gid('s_county').value + "</h3>"
+		}
+
+	Gid('s_county').setAttribute('onchange','showArea()');
+	
+</script>
+<!-- //for bootstrap working -->
+</body>
+</html>

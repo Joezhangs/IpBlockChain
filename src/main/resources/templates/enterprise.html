@@ -1,0 +1,380 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>我们科技-实名认证</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<link rel="icon" type="image/x-icon" th:href="@{~/images/favicon.ico}">
+<link href="../static/css/bootstrap.css" th:href="@{~/css/bootstrap.css}" rel='stylesheet' type='text/css' />
+<link href="../static/css/font-awesome.css" rel="stylesheet" th:href="@{~/css/font-awesome.css}"> 
+<link rel="stylesheet" href="../static/css/slider.css" th:href="@{~/css/slider.css}">
+<link href="../static/css/style.css" rel='stylesheet' type='text/css' th:href="@{~/css/style.css}"/>	
+<link rel="stylesheet" type="text/css" href="../static/css/mislider.css" th:href="@{~/css/mislider.css}"/>
+<link rel="stylesheet" type="text/css" href="../static/css/mislider-skin-cameo.css" th:href="@{~/css/mislider-skin-cameo.css}"/>
+<link th:href="@{/css/nav.css}" rel='stylesheet' type='text/css' />
+<style type="text/css">
+	 body{background: #f0f0f0;}
+	.top_header_agile_info_w3ls{background: #fff;}
+</style>
+</head>
+	<body>
+	<div id="" style="position: relative;">
+	
+
+	<div class="top_banner" id="topl">
+		<!-- SVG Arrows -->
+		<div class="svg-wrap">
+			<svg width="64" height="64" viewBox="0 0 64 64">
+				<path id="arrow-left" d="M46.077 55.738c0.858 0.867 0.858 2.266 0 3.133s-2.243 0.867-3.101 0l-25.056-25.302c-0.858-0.867-0.858-2.269 0-3.133l25.056-25.306c0.858-0.867 2.243-0.867 3.101 0s0.858 2.266 0 3.133l-22.848 23.738 22.848 23.738z" />
+			</svg>
+			<svg width="64" height="64" viewBox="0 0 64 64">
+				<path id="arrow-right" d="M17.919 55.738c-0.858 0.867-0.858 2.266 0 3.133s2.243 0.867 3.101 0l25.056-25.302c0.858-0.867 0.858-2.269 0-3.133l-25.056-25.306c-0.858-0.867-2.243-0.867-3.101 0s-0.858 2.266 0 3.133l22.848 23.738-22.848 23.738z" />
+			</svg>
+		</div>
+		<div class="top_header_agile_info_w3ls">
+		  <nav class="navbar navbar-default">
+				<div class="navbar-header navbar-left">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">版权</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<h1><a class="navbar-brand" href="index.html"  th:href="@{/}"><img src="../static/images/logoll.png" th:src="@{~/images/logoll.png}"/></a><span class="ospan">实名认证 > 企业认证</span></h1>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+<style type="text/css">
+	.m_nav li>a {color: #666; font-weight: 600;}
+	.top_header_agile_info_w3ls{border-bottom: 1px solid #ccc;}
+	.navbar-default .navbar-brand, .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus{color: #666;}
+	.ospan{margin: 15px; display: inline-block;}
+.dropbtn {
+	color: #666;
+	padding: 16px;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+	font-weight: 600;
+}
+
+/*容器 <div> - 需要定位下拉内容 */
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+/*下拉内容 (默认隐藏) */
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+/*下拉菜单的链接 */
+.dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+/*鼠标移上去后修改下拉菜单链接颜色 */
+.dropdown-content a:hover {
+	background-color: #f1f1f1
+}
+
+/*在鼠标移上去后显示下拉菜单 */
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+/* 当下拉内容显示后修改下拉按钮的背景颜色 */
+.dropdown:hover .dropbtn {
+	color: #3e8e41;
+}
+</style>
+					<div id="m_nav_container" class="m_nav wthree_bg">
+						<nav class="menu menu--sebastian">
+							<div class="dropdown-back-white">
+							  <span class="dropbtn-back-white" th:text="${session.user.userName}==null?${#strings.length(session.user.userNickname)>5?#strings.substring(session.user.userNickname,0,5)+'...':session.user.userNickname}:${#strings.length(session.user.userName)>5?#strings.substring(session.user.userName,0,5)+'...':session.user.userName}">登录/注册</span><i class="menu-ico-back-white"></i>
+							  <div class="dropdown-content-back-white">
+							    <a th:href="@{~/user/userInfo.html}">用户中心</a>
+							    <a th:href="@{~/auth/longOut}">退出</a>
+							  </div>
+							</div>
+						</nav>
+					</div>
+
+					</nav>
+				</div>
+		</div>
+	
+	
+		<!--<div class="sleekslider" id="home">
+	
+			<div class="slide active bg-1">
+				
+			</div>	
+		</div>	-->
+		
+		
+      <!--welcome-->
+ </div>
+	</div>
+
+<style type="text/css">
+	.formd{padding-top: 120px; min-height: 892px;}
+	.formdr{background: #fff; width:100%; height: 100%;}
+	.formdl{padding: 80px 0 40px 0; min-height: 600px; }
+	.formdl label{font-size: 14px;}
+</style>
+<div class="formd">
+	
+
+<div class=" container">
+<div class="formdr col-lg-12" >
+	<form class="col-md-offset-2 col-lg-6 formdl" onsubmit="return false" id="auth-form">
+	<input type="hidden" th:value="${session.token}" name="token">
+   <div class="form-group">
+    <label for="inputEmail3" class="col-sm-3 control-label text-right"><span style="color: #FF0000;">*</span> 企业名称 </label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" name="realName" id="inputEmail3" placeholder="企业名称" maxlength="30">
+      <input type="hidden" name="authId" th:value="${authId}">
+      <input type="hidden" name="identifyType" value="3">
+      <input type="hidden" name="userId" th:value="${session.user.userId}">
+    </div>
+   <div style="clear: both;"></div>
+  </div>
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-3 control-label  text-right"><span style="color: #FF0000;">*</span> 证件类型 </label>
+    <div class="col-sm-9">
+  
+     <div class="col-lg-5 mo0">
+<label class="radio-inline">
+  <input type="radio" name="idType" id="inlineRadio1" value="2">  社会信用代码认证
+</label>
+<label class="radio-inline" style="margin-left: 0;">
+  <input type="radio" name="idType" id="inlineRadio2" value="3">  营业执照号认证
+</label>
+
+     </div> 
+     
+     <div class="col-lg-5 mo0">
+<label class="radio-inline">
+  <input type="radio" name="idType" id="inlineRadio1" value="4">  非盈利组织认证
+</label>
+<label class="radio-inline" style="margin-left: 0;">
+  <input type="radio" name="idType" id="inlineRadio2" value="5">  三证合一认证
+</label>
+
+     </div> 
+    
+  
+
+    </div>
+   <div style="clear: both;"></div>
+  </div>
+ 	
+ 	
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-3 control-label text-right"><span style="color: #FF0000;">*</span> 证号码</label>
+    <div class="col-sm-9">
+      <input type="text" name="idNumber" class="form-control" id="inputPassword3" placeholder="请输入证件号码" maxlength="30" onkeyup="this.value=this.value.replace(/[^\w_]/g,'');">
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+  <div class="form-group" >
+   <style type="text/css"> 
+
+* { font-size:12px; } 
+ .form-control{border-radius: 2px; border:1px solid #ccc;}
+ .report-file {
+            display: block;
+            position: relative;
+            width: 100%;
+            height: 120px;
+            overflow: hidden;
+            border: 1px solid #ccc;
+            color: #666;
+            cursor: pointer;
+            text-align: center;
+            float: left;
+            margin-right:5px;
+        }
+        .report-file span {
+            cursor: pointer;
+            display: block;
+            line-height: 120px;
+        }
+        .file-prew {
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            left:0;
+            width: 100%;
+            height: 120px;
+            font-size: 100px; 
+            opacity: 0; 
+            filter: alpha(opacity=0);
+        }
+        .btnn{padding: 10px 80px; background: #00BFFF; border-radius: 2px; color: #fff; }
+         #wenzi{margin: 20px 0;}
+        #wenzi p{ font-size: 12px;line-height: 30px;}
+        .wenjian{text-align: center; line-height: 40px;border: 1px solid #ccc;}
+</style>  
+   <label for="inputEmail3" class="col-sm-3 control-label text-right"><span style="color: #FF0000;">*</span> 证件扫描件 </label>
+   <div class="col-sm-4">
+   <div class="report-file">
+      <span><img src="../static/images/57e47a6e2ca86_1024.jpg" th:src="@{~/images/57e47a6e2ca86_1024.jpg}" style="height: 120px;"></span><input tabindex="3" size="3" name="report" class="file-prew" type="file" onchange="uploadFile(this)" photo-type="4">
+      <input type="hidden" name="photoId" th:value="${photo1} eq null ? null : ${photo1.recordId}">
+   </div>
+   <div class="wenjian">
+   	  正面
+   </div>
+   </div>
+    <div style="clear: both;"></div>
+  </div>
+<div class="col-md-offset-3 col-lg-9">
+	<div id="wenzi">
+    <h2>证件扫描上传说明：</h2>
+   <p>1. 请上传该企业证件照片</p>
+   <p>2. 拍照时对焦请置于身份证上，保证身份证信息清晰且无遮挡</p>
+   <p>3. 上传文件格式为png，jpg和jpeg</p>
+   <p>4. 文件大小不超过3M</p>
+   <p>5. 使用电子版版权合同文件时，请包含盖章页</p>
+   <p>6. 所有上传信息均会被上海我们信息科技妥善保管，不会用于其它
+       商业用途或传输给其它第三方</p>
+	</div>
+	<button type="button" class="btn btnn" onclick="formSubmit()">提交</button>
+	<button type="button" class="btn btnn" onclick="window.history.back()" style="float: right;">返回</button>
+</div>
+  
+</form>
+<div style="clear: both;"></div>
+</div>
+
+
+</div>
+
+</div>
+
+
+<div style="clear: both;">
+	
+</div>
+<!-- footer -->
+
+
+	<div class="footer" >
+
+    <div class="agileinfo_footer_bottom1">
+			<div class="container">
+				    <p class="col-lg-2" style="padding-right: 0;"><a th:href="@{~/}">关于我们</a>&nbsp;&nbsp;<a href="javascript:;">法律协议</a></p>
+				
+					<p class="col-lg-10 text-right"> &copy;2017 wevolution Allg Rights Reserved. powered by 上海我们信息科技有限公司 <img th:src="@{~/images/pic1.gif}"  style="margin-top:5px;"/> 沪ICP备17045920号</p>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+		
+
+<!-- //footer -->
+<!-- JavaScripts -->
+<script type="text/javascript" src="../static/js/jquery-2.1.4.min.js" th:src="@{~/js/jquery-2.1.4.min.js}"></script>
+<script type="text/javascript" src="../static/js/sleekslider.js" th:src="@{~/js/sleekslider.js}"></script>
+<script type="text/javascript" src="../static/js/app.js" th:src="@{~/js/app.js}"></script>
+<script src="../static/js/bootstrap.js" th:src="@{~/js/bootstrap.js}"></script>
+<script src="../static/js/layer/layer.js" th:src="@{/js/layer/layer.js}"></script>
+<!-- //for bootstrap working -->
+<script type="text/javascript">
+function uploadFile(obj) {
+	var formData = new FormData();
+	formData.append('uploadfile', $(obj)[0].files[0]);
+	formData.append('photoId', $(obj).next().val());
+	formData.append('photoType', $(obj).attr("photo-type"));
+	// 返回 KB，保留小数点后两位
+    //alert((ele.files[0].size/(1024*1024)).toFixed(2));
+    var file = $(obj)[0].files[0];
+          
+  //检测文件类型 
+    if(file.type!='image/jpeg' && file.type!='image/png') { 
+    	layer.msg("文件类型非法"); 
+	    return false; 
+    } else{
+        var size = Math.floor(file.size/1024); 
+        if (size > 3000) { 
+        	layer.msg("上传文件不得超过3M"); 
+	        return false; 
+        }; 
+
+     }
+
+	$.ajax({
+		//url : "/certification/auth",
+		url : "/certification/avatarS3/auth",
+		type : "POST",
+		data : formData,
+		enctype : 'multipart/form-data',
+		processData : false,
+		contentType : false,
+		cache : false,
+		success : function(data) {
+			var jsondata = JSON.parse(data);
+			if(jsondata.status=="0"){
+				$(obj).next().val(jsondata.data.photoId);
+				$(obj).prev().html('<img src="' + jsondata.data.fileName +'" style="height: 120px;">')
+//				$(obj).prev().html('<img src="/certification/auth/' + jsondata.data.fileName +'" style="height: 120px;">')
+			}else{
+				layer.msg(jsondata.msg);
+			}
+		},
+		error : function() {
+			layer.msg("服务器错误");
+		}
+	});
+
+} // function uploadFile
+function formSubmit() {
+	if($("input[name='realName']").val()==null||$("input[name='realName']").val()==""){
+		layer.msg("企业名称不能为空");
+		return false;
+	}
+	if($('input[name="idType"]:checked').val()==null||$('input[name="idType"]:checked').val()==""){
+		layer.msg("请选择证件类型");
+		return false;
+	}
+	if($("input[name='idNumber']").val()==null||$("input[name='idNumber']").val()==""){
+		layer.msg("证件号不能为空");
+		return false;
+	}
+	if($("input[name='photoId']").val()==null||$("input[name='photoId']").val()==""){
+		layer.msg("请上传证件照");
+		return false;
+	}
+	$.ajax({
+		url : "/certification/certificate",
+		type : "POST",
+		data : $('#auth-form').serialize(),
+		cache : false,
+		success : function(data) {
+			var jsondata = JSON.parse(data);
+			if(jsondata.status=="0"){
+				window.location.href="/certification/getCertification.html";
+			}else {
+				layer.msg(jsondata.msg);
+			}
+		},
+		error : function() {
+			layer.msg("服务器错误");
+		}
+	});
+
+} // function uploadFile
+</script>
+</body>
+</html>

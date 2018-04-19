@@ -1,0 +1,199 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>我们科技-咨询阅读</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<link rel="icon" type="image/x-icon" th:href="@{~/images/favicon.ico}">
+<link th:href="@{~/css/bootstrap.css}" rel='stylesheet' type='text/css' />
+<link th:href="@{~/css/font-awesome.css}" rel="stylesheet"> 
+<link rel="stylesheet" th:href="@{~/css/slider.css}">
+<link href="css/style.css" rel='stylesheet' type='text/css' />	
+<link rel="stylesheet" type="text/css" th:href="@{~/css/mislider.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{~/css/mislider-skin-cameo.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{~/css/demo.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{~/css/main.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{~/css/index.css}"/>
+<link th:href="@{/css/nav.css}" rel='stylesheet' type='text/css' />
+</head>
+	<body>
+	<div id="" style="position: relative;">
+
+
+	<div class="top_banner" id="topl">
+		<!-- SVG Arrows -->
+	
+		<div class="top_header_agile_info_w3ls">
+		  <nav class="navbar navbar-default">
+				<div class="navbar-header navbar-left">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">版权</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<h1>
+						<a class="navbar-brand" href="company_en.html"th:href="@{~/company_en.html}">
+							<!--<span>w</span>shanghai-->
+							<img th:src="@{~/images/LOGOL.png}"/>
+						</a></h1>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+					
+					<div id="m_nav_container" class="m_nav wthree_bg">
+						<nav class="menu menu--sebastian">
+							<ul id="m_nav_list" class="m_nav menu__list">
+								<li class="m_nav_item" id="m_nav_item_1"> <a href="home_en.html" th:href="@{~/home_en}" class="link link--kumya"><span >Home</span></a></li>
+								<li class="m_nav_item" id="moble_nav_item_3"> <a href="affirm_en.html" th:href="@{~/affirm_en.html}" class="link link--kumya"><span >CopyrightAffirm</span></a></li>
+								<li class="m_nav_item" id="moble_nav_item_4"> <a href="copyright_show_en.html" th:href="@{~/copyright_show_en.html}" class="link link--kumya"><span >Copyright</span></a></li>
+							    <li class="m_nav_item active" id="moble_nav_item_4"> <a href="javascript:;" class="link link--kumya"><span >Consulting</span></a></li>
+							    <li class="m_nav_item" id="moble_nav_item_2"><a href="case_en.html" th:href="@{~/case_en.html}" class="link link--kumya"><span >Cases</span></a></li>
+								 <li class="m_nav_item" id="moble_nav_item_2" th:if="${session.user} != null"><a href="blockchain_show_en.html" th:href="@{~/chain/statistics_en.html}" class="link link--kumya"><span>BlockDisplay</span></a></li>
+								<li class="m_nav_item" id="m_nav_item_1"> <a th:href="@{~/company_en}" class="link link--kumya"><span >Company</span></a></li>
+								<li th:if="${session.user} != null" class="m_nav_item dropdown" id="moble_nav_item_6"> 
+									<span class="link link--kumya"><span class="dropbtn" th:text="${session.user.userName}==null?${#strings.length(session.user.userNickname)>5?#strings.substring(session.user.userNickname,0,5)+'...':session.user.userNickname}:${#strings.length(session.user.userName)>5?#strings.substring(session.user.userName,0,5)+'...':session.user.userName}">登录/注册</span><i class="menu-ico"></i></span>
+									<div class="dropdown-content">
+									    <a th:href="@{~/user/userInfo_en.html}">UserCentered</a>
+									    <a th:href="@{~/auth/longOut_en}">Sign Out</a>
+								  </div>
+								</li>
+								<li th:unless="${session.user} != null" class="m_nav_item" id="moble_nav_item_6"> 
+									<a  href="login_en.html" class="link link--kumya" th:href="@{/auth/loginPage_en.html}">
+										<span>Login/Register</span>
+									</a> 
+								</li>
+								<li class="m_nav_item"  style="float: right;">
+									<select  name="selectDropDown" style="height: 34px; margin-top:5px;">
+										<option value="0">ENGLISH</option>
+										<option value="1">中文 (简体)</option>
+									</select>
+								</li>
+							</ul>
+						</nav>
+					</div>
+
+					</nav>
+				</div>
+		</div>
+		
+		<div class="sleekslider" id="home">
+				<style type="text/css">
+					@media only screen and (min-width:760px ) {
+						.sleekslider{}
+					}
+				</style>
+			<div class="slide bg-3" >
+				<div class="slide-container">
+				
+				</div>				
+			</div>	
+		</div>	
+		
+		<div class="container">
+					<div class="content" style="margin-top: 40px;">
+			<!-- 瀑布流样式开始 -->
+			<div class="waterfull clearfloat" id="waterfull">
+				<ul id="oul">
+				</ul>
+			</div>
+		
+		</div>
+
+		</div>
+		
+      <!--welcome-->
+ </div>
+	</div>
+<script th:src="@{~/js/jquery.min.js}" type="text/javascript" charset="utf-8"></script>
+<script th:src="@{~/js/mislider.js}" type="text/javascript" charset="utf-8"></script>
+	<div class="container">
+		<div class="waterfall"></div>
+		
+	</div>
+	
+
+<!-- footer -->
+	<div class="footer">
+		<div class="agileinfo_footer_bottom1">
+			<div class="container">
+				<p class="col-lg-3" style="display: inline-block; letter-spacing:0px;"><a th:href="@{~/company_en.html}">About Us</a>&nbsp; &nbsp;<a href="javascript:;">Legal Agreements</a></p>
+
+				<p class="col-lg-9  text-right" style="display: inline-block;letter-spacing:0px;" > &copy;2017 wevolution Allg Rights Reserved. powered by Shanghai WE Info and Tech Co.,Ltd <img th:src="@{~/images/pic1.gif}"  style="margin-top:5px;"/> Shanghai ICP no. 17045920</p>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	
+<!-- //footer -->
+<!-- JavaScripts -->
+<script type="text/javascript" th:src="@{~/js/jquery-2.1.4.min.js}"></script>
+<script th:src="@{~/js/bootstrap.js}"></script>
+<script th:src="@{/js/layer/layer.js}"></script>
+<script th:src="@{/js/jquery.jsonp.js}"></script>
+<script type="text/javascript">
+$(function(){
+	$.ajax({
+		url : "/indexInfo/consultingList",
+		type : "GET",
+		data : {},
+		cache : false,
+		success : function(data) {
+			var jsondata = JSON.parse(data); 
+			var _data = JSON.parse(jsondata.data.list);
+			//console.log(data);
+			//console.log(jsondata);
+			//console.log(_data);
+		 	$("#oul").empty();
+			var cells = '';
+			if(_data.succeed=="0"){
+				_datalist = _data.data;
+				for(var i=0;i<_datalist.length;i++){
+					cells += '<li class="item1 col-lg-3">';
+					cells += '<div class="cimg"><a target="_blank" href="/consulting_en/info.html?id='+_datalist[i].id+' "class="a-img">'
+					if(_datalist[i].coverImage.indexOf("http")==-1){
+						cells += '<img src="'+jsondata.data.domain+_datalist[i].coverImage+'" ></a>';
+					}else{
+						cells += '<img src="'+_datalist[i].coverImage+'" ></a></div>';
+					}
+					cells += '<h2 class="li-title" title="'+_datalist[i].title+'">'+_datalist[i].title+'</h2>';
+					cells += '<p class="description">'+_datalist[i].articleDesc+'</p>';
+					cells += '<div class="qianm clearfloat">';
+					cells += '<span class="sp1"><b>Date :</span>	';
+					cells += '<span class="sp3">'+_datalist[i].publishDate+'</span>';
+					cells += '</div></li>';
+				}
+				$("#oul").append(cells); 
+			}else{
+				layer.msg(_data.errorMsg);
+			}
+		},
+		error : function() {
+			layer.msg("服务器错误！");
+		}
+	});
+})
+window.onload = function ()
+{
+    var sel = document.getElementsByName('selectDropDown')[0];
+    sel.onchange = function ()
+    {
+        // var options=$("#test option:selected");
+        var val = this.value;
+        switch (val)
+        {
+            case "0":
+                break;
+            case "1":
+                window.location.href='/consulting.html';
+                break;
+            default:
+                break;
+        }
+    }
+}
+</script>
+</body>
+</html>

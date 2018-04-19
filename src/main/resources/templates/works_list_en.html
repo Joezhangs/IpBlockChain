@@ -1,0 +1,398 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Our technology - works.</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<link rel="icon" type="image/x-icon" th:href="@{~/images/favicon.ico}">
+<link th:href="@{/css/bootstrap.css}" rel='stylesheet' type='text/css'/>
+<link th:href="@{/css/font-awesome.css}" rel="stylesheet"> 
+<link rel="stylesheet" th:href="@{/css/slider.css}">
+<link th:href="@{/css/style.css}" rel='stylesheet' type='text/css' />	
+<link rel="stylesheet" type="text/css" th:href="@{/css/mislider.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{/css/mislider-skin-cameo.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{/css/page.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{/css/load.css}"/>
+<link rel="stylesheet" type="text/css" href="../static/css/login.css" th:href="@{~/css/login.css}"/>
+<link th:href="@{/css/nav.css}" rel='stylesheet' type='text/css' />
+<style type="text/css">
+	 body{background: #f0f0f0;}
+	.top_header_agile_info_w3ls{background: #fff;}
+</style>
+</head>
+	<body>
+	<div id="" style="position: relative;">
+	
+
+	<div class="top_banner" id="topl">
+		<!-- SVG Arrows -->
+		<div class="svg-wrap">
+			<svg width="64" height="64" viewBox="0 0 64 64">
+				<path id="arrow-left" d="M46.077 55.738c0.858 0.867 0.858 2.266 0 3.133s-2.243 0.867-3.101 0l-25.056-25.302c-0.858-0.867-0.858-2.269 0-3.133l25.056-25.306c0.858-0.867 2.243-0.867 3.101 0s0.858 2.266 0 3.133l-22.848 23.738 22.848 23.738z" />
+			</svg>
+			<svg width="64" height="64" viewBox="0 0 64 64">
+				<path id="arrow-right" d="M17.919 55.738c-0.858 0.867-0.858 2.266 0 3.133s2.243 0.867 3.101 0l25.056-25.302c0.858-0.867 0.858-2.269 0-3.133l-25.056-25.306c-0.858-0.867-2.243-0.867-3.101 0s-0.858 2.266 0 3.133l22.848 23.738-22.848 23.738z" />
+			</svg>
+		</div>
+		<div class="top_header_agile_info_w3ls">
+		  <nav class="navbar navbar-default">
+				<div class="navbar-header navbar-left">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">copyright</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<h1><a class="navbar-brand" href="company_en.html"  th:href="@{/company_en.html}"><img src="../static/images/logoll.png" th:src="@{~/images/logoll.png}"/></a><span class="ospan">The user center  > Works of query</span></h1>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+					<div id="m_nav_container" class="m_nav wthree_bg">
+						<nav class="menu menu--sebastian">
+							<!-- <ul id="m_nav_list" class="m_nav menu__list">
+								<li class="m_nav_item" id="moble_nav_item_6"> 
+									<a href="login.html" class="link link--kumya">
+										<span data-letters="登录/注册" th:text="${session.user.userName}==null?${session.user.userNickname}:${session.user.userName}">登录/注册</span>
+									</a>
+								</li>
+							</ul> -->
+							<div class="dropdown-back-white">
+							  <span class="dropbtn-back-white" th:text="${session.user.userName}==null?${#strings.length(session.user.userNickname)>5?#strings.substring(session.user.userNickname,0,5)+'...':session.user.userNickname}:${#strings.length(session.user.userName)>5?#strings.substring(session.user.userName,0,5)+'...':session.user.userName}">Login/registration</span><i class="menu-ico-back-white"></i>
+							  <div class="dropdown-content-back-white">
+							    <a th:href="@{~/user/userInfo_en.html}">The user center</a>
+							    <a th:href="@{~/auth/longOut_en}">exit</a>
+							  </div>
+							</div>
+							<input id="user-id" type="hidden" th:value="${session.user.userId}">
+						</nav>
+					</div>
+
+					</nav>
+				</div>
+		</div>
+	
+	
+		<!--<div class="sleekslider" id="home">
+	
+			<div class="slide active bg-1">
+				
+			</div>	
+		</div>	-->
+		
+		
+      <!--welcome-->
+ </div>
+	</div>
+
+<style type="text/css">
+	.formd{padding-top: 120px; min-height: 892px;}
+* {
+	box-sizing: border-box;
+}
+
+
+#container {
+	width: 500px;
+	height: 820px;
+	margin: 0 auto;
+}
+/* div.search {padding: 30px 0;} */
+
+.searche-form {
+	position: relative;
+	width: 300px;
+	margin: 0 auto;
+}
+
+	.searche-form-en {
+		position: relative;
+		width: 370px;
+		margin: 0 auto;
+	}
+
+input, button {
+	border: none;
+	outline: none;
+}
+
+input {
+	width: 100%;
+	height: 42px;
+	padding-left: 13px;
+}
+
+button {
+	height: 42px;
+	width: 42px;
+	cursor: pointer;
+	position: absolute;
+}
+/* .bar3 {background: #F9F0DA;} */
+.bar3 div {background: #D3E1DD;}
+.bar3 input, .bar3 button {
+	background: transparent;
+}
+.bar3 button {
+	top: 0;
+	right: 0;
+}
+.bar3 button:before {
+	content: "\f002";
+	font-family: FontAwesome;
+	font-size: 16px;
+	color: #F9F0DA;
+}
+</style>
+<div class="formd">
+	
+<div class="container">
+	
+<div class="box " style="margin-top: 40px;">
+        <div class="col-lg-2 user-left">
+        	<ul class="user-ul">
+        		<li ><i class="fa fa-user"></i> User information</li>
+        		<li><a href="user_en.html" th:href="@{~/user/userInfo_en.html}">Personal information</a></li>
+        		<li th:if="${session.user.identifyType==3 && session.user.identifyStatus==3}"><a href="enterprise_info_en.html" th:href="@{~/certification/getEnterprise.html}">Enterprise information</a></li>
+        		<li><a href="user_auth_en.html" th:href="@{~/certification/getCertification_en.html}">Real name authentication</a></li>
+        		<!-- <li><a href="">版权证书</a></li> -->
+        	</ul>
+        	<ul class="user-ul">
+        		<li ><i class="fa fa-cog"></i> User operation</li>
+        		<!-- <li><a href="#">实名认证</a></li> -->
+        		<li class="activeuser"><a href="works_list_en.html" th:href="@{~/works/workses_en.html}" class="activeuser">Work inquiry</a></li>
+        		<li><a th:href="@{~/chain/search_en.html}">Block query</a></li>
+        		<!-- <li><a th:href="@{~/works/worksFirst.html}">版权登记</a></li> -->
+        		<li><a href="javascript:;" onclick="confirmation()">Copyright registration</a></li>
+        	</ul>
+        </div>
+        <div class="col-lg-10 ">
+        	<div class="user-right" style="margin-bottom: 70px;">
+        		<ul class="user-ulr2">
+        			<li>
+        				<div class="col-lg-4 search bar3" >
+							<div class="searche-form-en">
+								<input type="text" placeholder="Please enter the content you want to search..." >
+								<button type="button" id="search-button"></button>
+							</div>
+        				</div>
+        				<!-- <div class="col-lg-4  pull-right" >
+        					 <a th:href="@{~/works/worksFirst.html}" class="pull-right">上传作品</a>
+        				</div> -->
+        				
+        				<div style="clear: both;">
+        					
+        				</div>
+        			</li>
+        			<li>
+        				<div class="col-lg-4">
+
+							The name of the work
+        				</div>
+        				<div class="col-lg-2 " >
+        					<p class="edit">The author</p>
+        				</div>
+        				<div class="col-lg-2" >
+
+							state
+        				</div>
+        				<div class="col-lg-2 " >
+        					<p class="edit">operation</p>
+        				</div>
+        				<div class="col-lg-2" >
+							Work file
+        				</div>
+        				
+        				<div style="clear: both;">
+        					
+        				</div>
+        			</li>
+        			<div id="list-box"></div>
+        			<!-- <li th:each="works : ${workses}">
+        				<div class="col-lg-2" th:text="${works.worksName}">
+        					
+        					《好汉歌》 
+        				</div>
+        				<div class="col-lg-2 " >
+        					<p class="edit" th:text="${works.worksSign}"> 张三</p>
+        				</div>
+        				<div class="col-lg-2" th:if="${works.approvedStatus == 1}">
+        					录入中
+        				</div>
+        				<div class="col-lg-2" th:if="${works.approvedStatus == 2}">
+        					共识成功
+        				</div>
+        				<div class="col-lg-2" th:if="${works.approvedStatus == 3}">
+        					共识失败
+        				</div>
+        				<div class="col-lg-2" th:if="${works.approvedStatus == 4}">
+        					共识超时
+        				</div>
+        				<div class="col-lg-2" th:if="${works.approvedStatus == 5}">
+        					审核通过
+        				</div>
+        				<div class="col-lg-2" th:if="${works.approvedStatus == 6}">
+        					审核失败
+        				</div>
+        				<div class="col-lg-2 " >
+        					<p class="edit" th:if="${works.approvedStatus == 3}"> <a>查看证书</a></p>
+        					<p class="edit" th:if="${works.progress < 3 }"> <a th:href="@{~/works/worksPage/{worksId}(worksId=${works.worksId})}">编辑</a></p>
+        				</div>
+        				<div class="col-lg-2" >
+        					<a target="_blank" download th:href="@{~{fileName}(fileName=${works.worksUrl})}">下载</a> 
+        				</div>
+        				<div style="clear: both;">
+        				</div>
+        			</li> -->
+        		</ul>
+        		 
+        			<div class="col-lg-10" style="position: absolute;bottom: 80px;">
+        			<!-- <div class="col-lg-3"></div> -->
+        			<ul class="page" maxshowpageitem="5" pagelistcount="10"  id="page" style="/* float: inline-end; */ float: right;"></ul></div>
+        	</div>
+        </div>
+        
+</div>
+  <style type="text/css">
+  	.text{padding: 3px 15px; border: 1px solid #ccc;}
+  </style>
+</div>
+
+</div>
+
+
+<div style="clear: both;">
+	
+</div>
+<!-- footer -->
+
+
+	<div class="footer" >
+    <div class="agileinfo_footer_bottom1" th:replace="footer_en::footer">
+		</div>
+	</div>
+		
+
+<!-- //footer -->
+<!-- JavaScripts -->
+<script type="text/javascript" th:src="@{/js/jquery-2.1.4.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/sleekslider.js}"></script>
+<script type="text/javascript" th:src="@{/js/app.js}"></script>
+<script th:src="@{/js/bootstrap.js}"></script>
+<script th:src="@{/js/layer/layer.js}"></script>
+<script th:src="@{/js/page_en.js}"></script>
+<script th:src="@{/js/load-min.js}"></script>
+<script th:inline="javascript">
+/*<![CDATA[*/
+    var user = /*[[${session.user}]]*/ 'null';
+/*]]>*/
+</script>
+<!-- //for bootstrap working -->
+<script type="text/javascript">
+$(function(){
+	GG.kk(1);
+	$("#search-button").on('click',function(){
+		GG.kk(1);
+	});
+})
+var GG = {
+    "kk":function(mm){
+    	$.mask_element('#list-box');
+    	$.ajax({
+			url : "/works/worksList",
+			type : "GET",
+			data : {'pageNum':mm,'pageSize':$("#page").attr("pagelistcount"),'worksName':$.trim($("#search-button").prev().val()),'userId':$("#user-id").val()},
+			cache : false,
+			success : function(data) {
+				$.mask_close('#list-box');
+				var jsondata = JSON.parse(data); 
+				var _data = jsondata.data.list;
+				$("#list-box").empty();
+				var cells = '';
+				for(var i=0;i<_data.length;i++){
+					cells += '<li>';
+					cells += '<div class="col-lg-4" title="'+_data[i].worksName+'" style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">'+_data[i].worksName+'</div>';
+					cells += '<div class="col-lg-2 " ><p class="edit">'+_data[i].worksSign+'</p></div>';
+					if(_data[i].approvedStatus == 1){
+						cells += '<div class="col-lg-2">录入中</div>';
+					}else if(_data[i].approvedStatus == 2){
+						cells += '<div class="col-lg-2">共识成功</div>';
+					}else if(_data[i].approvedStatus == 3){
+						cells += '<div class="col-lg-2">共识失败</div>';
+					}else if(_data[i].approvedStatus == 4){
+						cells += '<div class="col-lg-2">共识超时</div>';
+					}else if(_data[i].approvedStatus == 5){
+						cells += '<div class="col-lg-2">审核通过</div>';
+					}else if(_data[i].approvedStatus == 6){
+						cells += '<div class="col-lg-2">审核失败</div>';
+					}
+					cells += '<div class="col-lg-2 " >';
+					if(_data[i].approvedStatus == 5){
+						cells += '<p class="edit"> <a href="/chain/certificate/'+_data[i].worksId+'">View the certificate</a></p>';//DOTO 后台提供接口
+					}else if(_data[i].progress < 3){
+						cells += '<p class="edit"> <a href="/works/worksPage_en/'+_data[i].worksId+'">edit</a></p>';
+					}
+					cells += '</div>';
+					cells += '<div class="col-lg-2" ><a target="_blank" download href='+_data[i].worksUrl+'>download</a>';
+					cells += '</div><div style="clear: both;"></div></li>';
+				}
+				cells += '<div style="height: 40px;"></div>';
+				var count=jsondata.data.total;
+				var current=jsondata.data.pageNum;
+				$("#list-box").append(cells);
+				$("#page").initPage(count,current,GG.kk);
+			},
+			error : function() {
+				layer.msg("服务器错误");
+			}
+		});
+    }
+}
+function confirmation(){
+	if(user == null){
+		window.location.href="/auth/loginPage_en.html";
+	}else{
+		if(user.phone==null||user.phone==""){
+			layer.confirm('尚未绑定手机号，是否立即绑定？', function(index){
+				  window.location.href="/user/bind.html";
+				  layer.close(index);
+				});       
+		}else{
+			$.ajax({
+				url : "/certification/getCertificationStatus",
+				type : "GET",
+				cache : false,
+				success : function(data) {
+					var jsondata = JSON.parse(data); 
+					var au = jsondata.data;
+					if(jsondata.status=="0"){
+						if(au.identityStatus==null||au.identityStatus==1){
+							layer.confirm('尚未实名认证，是否立即认证？', function(index){
+								  window.location.href="/certification/certificateSelect.html";
+								  layer.close(index);
+							});  
+						}else if(au.identityStatus==2){
+							layer.alert('实名认证尚在审核中，无法进行操作');
+						}else if(au.identityStatus==4){
+							layer.confirm('未通过实名认证，是否重新认证？', function(index){
+								  window.location.href="/certification/certificateSelect.html";
+								  layer.close(index);
+							}); 
+						}else{
+							window.location.href="/works/worksFirst_en.html";
+						}
+					}else{
+						layer.msg(jsondata.msg);
+					}
+				},
+				error : function() {
+					layer.msg("服务器错误");
+				}
+			});
+		}
+	}
+}
+</script>
+</body>
+</html>

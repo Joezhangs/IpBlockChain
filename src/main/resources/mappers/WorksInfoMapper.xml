@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wevolution.mapper.WorksInfoMapper">
+  <resultMap id="BaseResultMap" type="com.wevolution.domain.WorksInfo">
+    <id column="record_id" jdbcType="INTEGER" property="recordId" />
+    <result column="works_id" jdbcType="CHAR" property="worksId" />
+    <result column="user_id" jdbcType="CHAR" property="userId" />
+    <result column="works_name" jdbcType="VARCHAR" property="worksName" />
+    <result column="works_type" jdbcType="VARCHAR" property="worksType" />
+    <result column="works_explain" jdbcType="VARCHAR" property="worksExplain" />
+    <result column="works_nature" jdbcType="VARCHAR" property="worksNature" />
+    <result column="works_nature_explain" jdbcType="VARCHAR" property="worksNatureExplain" />
+    <result column="accomplish_time" jdbcType="VARCHAR" property="accomplishTime" />
+    <result column="province" jdbcType="VARCHAR" property="province" />
+    <result column="city" jdbcType="VARCHAR" property="city" />
+    <result column="area" jdbcType="VARCHAR" property="area" />
+    <result column="publish_status" jdbcType="TINYINT" property="publishStatus" />
+    <result column="first_publish_status" jdbcType="VARCHAR" property="firstPublishStatus" />
+    <result column="publish_address" jdbcType="VARCHAR" property="publishAddress" />
+    <result column="author" jdbcType="VARCHAR" property="author" />
+    <result column="author_sing" jdbcType="VARCHAR" property="authorSing" />
+    <result column="access_rights_type" jdbcType="VARCHAR" property="accessRightsType" />
+    <result column="access_rights_type_explain" jdbcType="VARCHAR" property="accessRightsTypeExplain" />
+    <result column="rights_affiliation_type" jdbcType="VARCHAR" property="rightsAffiliationType" />
+    <result column="rights_affiliation_type_explain" jdbcType="VARCHAR" property="rightsAffiliationTypeExplain" />
+    <result column="own_right_status" jdbcType="VARCHAR" property="ownRightStatus" />
+    <result column="own_right_status_explain" jdbcType="VARCHAR" property="ownRightStatusExplain" />
+    <result column="owner_name" jdbcType="VARCHAR" property="ownerName" />
+    <result column="owner_sign" jdbcType="VARCHAR" property="ownerSign" />
+    <result column="owner_type" jdbcType="VARCHAR" property="ownerType" />
+    <result column="owner_id_type" jdbcType="VARCHAR" property="ownerIdType" />
+    <result column="owner_id_number" jdbcType="CHAR" property="ownerIdNumber" />
+    <result column="owner_nationality" jdbcType="VARCHAR" property="ownerNationality" />
+    <result column="owner_province" jdbcType="VARCHAR" property="ownerProvince" />
+    <result column="owner_city" jdbcType="VARCHAR" property="ownerCity" />
+    <result column="electronic_medium" jdbcType="INTEGER" property="electronicMedium" />
+    <result column="created_time" jdbcType="CHAR" property="createdTime" />
+    <result column="updated_time" jdbcType="CHAR" property="updatedTime" />
+    <result column="progress" jdbcType="INTEGER" property="progress" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    record_id, works_id, user_id, works_name, works_type, works_explain, works_nature, 
+    works_nature_explain, accomplish_time, province, city, area, publish_status, first_publish_status, 
+    publish_address, author, author_sing, access_rights_type, access_rights_type_explain, 
+    rights_affiliation_type, rights_affiliation_type_explain, own_right_status, own_right_status_explain, 
+    owner_name, owner_sign, owner_type, owner_id_type, owner_id_number, owner_nationality, 
+    owner_province, owner_city, electronic_medium, created_time, updated_time, progress
+  </sql>
+  <select id="selectWorksInfoByWorksId" resultMap="BaseResultMap" parameterType="String">
+  	select <include refid="Base_Column_List"/>
+  	from works_info where works_id = #{worksId,jdbcType=CHAR}
+  </select>
+  <!-- 仅查询作品信息（不包括作者、著作权人） -->
+  <select id="selectWorksInfoOneByWorksId" resultMap="BaseResultMap" parameterType="String">
+  	select record_id, works_id, user_id, works_name, works_type, works_explain, works_nature, 
+    works_nature_explain, accomplish_time, province, city, area, publish_status, first_publish_status, 
+    publish_address, created_time
+  	from works_info where works_id = #{worksId,jdbcType=CHAR} limit 1
+  </select>
+  <insert id="insertWorksInfo" parameterType="java.util.List">
+	  <selectKey keyProperty="recordId" order="AFTER" resultType="java.lang.Integer">
+	      SELECT LAST_INSERT_ID()
+	    </selectKey>
+	      insert into works_info (works_id, user_id, works_name, 
+	      works_type, works_explain, works_nature, 
+	      works_nature_explain, accomplish_time, province, 
+	      city, area, publish_status, 
+	      first_publish_status, publish_address, author, 
+	      author_sing, access_rights_type, access_rights_type_explain, 
+	      rights_affiliation_type, rights_affiliation_type_explain, 
+	      own_right_status, own_right_status_explain, 
+	      owner_name, owner_sign, owner_type, 
+	      owner_id_type, owner_id_number, owner_nationality, 
+	      owner_province, owner_city, electronic_medium, 
+	      created_time, updated_time, progress)
+		  values 
+	    <foreach collection="list" item="works" index="index" separator=",">
+	      (#{works.worksId,jdbcType=CHAR}, #{works.userId,jdbcType=INTEGER}, #{works.worksName,jdbcType=VARCHAR}, 
+	      #{works.worksType,jdbcType=VARCHAR}, #{works.worksExplain,jdbcType=VARCHAR}, #{works.worksNature,jdbcType=VARCHAR}, 
+	      #{works.worksNatureExplain,jdbcType=VARCHAR}, #{works.accomplishTime,jdbcType=VARCHAR}, #{works.province,jdbcType=VARCHAR}, 
+	      #{works.city,jdbcType=VARCHAR}, #{works.area,jdbcType=VARCHAR}, #{works.publishStatus,jdbcType=TINYINT}, 
+	      #{works.firstPublishStatus,jdbcType=VARCHAR}, #{works.publishAddress,jdbcType=VARCHAR}, #{works.author,jdbcType=VARCHAR}, 
+	      #{works.authorSing,jdbcType=VARCHAR}, #{works.accessRightsType,jdbcType=VARCHAR}, #{works.accessRightsTypeExplain,jdbcType=VARCHAR}, 
+	      #{works.rightsAffiliationType,jdbcType=VARCHAR}, #{works.rightsAffiliationTypeExplain,jdbcType=VARCHAR}, 
+	      #{works.ownRightStatus,jdbcType=VARCHAR}, #{works.ownRightStatusExplain,jdbcType=VARCHAR}, 
+	      #{works.ownerName,jdbcType=VARCHAR}, #{works.ownerSign,jdbcType=VARCHAR}, #{works.ownerType,jdbcType=VARCHAR}, 
+	      #{works.ownerIdType,jdbcType=VARCHAR}, #{works.ownerIdNumber,jdbcType=CHAR}, #{works.ownerNationality,jdbcType=VARCHAR}, 
+	      #{works.ownerProvince,jdbcType=VARCHAR}, #{works.ownerCity,jdbcType=VARCHAR}, #{works.electronicMedium,jdbcType=INTEGER}, 
+	      #{works.createdTime,jdbcType=CHAR}, #{works.updatedTime,jdbcType=CHAR}, #{works.progress,jdbcType=INTEGER})
+	     </foreach>
+  </insert>
+  <delete id="deleteByWorksId" parameterType="String">
+  	delete from works_info
+    where works_id = #{worksId,jdbcType=CHAR}
+  </delete>
+   <update id="updateByWorksId" parameterType="com.wevolution.domain.WorksInfo">
+    update works_info
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=CHAR},
+      </if>
+      <if test="worksName != null">
+        works_name = #{worksName,jdbcType=VARCHAR},
+      </if>
+      <if test="worksType != null">
+        works_type = #{worksType,jdbcType=VARCHAR},
+      </if>
+      <if test="worksExplain != null">
+        works_explain = #{worksExplain,jdbcType=VARCHAR},
+      </if>
+      <if test="worksNature != null">
+        works_nature = #{worksNature,jdbcType=VARCHAR},
+      </if>
+      <if test="worksNatureExplain != null">
+        works_nature_explain = #{worksNatureExplain,jdbcType=VARCHAR},
+      </if>
+      <if test="accomplishTime != null">
+        accomplish_time = #{accomplishTime,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null">
+        province = #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null">
+        city = #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="area != null">
+        area = #{area,jdbcType=VARCHAR},
+      </if>
+      <if test="publishStatus != null">
+        publish_status = #{publishStatus,jdbcType=TINYINT},
+      </if>
+      <if test="firstPublishStatus != null">
+        first_publish_status = #{firstPublishStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="publishAddress != null">
+        publish_address = #{publishAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="author != null">
+        author = #{author,jdbcType=VARCHAR},
+      </if>
+      <if test="authorSing != null">
+        author_sing = #{authorSing,jdbcType=VARCHAR},
+      </if>
+      <if test="accessRightsType != null">
+        access_rights_type = #{accessRightsType,jdbcType=VARCHAR},
+      </if>
+      <if test="accessRightsTypeExplain != null">
+        access_rights_type_explain = #{accessRightsTypeExplain,jdbcType=VARCHAR},
+      </if>
+      <if test="rightsAffiliationType != null">
+        rights_affiliation_type = #{rightsAffiliationType,jdbcType=VARCHAR},
+      </if>
+      <if test="rightsAffiliationTypeExplain != null">
+        rights_affiliation_type_explain = #{rightsAffiliationTypeExplain,jdbcType=VARCHAR},
+      </if>
+      <if test="ownRightStatus != null">
+        own_right_status = #{ownRightStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="ownRightStatusExplain != null">
+        own_right_status_explain = #{ownRightStatusExplain,jdbcType=VARCHAR},
+      </if>
+      <if test="ownerName != null">
+        owner_name = #{ownerName,jdbcType=VARCHAR},
+      </if>
+      <if test="ownerSign != null">
+        owner_sign = #{ownerSign,jdbcType=VARCHAR},
+      </if>
+      <if test="ownerType != null">
+        owner_type = #{ownerType,jdbcType=VARCHAR},
+      </if>
+      <if test="ownerIdType != null">
+        owner_id_type = #{ownerIdType,jdbcType=VARCHAR},
+      </if>
+      <if test="ownerIdNumber != null">
+        owner_id_number = #{ownerIdNumber,jdbcType=CHAR},
+      </if>
+      <if test="ownerNationality != null">
+        owner_nationality = #{ownerNationality,jdbcType=VARCHAR},
+      </if>
+      <if test="ownerProvince != null">
+        owner_province = #{ownerProvince,jdbcType=VARCHAR},
+      </if>
+      <if test="ownerCity != null">
+        owner_city = #{ownerCity,jdbcType=VARCHAR},
+      </if>
+      <if test="electronicMedium != null">
+        electronic_medium = #{electronicMedium,jdbcType=INTEGER},
+      </if>
+      <if test="createdTime != null">
+        created_time = #{createdTime,jdbcType=CHAR},
+      </if>
+      <if test="updatedTime != null">
+        updated_time = #{updatedTime,jdbcType=CHAR},
+      </if>
+      <if test="progress != null">
+        progress = #{progress,jdbcType=INTEGER},
+      </if>
+    </set>
+    where works_id = #{worksId,jdbcType=CHAR}
+  </update>
+   <insert id="insertWorksInfoByOne" parameterType="com.wevolution.domain.WorksInfo">
+    <selectKey keyProperty="recordId" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into works_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="worksId != null">
+        works_id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="worksName != null">
+        works_name,
+      </if>
+      <if test="worksType != null">
+        works_type,
+      </if>
+      <if test="worksExplain != null">
+        works_explain,
+      </if>
+      <if test="worksNature != null">
+        works_nature,
+      </if>
+      <if test="worksNatureExplain != null">
+        works_nature_explain,
+      </if>
+      <if test="accomplishTime != null">
+        accomplish_time,
+      </if>
+      <if test="province != null">
+        province,
+      </if>
+      <if test="city != null">
+        city,
+      </if>
+      <if test="area != null">
+        area,
+      </if>
+      <if test="publishStatus != null">
+        publish_status,
+      </if>
+      <if test="firstPublishStatus != null">
+        first_publish_status,
+      </if>
+      <if test="publishAddress != null">
+        publish_address,
+      </if>
+      <if test="author != null">
+        author,
+      </if>
+      <if test="authorSing != null">
+        author_sing,
+      </if>
+      <if test="accessRightsType != null">
+        access_rights_type,
+      </if>
+      <if test="accessRightsTypeExplain != null">
+        access_rights_type_explain,
+      </if>
+      <if test="rightsAffiliationType != null">
+        rights_affiliation_type,
+      </if>
+      <if test="rightsAffiliationTypeExplain != null">
+        rights_affiliation_type_explain,
+      </if>
+      <if test="ownRightStatus != null">
+        own_right_status,
+      </if>
+      <if test="ownRightStatusExplain != null">
+        own_right_status_explain,
+      </if>
+      <if test="ownerName != null">
+        owner_name,
+      </if>
+      <if test="ownerSign != null">
+        owner_sign,
+      </if>
+      <if test="ownerType != null">
+        owner_type,
+      </if>
+      <if test="ownerIdType != null">
+        owner_id_type,
+      </if>
+      <if test="ownerIdNumber != null">
+        owner_id_number,
+      </if>
+      <if test="ownerNationality != null">
+        owner_nationality,
+      </if>
+      <if test="ownerProvince != null">
+        owner_province,
+      </if>
+      <if test="ownerCity != null">
+        owner_city,
+      </if>
+      <if test="electronicMedium != null">
+        electronic_medium,
+      </if>
+      <if test="createdTime != null">
+        created_time,
+      </if>
+      <if test="updatedTime != null">
+        updated_time,
+      </if>
+      <if test="progress != null">
+        progress,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="worksId != null">
+        #{worksId,jdbcType=CHAR},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=CHAR},
+      </if>
+      <if test="worksName != null">
+        #{worksName,jdbcType=VARCHAR},
+      </if>
+      <if test="worksType != null">
+        #{worksType,jdbcType=VARCHAR},
+      </if>
+      <if test="worksExplain != null">
+        #{worksExplain,jdbcType=VARCHAR},
+      </if>
+      <if test="worksNature != null">
+        #{worksNature,jdbcType=VARCHAR},
+      </if>
+      <if test="worksNatureExplain != null">
+        #{worksNatureExplain,jdbcType=VARCHAR},
+      </if>
+      <if test="accomplishTime != null">
+        #{accomplishTime,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null">
+        #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null">
+        #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="area != null">
+        #{area,jdbcType=VARCHAR},
+      </if>
+      <if test="publishStatus != null">
+        #{publishStatus,jdbcType=TINYINT},
+      </if>
+      <if test="firstPublishStatus != null">
+        #{firstPublishStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="publishAddress != null">
+        #{publishAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="author != null">
+        #{author,jdbcType=VARCHAR},
+      </if>
+      <if test="authorSing != null">
+        #{authorSing,jdbcType=VARCHAR},
+      </if>
+      <if test="accessRightsType != null">
+        #{accessRightsType,jdbcType=VARCHAR},
+      </if>
+      <if test="accessRightsTypeExplain != null">
+        #{accessRightsTypeExplain,jdbcType=VARCHAR},
+      </if>
+      <if test="rightsAffiliationType != null">
+        #{rightsAffiliationType,jdbcType=VARCHAR},
+      </if>
+      <if test="rightsAffiliationTypeExplain != null">
+        #{rightsAffiliationTypeExplain,jdbcType=VARCHAR},
+      </if>
+      <if test="ownRightStatus != null">
+        #{ownRightStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="ownRightStatusExplain != null">
+        #{ownRightStatusExplain,jdbcType=VARCHAR},
+      </if>
+      <if test="ownerName != null">
+        #{ownerName,jdbcType=VARCHAR},
+      </if>
+      <if test="ownerSign != null">
+        #{ownerSign,jdbcType=VARCHAR},
+      </if>
+      <if test="ownerType != null">
+        #{ownerType,jdbcType=VARCHAR},
+      </if>
+      <if test="ownerIdType != null">
+        #{ownerIdType,jdbcType=VARCHAR},
+      </if>
+      <if test="ownerIdNumber != null">
+        #{ownerIdNumber,jdbcType=CHAR},
+      </if>
+      <if test="ownerNationality != null">
+        #{ownerNationality,jdbcType=VARCHAR},
+      </if>
+      <if test="ownerProvince != null">
+        #{ownerProvince,jdbcType=VARCHAR},
+      </if>
+      <if test="ownerCity != null">
+        #{ownerCity,jdbcType=VARCHAR},
+      </if>
+      <if test="electronicMedium != null">
+        #{electronicMedium,jdbcType=INTEGER},
+      </if>
+      <if test="createdTime != null">
+        #{createdTime,jdbcType=CHAR},
+      </if>
+      <if test="updatedTime != null">
+        #{updatedTime,jdbcType=CHAR},
+      </if>
+      <if test="progress != null">
+        #{progress,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="queryWorksInfoByWorksId" resultType="java.util.Map" parameterType="String">
+  
+  	select 
+	  	works_id,
+		IFNULL(user_id,"") user_id,
+		IFNULL(works_name,"") works_name,
+		IFNULL(works_type,"") works_type,
+		IFNULL(works_explain,"") works_explain,
+		IFNULL(works_nature,"") works_nature,
+		IFNULL(works_nature_explain,"") works_nature_explain,
+		IFNULL(accomplish_time,"") accomplish_time,
+		IFNULL(province,"") province,
+		IFNULL(city,"") city,
+		IFNULL(area,"") area,
+		IFNULL(publish_status,"") publish_status,
+		IFNULL(first_publish_status,"") first_publish_status,
+		IFNULL(publish_address,"") publish_address,
+		IFNULL(author,"") author,
+		IFNULL(author_sing,"") author_sing,
+		IFNULL(access_rights_type,"") access_rights_type,
+		IFNULL(access_rights_type_explain,"") access_rights_type_explain,
+		IFNULL(rights_affiliation_type,"") rights_affiliation_type,
+		IFNULL(rights_affiliation_type_explain,"") rights_affiliation_type_explain,
+		IFNULL(own_right_status,"") own_right_status,
+		IFNULL(own_right_status_explain,"") own_right_status_explain,
+		IFNULL(owner_name,"") owner_name,
+		IFNULL(owner_sign,"") owner_sign,
+		IFNULL(owner_type,"") owner_type,
+		IFNULL(owner_id_type,"") owner_id_type,
+		IFNULL(owner_id_number,"") owner_id_number,
+		IFNULL(owner_nationality,"") owner_nationality,
+		IFNULL(owner_province,"") owner_province,
+		IFNULL(owner_city,"") owner_city,
+		IFNULL(electronic_medium,"") electronic_medium,
+		IFNULL(created_time,"") created_time,
+		IFNULL(updated_time,"") updated_time
+  	from works_info where works_id = #{worksId,jdbcType=CHAR}
+  </select>
+</mapper>

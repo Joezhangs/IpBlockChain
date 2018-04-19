@@ -1,0 +1,1077 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>We technology - copyright registration</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<link rel="icon" type="image/x-icon" th:href="@{~/images/favicon.ico}">
+<link th:href="@{/css/bootstrap.css}" rel='stylesheet' type='text/css'/>
+<link th:href="@{/css/font-awesome.css}" rel="stylesheet"> 
+<link rel="stylesheet" th:href="@{/css/slider.css}">
+<link th:href="@{/css/style.css}" rel='stylesheet' type='text/css' />	
+<link rel="stylesheet" type="text/css" th:href="@{/css/mislider.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{/css/mislider-skin-cameo.css}"/>
+<link th:href="@{/css/nav.css}" rel='stylesheet' type='text/css'/>
+<style type="text/css">
+	 body{background: #f0f0f0;}
+	.top_header_agile_info_w3ls{background: #fff;}
+</style>
+</head>
+	<body>
+	<div id="" style="position: relative;">
+	
+
+	<div class="top_banner" id="topl">
+		<!-- SVG Arrows -->
+		<div class="svg-wrap">
+			<svg width="64" height="64" viewBox="0 0 64 64">
+				<path id="arrow-left" d="M46.077 55.738c0.858 0.867 0.858 2.266 0 3.133s-2.243 0.867-3.101 0l-25.056-25.302c-0.858-0.867-0.858-2.269 0-3.133l25.056-25.306c0.858-0.867 2.243-0.867 3.101 0s0.858 2.266 0 3.133l-22.848 23.738 22.848 23.738z" />
+			</svg>
+			<svg width="64" height="64" viewBox="0 0 64 64">
+				<path id="arrow-right" d="M17.919 55.738c-0.858 0.867-0.858 2.266 0 3.133s2.243 0.867 3.101 0l25.056-25.302c0.858-0.867 0.858-2.269 0-3.133l-25.056-25.306c-0.858-0.867-2.243-0.867-3.101 0s-0.858 2.266 0 3.133l22.848 23.738-22.848 23.738z" />
+			</svg>
+		</div>
+		<div class="top_header_agile_info_w3ls">
+		  <nav class="navbar navbar-default">
+				<div class="navbar-header navbar-left">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">copyright</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<h1><a class="navbar-brand" href="company_en.html"  th:href="@{/company_en.html}"><img src="../static/images/logoll.png" th:src="@{~/images/logoll.png}"/></a><span class="ospan">copyright registration</span></h1>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+<style type="text/css">
+	.m_nav li>a {color: #666; font-weight: 600;}
+	.top_header_agile_info_w3ls{border-bottom: 1px solid #ccc;}
+	.navbar-default .navbar-brand, .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus{color: #666;}
+	.ospan{margin: 15px; display: inline-block;}
+.dropbtn {
+	color: #666;
+	padding: 16px;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+	font-weight: 600;
+}
+
+/*容器 <div> - 需要定位下拉内容 */
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+/*下拉内容 (默认隐藏) */
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+/*下拉菜单的链接 */
+.dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+/*鼠标移上去后修改下拉菜单链接颜色 */
+.dropdown-content a:hover {
+	background-color: #f1f1f1
+}
+
+/*在鼠标移上去后显示下拉菜单 */
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+/* 当下拉内容显示后修改下拉按钮的背景颜色 */
+.dropdown:hover .dropbtn {
+	color: #3e8e41;
+}
+</style>
+					<div id="m_nav_container" class="m_nav wthree_bg">
+						<nav class="menu menu--sebastian">
+							<div class="dropdown-back-white">
+							  <span class="dropbtn-back-white" th:text="${session.user.userName}==null?${#strings.length(session.user.userNickname)>5?#strings.substring(session.user.userNickname,0,5)+'...':session.user.userNickname}:${#strings.length(session.user.userName)>5?#strings.substring(session.user.userName,0,5)+'...':session.user.userName}">Login/registration</span><i class="menu-ico-back-white"></i>
+							  <div class="dropdown-content-back-white">
+							    <a th:href="@{~/user/userInfo_en.html}">User center</a>
+							    <a th:href="@{~/auth/longOut_en}">exit</a>
+							  </div>
+							</div>
+						</nav>
+					</div>
+
+					</nav>
+				</div>
+		</div>
+	
+	
+		<!--<div class="sleekslider" id="home">
+	
+			<div class="slide active bg-1">
+				
+			</div>	
+		</div>	-->
+		
+		
+      <!--welcome-->
+ </div>
+	</div>
+
+<style type="text/css">
+	.formd{padding-top: 120px; min-height: 892px; margin-bottom: 40px;}
+	.formdr{background: #fff; width:100%; height: 100%;}
+	.formdl{padding: 80px 0 40px 0; min-height: 600px; }
+	.formdl label{font-size: 14px; }
+	h2{margin:0 0 20px 0;}
+	.mo0{padding: 10px;}
+	.mo1{padding:10px 0;}
+</style>
+<div class="formd">
+	
+
+<div class=" container">
+<div class="formdr col-lg-12" >
+	<form class="col-md-offset-3 col-lg-6 formdl" th:action="@{~/works/author_en}" method="post" onsubmit="return check()">
+ 
+ <div class="col-lg-12" style="border-bottom: 1px dashed #ccc; margin-bottom: 20px;">
+ 	<h2>the author</h2>
+		      <input type="hidden" th:value="${worksInfos[0].worksId}" name="worksInfos[0].worksId">
+ 		<div id="author-div">
+	  	<div th:each="worksInfo : ${worksInfos}" class="authorflag" th:if="${#lists.size(worksInfos) > 1 && !#strings.isEmpty(worksInfo.author)}">
+	 	  	<div class="form-group">
+		    <label for="inputEmail3" class="col-sm-3 control-label text-right"><span style="color: #FF0000;">*</span> author </label>
+		    <div class="col-sm-9">
+		      <input type="text" th:value="${worksInfo.author}" class="form-control" placeholder="please fill in the name of the real creator" err-msg="the author's name or name cannot be null"
+		      th:name="|worksInfos[${worksInfoStat.index}].author|" name="worksInfos[0].author" maxlength="20">
+		    </div>
+		   <div style="clear: both;"></div>
+		   </div>
+		  <div class="form-group">
+		    <label for="inputPassword3" class="col-sm-3 control-label text-right"><span style="color: #FF0000;">*</span>work properties</label>
+		    <div class="col-sm-9">
+		     <input type="text" th:value="${worksInfo.authorSing}" class="form-control" placeholder="when you use aliases and pseudonyms to sign your work, please fill in your alias and pen name in this column" err-msg="a work signature cannot be empty"
+		     th:name="|worksInfos[${worksInfoStat.index}].authorSing|" name="worksInfos[0].authorSing" maxlength="30">
+		    </div>
+		    <div style="clear: both;"></div>
+		  </div>
+	  </div>
+	    <div th:each="worksInfo : ${worksInfos}" class="authorflag" th:if="${#lists.size(worksInfos) == 1}">
+	 	  	<div class="form-group">
+		    <label for="inputEmail3" class="col-sm-3 control-label text-right"><span style="color: #FF0000;">*</span> author </label>
+		    <div class="col-sm-9">
+		      <input type="text" th:value="${worksInfo.author}" class="form-control" placeholder="please fill in the name of the real creator" err-msg="the author's name or name cannot be null"
+		      th:name="|worksInfos[${worksInfoStat.index}].author|" name="worksInfos[0].author" maxlength="20">
+		    </div>
+		   <div style="clear: both;"></div>
+		   </div>
+		  <div class="form-group">
+		    <label for="inputPassword3" class="col-sm-3 control-label text-right"><span style="color: #FF0000;">*</span> work properties</label>
+		    <div class="col-sm-9">
+		     <input type="text" th:value="${worksInfo.authorSing}" class="form-control" placeholder="when you use aliases and pseudonyms to sign your work, please fill in your alias and pen name in this column" err-msg="a work signature cannot be empty"
+		     th:name="|worksInfos[${worksInfoStat.index}].authorSing|" name="worksInfos[0].authorSing" maxlength="30">
+		    </div>
+		    <div style="clear: both;"></div>
+		  </div>
+	  </div>
+	  </div>
+	   <div class="form-group">
+	    <label for="inputPassword3" class="col-sm-3 control-label text-right"></label>
+	    <div class="col-sm-9">
+	     <p class="col-lg-6" style="padding-left: 0;" id="add-author">
+	     	<a class="btn btn-info" id="add-author" onclick="addAuthor()"><i class="fa fa-plus-square-o"></i> add author</a>
+	     </p>
+	     <p class="col-lg-6" style="padding-left: 0;display: none;" id="remove-author">
+	     	<a class="btn btn-info" onclick="removeAuthor()"><i class="fa fa-minus-square-o"></i> delete author</a>
+	     </p>
+	    </div>
+	    <div style="clear: both;"></div>
+	  </div>
+   	<div style="clear: both;"></div>
+ </div>
+ 
+  <div class="col-lg-12" style="border-bottom: 1px dashed #ccc; margin-bottom: 20px;">
+ 	<h2>statement of rights</h2>
+ 	  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-3 control-label text-right"><span style="color: #FF0000;">*</span> access to rights </label>
+    <div class="col-sm-9">
+      <select class="form-control" name="worksInfos[0].accessRightsType" err-msg="please choose the right approach">
+	     	<option value="">please choose</option>
+		  	<option th:each="type : ${getway}" th:value="${type.name}" th:text="${type.name}" th:selected="${worksInfos[0].accessRightsType==null?false:#strings.contains(worksInfos[0].accessRightsType,type.name)}">1</option>
+		</select>
+    </div>
+   <div style="clear: both;"></div>
+  </div>
+  <div class="form-group" id="access-rights">
+    <label for="inputPassword3" class="col-sm-3 control-label text-right">instructions</label>
+    <div class="col-sm-9">
+     <input type="text" class="form-control" id="inputEmail3" placeholder="instructions" th:value="${worksInfos[0].accessRightsTypeExplain}" name="worksInfos[0].accessRightsTypeExplain" err-msg="the status of rights cannot be null" maxlength="50">
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+    <div class="form-group">
+    <label for="inputEmail3" class="col-sm-3 control-label text-right"><span style="color: #FF0000;">*</span> way of ownership </label>
+    <div class="col-sm-9">
+      <select class="form-control" name="worksInfos[0].rightsAffiliationType" err-msg="please choose the right to belong">
+	     	<option value="">please choose</option>
+		  	<option th:each="type : ${belonging}" th:value="${type.name}" th:text="${type.name}" th:selected="${worksInfos[0].rightsAffiliationType==null?false:#strings.contains(worksInfos[0].rightsAffiliationType,type.name)}">1</option>
+		</select>
+    </div>
+   <div style="clear: both;"></div>
+  </div>
+  <div class="form-group" id="rights-affiliation">
+    <label for="inputPassword3" class="col-sm-3 control-label text-right">instructions</label>
+    <div class="col-sm-9">
+     <input type="text" class="form-control" id="inputEmail3" placeholder="instructions" th:value="${worksInfos[0].rightsAffiliationTypeExplain}" name="worksInfos[0].rightsAffiliationTypeExplain" err-msg="the attribution of right cannot be null" maxlength="50">
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+  
+  
+ <div class="form-group">
+    <label for="inputEmail3" class="col-sm-3 control-label  text-right">
+    <span style="color: #FF0000;">*</span> ownership status </label>
+    <div class="col-sm-9">
+    <div class="col-lg-3 mo0">
+       	<label class="checkbox-inline">
+		  <input type="checkbox" id="own-right" value="option1"> all
+		</label>
+        <label class="checkbox-inline " style="margin-left: 0;">
+		  <input type="checkbox" id="inlineCheckbox2" value="right of publication" name="worksInfos[0].ownRightStatus" th:checked="*{worksInfos[0].ownRightStatus==null?false:#strings.contains(worksInfos[0].ownRightStatus,'Right of publication')}"> right of publication
+		</label>
+		<label class="checkbox-inline " style="margin-left: 0;">
+		  <input type="checkbox" id="inlineCheckbox3" value="the right of authorship" name="worksInfos[0].ownRightStatus" th:checked="*{worksInfos[0].ownRightStatus==null?false:#strings.contains(worksInfos[0].ownRightStatus,'The right of authorship')}"> the right of authorship
+		</label>
+	    <label class="checkbox-inline" style="margin-left: 0;">
+		  <input type="checkbox" id="inlineCheckbox3" value="right to modify the" name="worksInfos[0].ownRightStatus" th:checked="*{worksInfos[0].ownRightStatus==null?false:#strings.contains(worksInfos[0].ownRightStatus,'Right to modify the')}"> right to modify the
+     	</label>	
+	</div>
+    <div class="col-lg-4 mo0">
+	    <label class="checkbox-inline" style="font-size: 13px;">
+	  	  <input type="checkbox" id="inlineCheckbox1" value="protect the integrity of the work" name="worksInfos[0].ownRightStatus" th:checked="*{worksInfos[0].ownRightStatus==null?false:#strings.contains(worksInfos[0].ownRightStatus,'Protect the integrity of the work.')}"> protect the integrity of the work.
+		</label>
+		<label class="checkbox-inline"  style="margin-left: 0; font-size: 13px;">
+		  <input type="checkbox" id="inlineCheckbox2" value="information network transmission right" name="worksInfos[0].ownRightStatus" th:checked="*{worksInfos[0].ownRightStatus==null?false:#strings.contains(worksInfos[0].ownRightStatus,'Information network transmission right')}"> information network transmission right
+		</label>
+		<label class="checkbox-inline"  style="margin-left: 0;">
+		  <input type="checkbox" id="inlineCheckbox3" value="right to show" name="worksInfos[0].ownRightStatus" th:checked="*{worksInfos[0].ownRightStatus==null?false:#strings.contains(worksInfos[0].ownRightStatus,'Right to show')}"> right to show
+		</label>
+		   <label class="checkbox-inline"  style="margin-left: 0;">
+		  <input type="checkbox" id="inlineCheckbox3" value="which" name="worksInfos[0].ownRightStatus" th:checked="*{worksInfos[0].ownRightStatus==null?false:#strings.contains(worksInfos[0].ownRightStatus,'which')}"> which
+		</label>
+	</div> 
+	<div class="col-lg-3 mo0">
+		 <label class="checkbox-inline" >
+		   <input type="checkbox" id="inlineCheckbox1" value="presentation" name="worksInfos[0].ownRightStatus" th:checked="*{worksInfos[0].ownRightStatus==null?false:#strings.contains(worksInfos[0].ownRightStatus,'presentation')}"> presentation
+		</label>
+		<label class="checkbox-inline"  style="margin-left: 0;">
+		  <input type="checkbox" id="inlineCheckbox2" value="broadcasting rights" name="worksInfos[0].ownRightStatus" th:checked="*{worksInfos[0].ownRightStatus==null?false:#strings.contains(worksInfos[0].ownRightStatus,'broadcasting rights')}"> broadcasting rights
+		</label>
+		<label class="checkbox-inline"  style="margin-left: 0;">
+		  <input type="checkbox" id="inlineCheckbox3" value="rights" name="worksInfos[0].ownRightStatus" th:checked="*{worksInfos[0].ownRightStatus==null?false:#strings.contains(worksInfos[0].ownRightStatus,'rights')}"> rights
+		</label>
+		   <label class="checkbox-inline"  style="margin-left: 0;">
+		  <input type="checkbox" id="inlineCheckbox3" value="right of adaptation" name="worksInfos[0].ownRightStatus" th:checked="*{worksInfos[0].ownRightStatus==null?false:#strings.contains(worksInfos[0].ownRightStatus,'right of adaptation')}"> right of adaptation
+		</label>
+		   </div>
+		 <div class="col-lg-2 mo1">
+	       <label class="checkbox-inline" >
+		  <input type="checkbox" id="inlineCheckbox1" value="translation rights" name="worksInfos[0].ownRightStatus" th:checked="*{worksInfos[0].ownRightStatus==null?false:#strings.contains(worksInfos[0].ownRightStatus,'translation rights')}"> translation rights
+		</label>
+		<label class="checkbox-inline"  style="margin-left: 0;">
+		  <input type="checkbox" id="inlineCheckbox2" value="right to assembly" name="worksInfos[0].ownRightStatus" th:checked="*{worksInfos[0].ownRightStatus==null?false:#strings.contains(worksInfos[0].ownRightStatus,'right to assembly')}"> right to assembly
+		</label>
+		<label class="checkbox-inline"  style="margin-left: 0;">
+		  <input type="checkbox" id="inlineCheckbox2" value="other" name="worksInfos[0].ownRightStatus" th:checked="*{worksInfos[0].ownRightStatus==null?false:#strings.contains(worksInfos[0].ownRightStatus,'other')}"> other
+		</label>
+   </div> 
+    </div>
+   <div style="clear: both;"></div>
+  </div>
+ 	
+ 	 <div class="form-group" id="own-right-explain">
+    <label for="inputPassword3" class="col-sm-3 control-label text-right">instructions</label>
+    <div class="col-sm-9">
+     <input type="text" class="form-control" id="inputEmail3" placeholder="instructions" name="worksInfos[0].ownRightStatusExplain" th:value="${worksInfos[0].ownRightStatusExplain}" err-msg="the state of the rights is not null" maxlength="50">
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+ 	
+ 	<div style="clear: both;"></div>	
+ 	</div>
+ 
+   <div class="col-lg-12" style="border-bottom: 1px dashed #ccc; margin-bottom: 20px;">
+ 	<h2>the copyright owner</h2>
+ 	<div id="owner-div">
+ 	<div th:each="worksInfo : ${worksInfos}" class="ownerflag" th:if="${#lists.size(worksInfos) > 1 && !#strings.isEmpty(worksInfo.ownerName)}">
+ 	  <div class="form-group">
+	    <label for="inputEmail3" class="col-sm-3 control-label text-right"><span style="color: #FF0000;">*</span> name </label>
+	    <div class="col-sm-9">
+	      <input type="text" th:value="${worksInfo.ownerName}" class="form-control" id="inputEmail3" placeholder="name " err-msg="the name or name cannot be empty"
+	       th:name="|worksInfos[${worksInfoStat.index}].ownerName|" name="worksInfos[0].ownerName" maxlength="20">
+	    </div>
+	   <div style="clear: both;"></div>
+	  </div>
+
+   	  <div class="form-group">
+	    <label for="inputEmail3" class="col-sm-3 control-label text-right"><span style="color: #FF0000;">*</span> signature of </label>
+	    <div class="col-sm-9">
+	      <input type="text" th:value="${worksInfo.ownerSign}" class="form-control" id="inputEmail3" placeholder="signature of" err-msg="the signature cannot be empty"
+	      th:name="|worksInfos[${worksInfoStat.index}].ownerSign|" name="worksInfos[0].ownerSign" maxlength="30">
+	    </div>
+	   <div style="clear: both;"></div>
+  	</div>
+
+ 	<div class="form-group">
+	    <label for="inputEmail3" class="col-sm-3 control-label  text-right"><span style="color: #FF0000;">*</span> category </label>
+	    <div class="col-sm-9">
+	  
+	     <div class="col-lg-4 mo0">
+			<label class="radio-inline">
+			  <input type="radio" name="worksInfos[0].ownerType" th:name="|worksInfos[${worksInfoStat.index}].ownerType|"  th:checked="*{worksInfo.ownerType} == 'a natural person'"
+			  id="inlineRadio1" value="a natural person" > a natural person
+			</label>
+			<label class="radio-inline" style="margin-left: 0;">
+			  <input type="radio" name="worksInfos[0].ownerType" th:name="|worksInfos[${worksInfoStat.index}].ownerType|"  th:checked="*{worksInfo.ownerType} == 'public institution'"
+			   id="inlineRadio2" value="public institution"> public institution
+			</label>
+			
+			     </div> 
+			     
+			     <div class="col-lg-4 mo0">
+			<label class="radio-inline">
+			  <input type="radio" name="worksInfos[0].ownerType" th:name="|worksInfos[${worksInfoStat.index}].ownerType|"  th:checked="*{worksInfo.ownerType} == ' business entity'"
+			  id="inlineRadio1" value=" business entity"> business entity
+			</label>
+			<label class="radio-inline" style="margin-left: 0;">
+			  <input type="radio" name="worksInfos[0].ownerType" th:name="|worksInfos[${worksInfoStat.index}].ownerType|"  th:checked="*{worksInfo.ownerType} == 'social organization'"
+			  id="inlineRadio2" value="social organization"> social organization
+			</label>
+			
+			     </div> 
+			      <div class="col-lg-4 mo0">
+			<label class="radio-inline">
+			  <input type="radio" name="worksInfos[0].ownerType" th:name="|worksInfos[${worksInfoStat.index}].ownerType|"  th:checked="*{worksInfo.ownerType} == 'institution legal person'"
+			  id="inlineRadio1" value="institution legal person"> institution legal person
+			</label>
+	     </div> 
+	    </div>
+	   <div style="clear: both;"></div>
+	  </div>
+ 	
+ 	
+ 	<div class="form-group">
+    <label for="inputEmail3" class="col-sm-3 control-label text-right"><span style="color: #FF0000;">*</span> document type </label>
+    <div class="col-sm-9">
+      <select class="form-control"  th:name="|worksInfos[${worksInfoStat.index}].ownerIdType|" name="worksInfos[0].ownerIdType">
+  			<option value="">please choose</option>
+		  	<option th:each="type : ${certificateType}" th:value="${type.name}" th:text="${type.name}" th:selected="${worksInfo.ownerIdType==null? false :#strings.contains(worksInfo.ownerIdType,type.name)}">1</option>
+		</select>
+    </div>
+   <div style="clear: both;"></div>
+  </div>
+  
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-3 control-label text-right"><span style="color: #FF0000;">*</span> I.d. </label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" id="inputEmail3" placeholder="I.d." maxlength="25" th:name="|worksInfos[${worksInfoStat.index}].ownerIdNumber|"
+      th:value="${worksInfo.ownerIdNumber}" name="worksInfos[0].ownerIdNumber" onkeyup="this.value=this.value.replace(/[^\w_]/g,'');">
+    </div>
+   <div style="clear: both;"></div>
+  </div>
+  
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-3 control-label text-right"><span style="color: #FF0000;">*</span> nationality </label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" id="inputEmail3" placeholder="nationality" maxlength="20" th:name="|worksInfos[${worksInfoStat.index}].ownerNationality|"
+      th:value="${worksInfo.ownerNationality}"  name="worksInfos[0].ownerNationality" onkeyup="value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')" onpaste="value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')" oncontextmenu = "value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')">
+    </div>
+   <div style="clear: both;"></div>
+  </div>
+  
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-3 control-label text-right"><span style="color: #FF0000;">*</span> provinces </label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" id="inputEmail3" placeholder="provinces" maxlength="20" th:name="|worksInfos[${worksInfoStat.index}].ownerProvince|"
+      th:value="${worksInfo.ownerProvince}" name="worksInfos[0].ownerProvince" onkeyup="value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')" onpaste="value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')" oncontextmenu = "value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')">
+    </div>
+   <div style="clear: both;"></div>
+  </div>
+ 	  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-3 control-label text-right"><span style="color: #FF0000;">*</span> city </label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" id="inputEmail3" placeholder="city" maxlength="20" th:name="|worksInfos[${worksInfoStat.index}].ownerCity|"
+      th:value="${worksInfo.ownerCity}" name="worksInfos[0].ownerCity" onkeyup="value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')" onpaste="value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')" oncontextmenu = "value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')">
+    </div>
+   <div style="clear: both;"></div>
+   </div>
+  </div>
+ 	<div th:each="worksInfo : ${worksInfos}" class="ownerflag" th:if="${#lists.size(worksInfos)==1}">
+ 	  <div class="form-group">
+	    <label for="inputEmail3" class="col-sm-3 control-label text-right"><span style="color: #FF0000;">*</span> name </label>
+	    <div class="col-sm-9">
+	      <input type="text" th:value="${worksInfo.ownerName}" class="form-control" id="inputEmail3" placeholder="name " maxlength="20"
+	       th:name="|worksInfos[${worksInfoStat.index}].ownerName|" name="worksInfos[0].ownerName">
+	    </div>
+	   <div style="clear: both;"></div>
+	  </div>
+
+   	  <div class="form-group">
+	    <label for="inputEmail3" class="col-sm-3 control-label text-right"><span style="color: #FF0000;">*</span> signature of </label>
+	    <div class="col-sm-9">
+	      <input type="text" th:value="${worksInfo.ownerSign}" class="form-control" id="inputEmail3" placeholder="signature of" maxlength="30"
+	      th:name="|worksInfos[${worksInfoStat.index}].ownerSign|" name="worksInfos[0].ownerSign">
+	    </div>
+	   <div style="clear: both;"></div>
+  	</div>
+
+ 	<div class="form-group">
+	    <label for="inputEmail3" class="col-sm-3 control-label  text-right"><span style="color: #FF0000;">*</span> category </label>
+	    <div class="col-sm-9">
+	  
+	     <div class="col-lg-4 mo0">
+			<label class="radio-inline">
+			  <input type="radio" name="worksInfos[0].ownerType" th:name="|worksInfos[${worksInfoStat.index}].ownerType|"  th:checked="*{worksInfo.ownerType} == 'a natural person'"
+			  id="inlineRadio1" value="a natural person" > a natural person
+			</label>
+			<label class="radio-inline" style="margin-left: 0;">
+			  <input type="radio" name="worksInfos[0].ownerType" th:name="|worksInfos[${worksInfoStat.index}].ownerType|"  th:checked="*{worksInfo.ownerType} == 'public institution'"
+			   id="inlineRadio2" value="public institution"> public institution
+			</label>
+			
+			     </div> 
+			     
+			     <div class="col-lg-4 mo0">
+			<label class="radio-inline">
+			  <input type="radio" name="worksInfos[0].ownerType" th:name="|worksInfos[${worksInfoStat.index}].ownerType|"  th:checked="*{worksInfo.ownerType} == 'business entity'"
+			  id="inlineRadio1" value="business entity"> business entity
+			</label>
+			<label class="radio-inline" style="margin-left: 0;">
+			  <input type="radio" name="worksInfos[0].ownerType" th:name="|worksInfos[${worksInfoStat.index}].ownerType|"  th:checked="*{worksInfo.ownerType} == 'social organization'"
+			  id="inlineRadio2" value="social organization"> social organization
+			</label>
+			
+			     </div> 
+			      <div class="col-lg-4 mo0">
+			<label class="radio-inline">
+			  <input type="radio" name="worksInfos[0].ownerType" th:name="|worksInfos[${worksInfoStat.index}].ownerType|"  th:checked="*{worksInfo.ownerType} == 'institution legal person'"
+			  id="inlineRadio1" value="institution legal person"> institution legal person
+			</label>
+	     </div> 
+	    </div>
+	   <div style="clear: both;"></div>
+	  </div>
+ 	
+ 	
+ 	<div class="form-group">
+    <label for="inputEmail3" class="col-sm-3 control-label text-right"><span style="color: #FF0000;">*</span> document type </label>
+    <div class="col-sm-9">
+      <select class="form-control"  th:name="|worksInfos[${worksInfoStat.index}].ownerIdType|" name="worksInfos[0].ownerIdType">
+  			<option value="">please choose</option>
+		  	<option th:each="type : ${certificateType}" th:value="${type.name}" th:text="${type.name}" th:selected="${worksInfo.ownerIdType==null? false :#strings.contains(worksInfo.ownerIdType,type.name)}">1</option>
+		</select>
+    </div>
+   <div style="clear: both;"></div>
+  </div>
+  
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-3 control-label text-right"><span style="color: #FF0000;">*</span> I.d. </label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" id="inputEmail3" placeholder="I.d." maxlength="25" th:name="|worksInfos[${worksInfoStat.index}].ownerIdNumber|"
+      th:value="${worksInfo.ownerIdNumber}" name="worksInfos[0].ownerIdNumber"  onkeyup="this.value=this.value.replace(/[^\w_]/g,'');">
+    </div>
+   <div style="clear: both;"></div>
+  </div>
+  
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-3 control-label text-right"><span style="color: #FF0000;">*</span> nationality </label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" id="inputEmail3" placeholder="nationality" maxlength="20" th:name="|worksInfos[${worksInfoStat.index}].ownerNationality|"
+      th:value="${worksInfo.ownerNationality}"  name="worksInfos[0].ownerNationality" onkeyup="value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')" onpaste="value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')" oncontextmenu = "value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')">
+    </div>
+   <div style="clear: both;"></div>
+  </div>
+  
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-3 control-label text-right"><span style="color: #FF0000;">*</span> provinces </label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" id="inputEmail3" placeholder="provinces" maxlength="20" th:name="|worksInfos[${worksInfoStat.index}].ownerProvince|"
+      th:value="${worksInfo.ownerProvince}" name="worksInfos[0].ownerProvince" onkeyup="value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')" onpaste="value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')" oncontextmenu = "value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')">
+    </div>
+   <div style="clear: both;"></div>
+  </div>
+ 	  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-3 control-label text-right"><span style="color: #FF0000;">*</span> city </label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" id="inputEmail3" placeholder="city" maxlength="20" th:name="|worksInfos[${worksInfoStat.index}].ownerCity|"
+      th:value="${worksInfo.ownerCity}" name="worksInfos[0].ownerCity" onkeyup="value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')" onpaste="value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')" oncontextmenu = "value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')">
+    </div>
+   <div style="clear: both;"></div>
+   </div>
+  </div>
+  </div>
+     <div class="form-group">
+    <label for="inputPassword3" class="col-sm-3 control-label text-right"></label>
+    <div class="col-sm-9">
+     <p class="col-lg-6" style="padding-left: 0;" id="add-owner">
+     	<a class="btn btn-info" onclick="addOwner()"><i class="fa fa-plus-square-o"></i> copyright owner</a>
+     </p> 
+     <p class="col-lg-6" style="padding-left: 0;display: none;" id="remove-owner">
+     	<a class="btn btn-info" onclick="removeOwner()"><i class="fa fa-minus-square-o"></i> delete copyright owner</a>
+     </p>
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+
+ 	<div style="clear: both;"></div>	
+ 	</div>
+  <div class="col-lg-12" style=" margin-bottom: 20px;">
+ 	<h2>remaining samples</h2>
+ 	
+ 	  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-3 control-label text-right"><span style="color: #FF0000;">*</span> electronic medium (piece) </label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" id="inputEmail3" maxlength="2" placeholder="electronic medium (piece)" onkeyup="this.value=this.value.replace(/\D/g,'')" th:value="${worksInfos[0].electronicMedium}" name="worksInfos[0].electronicMedium">
+    </div>
+   <div style="clear: both;"></div>
+  </div>
+
+   <div style="clear: both;"></div>
+ </div>
+ 
+ 
+<style type="text/css"> 
+.btnn{padding: 10px 80px; background: #00BFFF; border-radius: 2px; color: #fff; }   
+</style>  
+  
+<div class="col-md-offset-2 col-lg-10" style="margin-top: 40px;">
+
+	<button type="submit" class="btn btnn">save</button>
+	<a class="btn btnn" href="works_second_en.html" th:href="@{~/works/worksPage_en/{worksId}(worksId=${worksId},progress=0)}">previous</a>
+</div>
+  
+</form>
+<div style="clear: both;"></div>
+</div>
+
+
+</div>
+
+</div>
+
+
+<div style="clear: both;">
+	
+</div>
+<!-- footer -->
+
+
+	<div class="footer">
+		<div class="agileinfo_footer_bottom1">
+			<div class="container">
+				<p class="col-lg-3" style="display: inline-block; letter-spacing:0px;"><a th:href="@{~/company_en.html}">About Us</a>&nbsp; &nbsp;<a href="javascript:;">Legal Agreements</a></p>
+
+				<p class="col-lg-9  text-right" style="display: inline-block;letter-spacing:0px;" > &copy;2017 wevolution Allg Rights Reserved. powered by Shanghai WE Info and Tech Co.,Ltd <img th:src="@{~/images/pic1.gif}"  style="margin-top:5px;"/> Shanghai ICP no. 17045920</p>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+		
+
+<!-- //footer -->
+<!-- JavaScripts -->
+<script type="text/javascript" th:src="@{/js/jquery-2.1.4.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/sleekslider.js}"></script>
+<script type="text/javascript" th:src="@{/js/app.js}"></script>
+<script th:src="@{/js/bootstrap.js}"></script>
+<script th:src="@{/js/layer/layer.js}"></script>
+<!-- //for bootstrap working -->
+<script type="text/javascript">
+$(function() {
+	//权利拥有状况
+	if($('input[value="其他"]').is(':checked')){
+		$("#own-right-explain").fadeIn();
+	}else{
+		$("#own-right-explain").fadeOut();
+		$('input[name="worksInfos[0].ownRightStatusExplain"]').val('');
+	}
+	$("#own-right").click(function() {
+		$('input[name="worksInfos[0].ownRightStatus"]').prop("checked", this.checked);
+		if($('input[value="其他"]').is(':checked')){
+			$("#own-right-explain").fadeIn();
+		}else{
+			$("#own-right-explain").fadeOut();
+			$('input[name="worksInfos[0].ownRightStatusExplain"]').val('');
+		}
+	});
+	var $subBox = $("input[name='worksInfos[0].ownRightStatus']");
+	$subBox.click(function() {
+		$("#own-right").prop("checked",$subBox.length == $("input[name='worksInfos[0].ownRightStatus']:checked").length ? true: false);
+		if($('input[value="其他"]').is(':checked')){
+			$("#own-right-explain").fadeIn();
+		}else{
+			$("#own-right-explain").fadeOut();
+			$('input[name="worksInfos[0].ownRightStatusExplain"]').val('');
+		}
+	}); 
+	//权利取得方式
+	 if($("select[name='worksInfos[0].accessRightsType']").val()=="其他"){
+		$("#access-rights").fadeIn();
+	}else{
+		$("#access-rights").fadeOut();
+		$('input[name="worksInfos[0].accessRightsTypeExplain"]').val('');
+	}
+	$("select[name='worksInfos[0].accessRightsType']").bind("change",function(){
+		if($(this).val()=="其他"){
+			$("#access-rights").fadeIn();
+		}else{
+			$("#access-rights").fadeOut();
+		}
+	});
+	/*if($("select[name='worksInfos[0].rightsAffiliationType']").val()=="其他"){
+		$("#rights-affiliation").fadeIn();
+	}else{
+		$("#rights-affiliation").fadeOut();
+	}
+	$("select[name='worksInfos[0].rightsAffiliationType']").bind("change",function(){
+		if($(this).val()=="其他"){
+			$("#rights-affiliation").fadeIn();
+		}else{
+			$("#rights-affiliation").fadeOut();
+		}
+	}); */
+	//作者、著作权人的增加与删除
+	var _index_owner = $("div .ownerflag").length;
+	if(_index_owner<5){
+		$("#add-owner").fadeIn();
+		$("#remove-owner").fadeIn();
+		if(_index_owner<2){
+			$("#remove-owner").fadeOut();
+		}
+	}else if(_index_owner>=5){
+		$("#add-owner").fadeOut();
+		$("#remove-owner").fadeIn();
+	}
+	var _index_owner = $("div .authorflag").length;
+	if(_index_owner<5){
+		$("#add-author").fadeIn();
+		$("#remove-author").fadeIn();
+		if(_index_owner<2){
+			$("#remove-author").fadeOut();
+		}
+	}else if(_index_owner>=5){
+		$("#add-owner").fadeOut();
+		$("#remove-owner").fadeIn();
+	}
+});
+function addAuthor(){
+	var index = $("div .authorflag").length;
+	if(index>4){
+		return false;
+	}
+	$("#author-div").append('<div class="authorflag">'+
+	  	'<div class="form-group">'+
+	    '<label for="inputEmail3" class="col-sm-3 control-label text-right"><span style="color: #FF0000;">*</span> author </label>'+
+	    '<div class="col-sm-9">'+
+	      '<input type="text" class="form-control" placeholder="请填写真实创作者的姓名" maxlength="20" '+
+	      'name="worksInfos['+index+'].author" >'+
+	    '</div>'+
+	   '<div style="clear: both;"></div>'+
+	   '</div>'+
+	  '<div class="form-group">'+
+	    '<label for="inputPassword3" class="col-sm-3 control-label text-right"><span style="color: #FF0000;">*</span> Signature of work</label>'+
+	    '<div class="col-sm-9">'+
+	     '<input type="text" class="form-control" placeholder="When you use the alias and pen name to sign the work, please fill in your alias and pseudonym in this column." maxlength="30"'+
+	     'name="worksInfos['+index+'].authorSing">'+
+	    '</div>'+
+	    '<div style="clear: both;"></div>'+
+	  '</div>'+
+  '</div>');
+	index = $("div .authorflag").length;
+	if(index>0){
+		$("#remove-author").fadeIn();
+		if(index>4){
+			$("#add-author").fadeOut();
+			return false;
+		}
+	}
+}
+function removeAuthor(){
+	var index = $("div .authorflag").length;
+	if(index>1){
+		$("#author-div>div:last").remove();
+	}
+	index = $("div .authorflag").length;
+	if(index<5){
+		$("#add-author").fadeIn();
+		if(index<2){
+			$("#remove-author").fadeOut();
+		}
+	}
+}
+function addOwner(){
+	var index = $("div .ownerflag").length;
+	if(index>4){
+		return false;
+	}
+	$("#owner-div").append('<div class="ownerflag">'+
+ 	  '<div class="form-group">'+
+	    '<label for="inputEmail3" class="col-sm-3 control-label text-right"><span style="color: #FF0000;">*</span> 姓名或名称 </label>'+
+	    '<div class="col-sm-9">'+
+	      '<input type="text" class="form-control" placeholder="name " maxlength="20"'+
+	       'name="worksInfos['+index+'].ownerName">'+
+	    '</div>'+
+	   '<div style="clear: both;"></div>'+
+	  '</div>'+
+
+   	  '<div class="form-group">'+
+	    '<label for="inputEmail3" class="col-sm-3 control-label text-right"><span style="color: #FF0000;">*</span> Signature </label>'+
+	    '<div class="col-sm-9">'+
+	      '<input type="text" class="form-control" placeholder="Signature" maxlength="30" '+
+	      'name="worksInfos['+index+'].ownerSign">'+
+	    '</div>'+
+	   '<div style="clear: both;"></div>'+
+  	'</div>'+
+
+ 	'<div class="form-group">'+
+	    '<label for="inputEmail3" class="col-sm-3 control-label  text-right"><span style="color: #FF0000;">*</span> category </label>'+
+	    '<div class="col-sm-9">'+
+	  
+	     '<div class="col-lg-4 mo0">'+
+			'<label class="radio-inline">'+
+			  '<input type="radio" name="worksInfos['+index+'].ownerType" value="natural person" > 自然人'+
+			'</label>'+
+			'<label class="radio-inline" style="margin-left: 0;">'+
+			  '<input type="radio" name="worksInfos['+index+'].ownerType" value="Institution legal person"> 事业单位法人'+
+			'</label>'+
+		'</div>'+ 
+			     
+		'<div class="col-lg-4 mo0">'+
+			'<label class="radio-inline">'+
+			  '<input type="radio" name="worksInfos['+index+'].ownerType" value="Enterprise legal person"> 企业法人'+
+			'</label>'+
+			'<label class="radio-inline" style="margin-left: 0;">'+
+			  '<input type="radio" name="worksInfos['+index+'].ownerType" value="Social group legal person"> 社会团体法人'+
+			'</label>'+
+			
+		'</div>'+ 
+			'<div class="col-lg-4 mo0">'+
+			'<label class="radio-inline">'+
+			  '<input type="radio" name="worksInfos['+index+'].ownerType" value="Institutional legal person"> 机构法人'+
+			'</label>'+
+	     '</div>'+ 
+	    '</div>'+
+	   '<div style="clear: both;"></div>'+
+	  '</div>'+
+ 	
+ 	'<div class="form-group">'+
+    '<label for="inputEmail3" class="col-sm-3 control-label text-right"><span style="color: #FF0000;">*</span> Document type </label>'+
+    '<div class="col-sm-9">'+
+      '<select class="form-control" name="worksInfos['+index+'].ownerIdType">'+
+	      	'<option value="">choose</option>'+
+		  	'<option value="居民身份证">居民身份证</option>'+
+		  	'<option value="军官证">军官证</option>'+
+		  	'<option value="营业执照">营业执照</option>'+
+		  	'<option value="护照">护照</option>'+
+		  	'<option value="企业法人营业执照">企业法人营业执照</option>'+
+		  	'<option value="组织机构代码证书">组织机构代码证书</option>'+
+		  	'<option value="社团法人证书">社团法人证书</option>'+
+		  	'<option value="其他有效证书">其他有效证书</option>'+
+		'</select>'+
+    '</div>'+
+   '<div style="clear: both;"></div>'+
+  '</div>'+
+  
+  '<div class="form-group">'+
+    '<label for="inputEmail3" class="col-sm-3 control-label text-right"><span style="color: #FF0000;">*</span> 证件号码 </label>'+
+    '<div class="col-sm-9">'+
+      '<input type="text" class="form-control" id="inputEmail3" placeholder="证件号码" maxlength="25" name="worksInfos['+index+'].ownerIdNumber" onkeyup="value=value.replace(/[^\\w_]/g,\'\')">'+
+    '</div>'+
+   '<div style="clear: both;"></div>'+
+  '</div>'+
+  
+  '<div class="form-group">'+
+    '<label for="inputEmail3" class="col-sm-3 control-label text-right"><span style="color: #FF0000;">*</span> 国籍 </label>'+
+    '<div class="col-sm-9">'+
+      '<input type="text" class="form-control" id="inputEmail3" placeholder="国籍" maxlength="20" name="worksInfos['+index+'].ownerNationality" onkeyup="value=value.replace(/[^\\a-\\z\\A-\\Z0-9\\u4E00-\\u9FA5]/g,\'\')" onpaste="value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,\'\')" oncontextmenu = "value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,\'\')">'+
+    '</div>'+
+   '<div style="clear: both;"></div>'+
+  '</div>'+
+  
+  '<div class="form-group">'+
+    '<label for="inputEmail3" class="col-sm-3 control-label text-right"><span style="color: #FF0000;">*</span> 省份 </label>'+
+    '<div class="col-sm-9">'+
+      '<input type="text" class="form-control" id="inputEmail3" placeholder="省份" maxlength="20" name="worksInfos['+index+'].ownerProvince" onkeyup="value=value.replace(/[^\\a-\\z\\A-\\Z0-9\\u4E00-\\u9FA5]/g,\'\')" onpaste="value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,\'\')" oncontextmenu = "value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,\'\')">'+
+    '</div>'+
+   '<div style="clear: both;"></div>'+
+  '</div>'+
+ 	  '<div class="form-group">'+
+    '<label for="inputEmail3" class="col-sm-3 control-label text-right"><span style="color: #FF0000;">*</span> 城市 </label>'+
+    '<div class="col-sm-9">'+
+      '<input type="text" class="form-control" id="inputEmail3" placeholder="城市" maxlength="20" name="worksInfos['+index+'].ownerCity" onkeyup="value=value.replace(/[^\\a-\\z\\A-\\Z0-9\\u4E00-\\u9FA5]/g,\'\')" onpaste="value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,\'\')" oncontextmenu = "value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,\'\')">'+
+    '</div>'+
+   '<div style="clear: both;"></div>'+
+   '</div>'+
+  '</div>');
+	index = $("div .ownerflag").length;
+	if(index>0){
+		$("#remove-owner").fadeIn();
+		if(index>4){
+			$("#add-owner").fadeOut();
+			return false;
+		}
+	}
+}
+function removeOwner(){
+	var index = $("div .ownerflag").length;
+	if(index>1){
+		$("#owner-div>div:last").remove();
+	}
+	index = $("div .ownerflag").length;
+	if(index<5){
+		$("#add-owner").fadeIn();
+		if(index<2){
+			$("#remove-owner").fadeOut();
+		}
+	}
+}
+function check(){
+	var checkInfo = true;
+	var checkFormat = true;
+	var authors = [];
+	$("input[name$='author']").each(function(){
+		if($.trim($(this).val())==""){
+			checkInfo = false;
+			return;
+		}else{
+			authors.push($.trim($(this).val()));
+		}
+	});
+	if(!checkInfo){
+		layer.msg("请填写作者名称");
+		return false;
+	}else{
+		if(isRepeat(authors)){
+			layer.msg("存在重复作者名称");
+			return false;
+		}
+	}
+	var authorSings = [];
+	$("input[name$='authorSing']").each(function(){
+		if($.trim($(this).val())==""){
+			checkInfo = false;
+			return;
+		}else{
+			authorSings.push($.trim($(this).val()));
+		}
+	});
+	if(!checkInfo){
+		layer.msg("请填写作者署名");
+		return false;
+	}else{
+		if(isRepeat(authorSings)){
+			layer.msg("存在重复作者署名");
+			return false;
+		}
+	}
+	
+	if($.trim($("select[name$='accessRightsType']").val())==""){
+			layer.msg("请选择权利获取方式");
+			return false;
+	}
+	if($.trim($("select[name$='accessRightsType']").val())=="其他"){
+		if($.trim($("input[name$='accessRightsTypeExplain']").val())==""){
+			layer.msg("请填写作权利获取方式说明");
+			return false;
+		}
+	}
+	if($.trim($("select[name$='rightsAffiliationType']").val())==""){
+		layer.msg("请选择权利归属方式");
+		return false;
+	}
+	/* if($.trim($("input[name$='rightsAffiliationTypeExplain']").val())==""){
+		layer.msg("请填写权利归属方式说明");
+		return false;
+	} */
+	var ownRightStatus_array=new Array();  
+	$('input[name$="ownRightStatus"]:checked').each(function(){  
+	    ownRightStatus_array.push($(this).val());
+	});
+	if(ownRightStatus_array.length<1){
+		layer.msg("请选择权利拥有状况");
+		return false;
+	}
+	if($('input[value="其他"]').is(':checked')){
+		if($.trim($('input[name$="ownRightStatusExplain"]').val())==""){
+			layer.msg("请填写权利拥有状况说明");
+			return false;
+		}
+	}
+	var ownerNames = [];
+	$("input[name$='ownerName']").each(function(){
+		if($.trim($(this).val())==""){
+			checkInfo = false;
+			return;
+		}else{
+			ownerNames.push($.trim($(this).val()));
+		}
+	});
+	if(!checkInfo){
+		layer.msg("请填写著作权姓名");
+		return false;
+	}else{
+		if(isRepeat(ownerNames)){
+			layer.msg("存在重复著作权姓名");
+			return false;
+		}
+	}
+	
+	var ownerSigns = [];
+	$("input[name$='ownerSign']").each(function(){
+		if($.trim($(this).val())==""){
+			checkInfo = false;
+			return;
+		}else{
+			ownerSigns.push($.trim($(this).val()));
+		}
+	});
+	if(!checkInfo){
+		layer.msg("请填写著作权署名情况");
+		return false;
+	}else{
+		if(isRepeat(ownerSigns)){
+			layer.msg("存在重复著作权署名");
+			return false;
+		}
+	}
+	
+	var ownerTypeLengthCheck = $('input[name$="ownerType"]:checked').length;
+	var ownerTypeLength = $('input[name$="ownerType"]').length;
+	if(ownerTypeLength/5!=ownerTypeLengthCheck){
+		layer.msg("请选择类别");
+		return false;
+	}
+	
+	$("select[name$='ownerIdType']").each(function(){
+		if($(this).val()==""){
+			checkInfo = false;
+			return;
+		}
+	});
+	if(!checkInfo){
+		layer.msg("请选择证件类型");
+		return false;
+	}
+	
+	var ownerIdNumbers = [];
+	var _number="";
+	$("input[name$='ownerIdNumber']").each(function(){
+		if($.trim($(this).val())==""){
+			checkInfo = false;
+			return;
+		}else{
+			var con = $(this).attr("name").replace(/[^0-9]/ig, "")
+			var id_type = $('select[name="worksInfos['+con+'].ownerIdType"').val();
+			if(id_type=="居民身份证"){
+				if(isCardNo($.trim($(this).val())) === false){
+					_number = "居民身份证";
+					return;
+				}
+			}
+			ownerIdNumbers.push($.trim($(this).val()));
+		}
+	});
+	if(!checkInfo){
+		layer.msg("请填写证件号码");
+		return false;
+	}else{
+		if(_number!=""){
+			layer.msg(_number+"号码非法");
+			return false;
+		}
+		if(isRepeat(ownerIdNumbers)){
+			layer.msg("存在重复证件号码");
+			return false;
+		}
+	}
+	
+	$("input[name$='ownerNationality']").each(function(){
+		if($.trim($(this).val())==""){
+			checkInfo = false;
+			return;
+		}
+	});
+	if(!checkInfo){
+		layer.msg("请填写国籍");
+		return false;
+	}
+	
+	$("input[name$='ownerProvince']").each(function(){
+		if($.trim($(this).val())==""){
+			checkInfo = false;
+			return;
+		}
+	});
+	if(!checkInfo){
+		layer.msg("请填写省份");
+		return false;
+	}
+	
+	$("input[name$='ownerCity']").each(function(){
+		if($.trim($(this).val())==""){
+			checkInfo = false;
+			return;
+		}
+	});
+	if(!checkInfo){
+		layer.msg("请填写城市");
+		return false;
+	}
+	
+	if($.trim($("input[name$='electronicMedium']").val())==""){
+		layer.msg("请填写电子介质");
+		return false;
+	}
+	return true;
+}
+
+//检查号码是否符合规范，包括长度，类型 
+function isCardNo(card){ 
+	var reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/; 
+ 	if(reg.test(card) === false){ 
+		return false; 
+ 	} 
+ 	return true; 
+}
+/**
+ * 重复数组校验
+ */
+function isRepeat(arr){  
+	  
+    var hash = {};  
+ 
+    for(var i in arr) {  
+ 
+        if(hash[arr[i]])  
+ 
+             return true;  
+ 
+        hash[arr[i]] = true;  
+ 
+    }  
+ 
+    return false;  
+ 
+}  
+</script>
+</body>
+</html>

@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wevolution.mapper.UsersMapper">
+  <resultMap id="BaseResultMap" type="com.wevolution.domain.Users">
+    <id column="record_id" jdbcType="INTEGER" property="recordId" />
+    <result column="user_id" jdbcType="CHAR" property="userId" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="user_nickname" jdbcType="VARCHAR" property="userNickname" />
+    <result column="user_image_url" jdbcType="VARCHAR" property="userImageUrl" />
+    <result column="phone" jdbcType="CHAR" property="phone" />
+    <result column="identify_status" jdbcType="TINYINT" property="identifyStatus" />
+    <result column="identify_type" jdbcType="TINYINT" property="identifyType" />
+    <result column="verify_channel" jdbcType="TINYINT" property="verifyChannel" />
+    <result column="verify_user" jdbcType="VARCHAR" property="verifyUser" />
+    <result column="verify_credential" jdbcType="VARCHAR" property="verifyCredential" />
+    <result column="company_logo_url" jdbcType="VARCHAR" property="companyLogoUrl" />
+    <result column="user_address" jdbcType="VARCHAR" property="userAddress" />
+    <result column="update_time" jdbcType="CHAR" property="updateTime" />
+    <result column="create_time" jdbcType="CHAR" property="createTime" />
+    <result column="is_usable" jdbcType="BIT" property="isUsable" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    record_id, user_id, user_name, user_nickname, user_image_url, phone, identify_status, 
+    identify_type, verify_channel, verify_user, verify_credential, company_logo_url, 
+    user_address, update_time, create_time, is_usable
+  </sql>
+  <!-- 记录id查询用户 -->
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from front_users
+    where record_id = #{recordId,jdbcType=INTEGER}
+  </select>
+  <!-- 新增用户 -->
+  <insert id="insertUser" parameterType="com.wevolution.domain.Users">
+    <selectKey keyProperty="recordId" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into front_users
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="userName != null">
+        user_name,
+      </if>
+      <if test="userNickname != null">
+        user_nickname,
+      </if>
+      <if test="userImageUrl != null">
+        user_image_url,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="identifyStatus != null">
+        identify_status,
+      </if>
+      <if test="identifyType != null">
+        identify_type,
+      </if>
+      <if test="verifyChannel != null">
+        verify_channel,
+      </if>
+      <if test="verifyUser != null">
+        verify_user,
+      </if>
+      <if test="verifyCredential != null">
+        verify_credential,
+      </if>
+      <if test="companyLogoUrl != null">
+        company_logo_url,
+      </if>
+      <if test="userAddress != null">
+        user_address,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="isUsable != null">
+        is_usable,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=CHAR},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userNickname != null">
+        #{userNickname,jdbcType=VARCHAR},
+      </if>
+      <if test="userImageUrl != null">
+        #{userImageUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=CHAR},
+      </if>
+      <if test="identifyStatus != null">
+        #{identifyStatus,jdbcType=TINYINT},
+      </if>
+      <if test="identifyType != null">
+        #{identifyType,jdbcType=TINYINT},
+      </if>
+      <if test="verifyChannel != null">
+        #{verifyChannel,jdbcType=TINYINT},
+      </if>
+      <if test="verifyUser != null">
+        #{verifyUser,jdbcType=VARCHAR},
+      </if>
+      <if test="verifyCredential != null">
+        #{verifyCredential,jdbcType=VARCHAR},
+      </if>
+      <if test="companyLogoUrl != null">
+        #{companyLogoUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="userAddress != null">
+        #{userAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=CHAR},
+      </if>
+      <if test="isUsable != null">
+        #{isUsable,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <!-- 平台用户查询 -->
+  <select id="selectByNameOrPhoneSys" parameterType="String" resultMap="BaseResultMap">
+  	select 
+  	<include refid="Base_Column_List" /> 
+  	from front_users where (user_name = #{userName} or phone = #{userName})
+  	and	verify_channel=0
+  </select>
+  <!-- 用户名/手机号校验 -->
+  <select id="checkUser" resultType="Integer">
+  	select count(*) from front_users where 1=1
+  	<if test="userName != null and userName != ''">
+  		and user_name = #{userName} and verify_channel=0
+  	</if>
+  	<if test="phone != null and phone != ''">
+  		and phone = #{phone}
+  	</if>
+  </select>
+  <!-- 密码登录校验 -->
+  <select id="selcetUserByParam" resultMap="BaseResultMap">
+  	select 
+  	<include refid="Base_Column_List" />
+  	from front_users where (user_name = #{nameOrPhone} or phone = #{nameOrPhone})
+  	and	verify_credential = #{credential}
+  </select>
+  <!-- 手机号查询用户 -->
+  <select id="selectUserByPhone" resultMap="BaseResultMap">
+  	select 
+  	<include refid="Base_Column_List" />
+  	from front_users where phone = #{phone}
+  	and verify_channel = #{verifyChannel}
+  </select>
+  <!-- 手机号、用户名匹配 (密码修改校验)-->
+  <select id="selectUserIdByNameAndPhone" resultType="String">
+  	SELECT
+		user_id
+	FROM
+		front_users
+	WHERE
+		user_name = #{userName}
+	AND phone = #{phone}
+  </select>
+  <!-- 根据userId查询用户 -->
+  <select id="selectUserById" resultMap="BaseResultMap">
+  	select 
+  	<include refid="Base_Column_List" />
+  	from front_users where user_id = #{userId}
+  </select>
+  <update id="changePwd">
+  	update front_users
+    set 
+      verify_credential = #{verifyCredential,jdbcType=VARCHAR}
+    where user_id = #{userId} and verify_channel = 0
+  </update>
+  <update id="updateUserById" parameterType="com.wevolution.domain.Users">
+  	update front_users
+    <set>
+      <if test="userName != null">
+        user_name = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userImageUrl != null">
+        user_image_url = #{userImageUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=CHAR},
+      </if>
+      <if test="identifyStatus != null">
+        identify_status = #{identifyStatus,jdbcType=TINYINT},
+      </if>
+      <if test="identifyType != null">
+        identify_type = #{identifyType,jdbcType=TINYINT},
+      </if>
+      <if test="companyLogoUrl != null">
+        company_logo_url = #{companyLogoUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="userAddress != null">
+        user_address = #{userAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=CHAR},
+      </if>
+      <if test="isUsable != null">
+        is_usable = #{isUsable,jdbcType=BIT},
+      </if>
+    </set>
+    where user_id = #{userId,jdbcType=CHAR}
+  </update>
+  <select id="selectUserByVerify" resultMap="BaseResultMap">
+  	select 
+  	<include refid="Base_Column_List" />
+  	from front_users where verify_user = #{verifyUser} and verify_channel=#{verifyChannel}
+  </select>
+  <select id="registrations" resultType="java.util.Map">
+  	<![CDATA[
+		SELECT
+			days.date_day,
+			(SELECT COUNT(u.user_id) FROM front_users u WHERE DATE_FORMAT(u.create_time, '%Y-%m-%d') = days.date_day) user_num,
+			(SELECT COUNT(ca.record_id) FROM copyright_audit ca WHERE DATE_FORMAT(ca.created_time, '%Y-%m-%d') = days.date_day) works_num
+		FROM
+			(
+				SELECT
+					adddate(#{begindate}, numlist.id) AS date_day
+				FROM
+					(
+						SELECT
+							n1.i + n10.i * 10 + n100.i * 100 AS id
+						FROM
+							calendar_auxiliary n1
+						CROSS JOIN calendar_auxiliary AS n10
+						CROSS JOIN calendar_auxiliary AS n100
+					) AS numlist
+				WHERE
+					adddate(#{begindate}, numlist.id) <= #{endDate}
+			) days
+		]]>
+		
+  </select>
+</mapper>
